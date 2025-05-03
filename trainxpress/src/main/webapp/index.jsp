@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +7,13 @@
 
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <title>Travel Express</title>
+    <title>TrainXpress</title>
 </head>
 <body>
     <div id="scroll-indicator"></div>
     <section class="showcase">
         <header>
-          <h2 class="logo">Welcome Travel Express ..</h2>
+          <h2 class="logo">Welcome to TrainXpress..</h2>
         </header>
         <video src="./homecont/video.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
@@ -29,15 +27,19 @@
           <a href="#">Explore</a>
         </div>
         <ul class="social">
+        
           <li><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
-          <li><a href="#"><i class="ri-github-fill"></i></li>
-          <li><a href="#"><i class="ri-youtube-fill"></i></li>
+          <li><a href="#"><i class="ri-github-fill"></i></a></li>
+          <li><a href="#"><i class="ri-youtube-fill"></i></a></li>
+          
         </ul>
+        
         <!-- Search Tab -->
+        
         <div class="search-tab">
-            <form id="searchForm">
-                <input type="text" id="from" placeholder="From" required>
-                <input type="text" id="to" placeholder="To" required>
+            <form  action="SearchTrout" method="post">
+                <input type="text" id="from" name="tfrom"placeholder="From" required>
+                <input type="text" id="to" name="tto"placeholder="To" required>
                 <button type="submit">View Details</button>
             </form>
         </div>
@@ -53,7 +55,7 @@
                     <div class="card-cont">
                         <h1>Hatton</h1>
                         <p>Hatton to Kandy</p>
-                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
+                        <a href="routeDetail.html" class="card-btn">View Details</a>
                     </div>
                 </div>
                 <div class="Route-card">
@@ -61,7 +63,7 @@
                     <div class="card-cont">
                         <h1>Colombo</h1>
                         <p>Colombo to Beliatta</p>
-                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
+                        <a href="routeDetail.html" class="card-btn">View Details</a>
                     </div>
                 </div>
                 <div class="Route-card">
@@ -69,7 +71,7 @@
                     <div class="card-cont">
                         <h1>Mirissa</h1>
                         <p>Mirissa to Kandy</p>
-                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
+                        <a href="routeDetail.html" class="card-btn">View Details</a>
                     </div>
                 </div>
             </div>
@@ -83,35 +85,35 @@
         <div class="cont">
             <ul>
                 <li>
-                    <h3 class="heading">xxxxxxx</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit excepturi accusamus minus
-                    totam </p>
+                    <h3 class="heading">Personalized Service</h3>
+                    <p>Experience a journey where every detail is tailor-made for you. Onboard are attentive staff ready to cater to your preferences. 
+                        We ensure that your journey is as unique and comfortable as possible. Enjoy an exclusive travel experience where your comfort and satisfaction are our top priorities.</p>
                     <a href="#">Read More ></a>
-                    <span class="date">xxxxxxx</span>
                     <span class="circle"></span>
                 </li>
                 <li>
-                    <h3 class="heading">xxxxxxx</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit excepturi accusamus minus
-                    totam </p>
+                    <h3 class="heading">Magnificent Scenery</h3>
+                    <p>Prepare to be captivated by breathtaking views as you travel through the Tsavo National Park. Our route is designed to showcase stunning scenery, and every window offers exciting views. </p>
                     <a href="#">Read More ></a>
-                    <span class="date">xxxxxxx</span>
                     <span class="circle"></span>
                 </li>
                 <li>
-                    <h3 class="heading">xxxxxxx</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit excepturi accusamus minus
-                    totam </p>
+                    <h3 class="heading">Destination</h3>
+                    <p>Embark on a voyage that takes you to a diverse range of destinations,
+                        each offering its own charm and allure. Our extensive network of routes
+                        covers Jaffna,Nuwara Eliya,Ella,Colombo,Mirissa,Galle,Hatton,
+                        Trincomalee, and Kaluthara. Our train provides an expansive journey across
+                        a wide array of locations, making every trip a new adventure.</p>
                     <a href="#">Read More ></a>
-                    <span class="date">xxxxxxx</span>
                     <span class="circle"></span>
                 </li>
                 <li>
-                    <h3 class="heading">xxxxxxxr</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit excepturi accusamus minus
-                    totam </p>
+                    <h3 class="heading">Enjoy Special Moments</h3>
+                    <p>Delight in splendid moments that transform your journey into a memorable
+                        experience. Whether it's an exceptional meal or celebrating a birthday or
+                        anniversary, aboard the TrailXpress, you can enjoy the little things
+                        that truly make every moment unforgettable. </p>
                     <a href="#">Read More ></a>
-                    <span class="date">xxxxxxx</span>
                     <span class="circle"></span>
                 </li>
             </ul>
@@ -191,7 +193,8 @@
         <div class="footer-container">
             <div class="footer-section about">
                 <h2>About Us</h2>
-                <p>Travel Express is your go-to platform for booking train tickets and exploring the best routes and services. We aim to provide a seamless and enjoyable travel experience for all our passengers.</p>
+                <p>	Travel Express is your go-to platform for booking train tickets and exploring the best routes and services. 
+                	We aim to provide a seamless and enjoyable travel experience for all our passengers.</p>
             </div>
             <div class="footer-section links">
                 <h2>Quick Links</h2>
