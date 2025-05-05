@@ -74,7 +74,7 @@ header .logo
   left: 0;
   width: 100%;
   height: 90%;
-  background: rgb(0, 128, 255);
+  background:#3f3f41;
   mix-blend-mode: overlay;
 }
 .text
@@ -135,7 +135,7 @@ header .logo
   width: 100%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: #615c5c;
+  background-color: Apple
 }
 
 .social ul {
@@ -145,7 +145,7 @@ header .logo
 }
 
 .social ul li {
-  background-color: #434343;
+  background-color:dark-green;
   margin: 10px 0;
   line-height: 40px;
 
@@ -335,7 +335,7 @@ header .logo
 .search-tab button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color:#8BC34A;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -343,7 +343,7 @@ header .logo
 }
 
 .search-tab button:hover {
-  background-color: #0056b3;
+  background-color:#8BC34A;
 }
 
 
