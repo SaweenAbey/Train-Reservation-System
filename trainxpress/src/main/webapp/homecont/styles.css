@@ -1,18 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  text-decoration: none;
-}
 header
 {
   position: absolute;
-  top: 0;
+  top: 15%;
   left: 0;
   width: 100%;
   padding: 40px 100px;
@@ -59,7 +51,7 @@ header .logo
 .showcase video
 {
   position: absolute;
-  top: 0;
+  top: 60px;
   left: 0;
   width: 100%;
   height: 90%;
@@ -70,7 +62,7 @@ header .logo
 .overlay
 {
   position: absolute;
-  top: 0;
+  top: 60px;
   left: 0;
   width: 100%;
   height: 90%;
@@ -657,64 +649,4 @@ button:hover:before {
 
 .prev i, .next i {
   font-size: 24px;
-}
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-section {
-  flex: 1;
-  margin: 20px;
-}
-
-.footer-section h2 {
-  margin-bottom: 10px;
-}
-
-.footer-section p, .footer-section ul, .footer-section li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.footer-section ul {
-  margin-top: 10px;
-}
-
-.footer-section ul li {
-  margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-section ul li i {
-  margin-right: 10px;
-}
-
-.footer-bottom {
-  background-color: #222;
-  padding: 10px 0;
-  margin-top: 20px;
-}
-
-.footer-bottom p {
-  margin: 0;
 }
