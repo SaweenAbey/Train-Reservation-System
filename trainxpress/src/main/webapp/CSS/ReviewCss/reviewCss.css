@@ -1,0 +1,212 @@
+           @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+			*{
+			    margin: 0;
+			    padding: 0;
+			    box-sizing: border-box;
+                font-family: inter;
+			}
+			html, body {
+			  height: 100vh;
+			}
+			
+			.navbar {
+                font-family: inter;
+                display: flex;
+                justify-content: space-between;  
+                background-color: #388e3c;
+                height: 60px;
+            }
+
+            .navbar a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+            }
+
+            .home-link {
+                color: white;
+                text-decoration: none;
+                padding: 0 15px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .home-link:hover {
+            background-color: #292929 ;
+            }
+
+            /* Nav right section */
+            .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            }
+
+            .nav-right a {
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            }
+
+            .nav-right a:hover {
+            background-color: #292929;
+            }
+
+            .btn {
+            padding: 8px 14px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            }
+
+            .login-btn {
+            background-color: #007bff;
+            color: white;
+            }
+
+            .signup-btn {
+            background-color: #007bff;
+            color: white;
+            }
+
+            .login-btn:hover {
+            background-color: #0056b3;
+            }
+
+            .signup-btn:hover {
+            background-color: #0056b3;
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+            .nav-right {
+                flex-direction: column;
+                gap: 5px;
+                width: 100%;
+                align-items: flex-start;
+                padding-top: 10px;
+            }
+            }
+           
+            .maincontainer{
+                display:flex;
+                height:100vh;
+                flex-wrap: wrap;
+                padding:0;
+                background-color: #ebfff24a;
+                
+            }
+            .submaincontainers, .submaincontainers1{
+                width:100%;
+               
+            }
+            .submaincontainers1{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                padding:40px;
+                gap:10px;
+            }
+            
+            .submaincontainers1 .imgdiv{
+              background-image: url(Review.jpg);
+              width:809px;
+              height:370px;
+              background-size: cover;
+              border-radius: 8px;
+            }
+            .submaincontainers1 .title{
+              
+              display:flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background-color: #ffffff;
+              height:50px;
+              width:809px;
+              height:200px;
+              border-radius: 10px;
+              line-height: 25px;
+              
+            }
+            .submaincontainers1 .title h3{
+                font-size: 25px;
+            }
+            .submaincontainers1 .title p{
+                font-size: 18px;
+            }
+            .submaincontainers2{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                padding:40px;
+                gap:10px;
+            }
+            form{
+                padding:10px;
+                display:flex;
+                flex-direction: column;
+                gap:8px;
+            }
+            form input,option,textarea,select{
+                height:40px;
+            }
+            form label{
+                font-family: Inter;
+                font-weight: 500;
+                line-height: 30px;;
+            }
+            #submitbtn{
+               background-color: #16A34A;
+               border:none;
+               border-radius: 8px;
+               flex-shrink: 0;
+               margin-top: 10px;;
+            }
+            
+     
+            .review-slider {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            }
+
+            .review-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            }
+
+            .review-card {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            }
+
+            .review-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            }
+
+            .review-content {
+            margin-top: 10px;
+            }
+
+            .stars {
+            color: gold;
+            margin: 10px 0;
+            }
+      
+        
+ 
