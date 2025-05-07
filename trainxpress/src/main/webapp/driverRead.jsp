@@ -48,7 +48,7 @@
 		                    <td>${driver.age}</td>
 		                    <td>
 		                        <div class="action-buttons">
-		                            <form action="Routeupdate.jsp" method="post" style="display: inline;">
+		                            <form action="driverUpdate.jsp" method="post" style="display: inline;">
 		                                <input type="hidden" name="driverId" value="${driver.driverId}">
 		                                <input type="hidden" name="fname" value="${driver.fname}">
 		                                <input type="hidden" name="lname" value="${driver.lname}">
@@ -61,8 +61,8 @@
 		                                    <i class="ri-file-edit-line"></i> Update
 		                                </button>
 		                            </form>
-		                            <form action="deleteTroute" method="post" style="display: inline;">
-		                                <input type="hidden" name="rid" value="${driver.driverId}">
+		                            <form action="DriverDelete" method="post" style="display: inline;">
+		                                <input type="hidden" name="driverId" value="${driver.driverId}">
 		                                <button type="submit" class="action-button delete-button">
 		                                    <i class="ri-delete-bin-2-line"></i> Delete
 		                                </button>

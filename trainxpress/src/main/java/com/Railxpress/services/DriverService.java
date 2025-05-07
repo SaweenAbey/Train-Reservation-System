@@ -75,4 +75,38 @@ public class DriverService {
 		}
 		return driverList;
 	}
+	
+	public void update(Driver driver) {
+		String query= "UPDATE driver set fName=?,lName=?,address=?,licenseNum=?,telNo=?,age=? where driverId=?";
+		try {
+			Connection conn = DBconnect.getConnection();
+			PreparedStatement stmt =conn.prepareStatement(query);
+			stmt.setString(1, driver.getFname());
+			stmt.setString(2, driver.getLname());
+			stmt.setString(3, driver.getAddress());
+			stmt.setString(4, driver.getLicenseNum());
+			stmt.setString(5, driver.getTelNo());
+			stmt.setInt(6, driver.getAge());
+			stmt.setInt(7, driver.getDriverId());
+			
+			stmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void delete(int id) {
+		String query="Delete from driver where driverId=?";
+		try {
+			Connection conn =DBconnect.getConnection();
+			PreparedStatement stmt =conn.prepareStatement(query);
+			
+			stmt.setInt(1, id);
+			stmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
