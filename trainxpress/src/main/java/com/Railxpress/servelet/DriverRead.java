@@ -1,8 +1,9 @@
 package com.Railxpress.servelet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,12 +14,11 @@ import com.Railxpress.model.Driver;
 import com.Railxpress.services.DriverService;
 
 
-@WebServlet("/Driverinsert")
-public class Driverinsert extends HttpServlet {
+@WebServlet("/DriverRead")
+public class DriverRead extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     
-    public Driverinsert() {
+    public DriverRead() {
         super();
        
     }
@@ -26,26 +26,25 @@ public class Driverinsert extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		DriverService service= new DriverService();
+		ArrayList<Driver> driver=service.readAll();
+		
+		request.setAttribute("driver", driver);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("driverRead.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Driver driver= new Driver();
 		
-		driver.setFname(request.getParameter("fname"));
-		driver.setLname(request.getParameter("lname"));
-		driver.setAddress(request.getParameter("address"));
-		driver.setLicenseNum(request.getParameter("licenseNum"));
-		driver.setTelNo(request.getParameter("telephone"));
-		driver.setAge(Integer.parseInt(request.getParameter("age")));
+		DriverService service= new DriverService();
+		ArrayList<Driver> driver=service.readAll();
 		
-		DriverService service = new DriverService();
-		service.insertDriver(driver);
+		request.setAttribute("driver", driver);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("driverRead.jsp");
+		dispatcher.forward(request, response);
 		
-		response.sendRedirect("DriverRead");
 		
-		doGet(request, response);
 	}
 
 }

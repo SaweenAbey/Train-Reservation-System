@@ -15,7 +15,7 @@
 		    <h3>Driver Details</h3>
 		    <!-- From Uiverse.io by adamgiebl --> 
 		<div class="button-container">
-		        <a href="RrouteReg.jsp">
+		        <a href="driverInsert.jsp">
 		            <button class="cssbuttons-io-button">
 		                <i class="ri-user-add-line"></i> Add Bus Driver
 		            </button>
@@ -62,7 +62,7 @@
 		                                </button>
 		                            </form>
 		                            <form action="deleteTroute" method="post" style="display: inline;">
-		                                <input type="hidden" name="rid" value="${allTrout.rid}">
+		                                <input type="hidden" name="rid" value="${driver.driverId}">
 		                                <button type="submit" class="action-button delete-button">
 		                                    <i class="ri-delete-bin-2-line"></i> Delete
 		                                </button>

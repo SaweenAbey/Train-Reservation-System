@@ -2,6 +2,8 @@ package com.Railxpress.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.Railxpress.model.Driver;
 import com.Railxpress.utils.DBconnect;
@@ -26,7 +28,7 @@ public class DriverService {
 			
 			stmt.executeUpdate();
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 //		String query = "INSERT INTO driver (name,nic,age,phone) VALUES(?,?,?,?)";
 //		
@@ -46,5 +48,31 @@ public class DriverService {
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
+	}
+	
+	public ArrayList<Driver> readAll() {
+		ArrayList<Driver> driverList= new ArrayList<Driver>();
+		try {
+			Connection conn= DBconnect.getConnection();
+			String query= "SELECT * FROM driver";
+			PreparedStatement stmt = conn.prepareStatement(query);
+			
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				Driver driver =new Driver();
+				driver.setDriverId(rs.getInt("driverId"));
+				driver.setFname(rs.getString("fName"));
+				driver.setLname(rs.getString("lName"));
+				driver.setAddress(rs.getString("address"));
+				driver.setLicenseNum(rs.getString("licenseNum"));
+				driver.setTelNo(rs.getString("telNo"));
+				driver.setAge(rs.getInt("age"));
+				driverList.add(driver);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return driverList;
 	}
 }
