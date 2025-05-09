@@ -1,4 +1,4 @@
-package tModel;
+package com.Railxpress.model;
 
 public class Admin extends Person{
 
