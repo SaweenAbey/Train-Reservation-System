@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,10 +27,8 @@
         <div class="text">
           <h2>Never Stop To </h2> 
           <h3>Exploring The World</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.</p>
+          <p>Plan your journey, reserve your seats, and explore Sri Lanka with comfort and convenience. 
+          RailXpress brings you a modern, reliable, and hassle-free online train reservation experience—anywhere, anytime.</p>
           <a href="#">Explore</a>
         </div>
         <ul class="social">
@@ -160,36 +160,36 @@
         <div class="review-slider">
             <button class="prev" onclick="moveReviewSlide(-1)"><i class="ri-arrow-left-circle-fill"></i></button>
             <div class="review-container">
-                <div class="review-card">
-                    <img src="homecont/re (1).jpg" alt="User 1">
-                    <div class="review-content">
-                        <h3>Sandeep</h3>
-                        <div class="stars">
-                            &#9733;&#9733;&#9733;&#9733;&#9734;
-                        </div>
-                        <p>Great experience! Highly recommend.</p>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <img src="homecont/re (2).jpg" alt="User 2">
-                    <div class="review-content">
-                        <h3>Sadeepa</h3>
-                        <div class="stars">
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                        </div>
-                        <p>Amazing service and beautiful places.</p>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <img src="homecont/re (3).jpg" alt="User 3">
-                    <div class="review-content">
-                        <h3>Wasika</h3>
-                        <div class="stars">
-                            &#9733;&#9733;&#9733;&#9733;&#9732;
-                        </div>
-                        <p>Had a wonderful time, will come back again!</p>
-                    </div>
-                </div>
+                <% int count=0; %>
+	            <c:forEach var="rev" items="${review}">
+	                <div class="review-card">
+	                    <img src="homecont/re (<%=++count %>).jpg" alt="User 1">
+	                    <div class="review-content">
+	                        <h3>${rev.name}</h3>
+	                        <div class="stars">
+	                            <c:choose>
+				                    <c:when test="${rev.rating == 1}">
+				                        &#9733;&#9734;&#9734;&#9734;&#9734;
+				                    </c:when>
+				                    <c:when test="${rev.rating == 2}">
+				                        &#9733;&#9733;&#9734;&#9734;&#9734;
+				                    </c:when>
+				                    <c:when test="${rev.rating == 3}">
+				                        &#9733;&#9733;&#9733;&#9734;&#9734;
+				                    </c:when>
+				                    <c:when test="${rev.rating == 4}">
+				                        &#9733;&#9733;&#9733;&#9733;&#9734;
+				                    </c:when>
+				                    <c:otherwise>
+				                        &#9733;&#9733;&#9733;&#9733;&#9733;
+				                    </c:otherwise>
+				                </c:choose>
+	                        </div>
+	                        <p>${rev.message}</p>
+	                    </div>
+	                </div>
+	                <% if(count==3){count=0;} %>
+	             </c:forEach>
             </div>
             <button class="next" onclick="moveReviewSlide(1)"><i class="ri-arrow-right-circle-fill"></i></button>
         </div>
@@ -237,7 +237,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 RailConnect. All rights reserved.</p>
+                <p>&copy; 2023 RailXpress. All rights reserved.</p>
             </div>
         </div>
     </footer>

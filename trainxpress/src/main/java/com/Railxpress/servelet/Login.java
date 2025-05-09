@@ -43,11 +43,11 @@ public class Login extends HttpServlet {
 
 		if(status!=0) {
 			HttpSession session= request.getSession();
-			session.setAttribute("cid", service);
-			
-			
-			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
-			dispatch.forward(request, response);
+			session.setAttribute("cid", status);
+			System.out.println("session id:"+session.getAttribute("cid"));
+			response.sendRedirect("index");
+//			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
+//			dispatch.forward(request, response);
 		} else {
 			RequestDispatcher dispatch = request.getRequestDispatcher("login.jsp");
 			dispatch.forward(request, response);

@@ -297,12 +297,19 @@
             </svg>RailXpress</a>
         
         <div class="nav-right">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
-          <button class="btn login-btn">Login</button>
-          <button class="btn signup-btn" style="margin-right:8px">Sign Up</button>
+          <a href="#">Booking</a>
+            <a href="insertReview">Review</a>
+            <a href="ContactUs.jsp">Contact</a>
+            
+            <% 
+            if (session != null && session.getAttribute("cid") != null && (int) session.getAttribute("cid") != 0) {%>
+            
+            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
+            
+            
+            
+            <%}else{%>
+            <button class="btn login-btn" onclick="location.href='login.jsp'">Login</button><%} %>
         </div>
       </nav>
     <div style="display: flex;flex-direction: column;">
