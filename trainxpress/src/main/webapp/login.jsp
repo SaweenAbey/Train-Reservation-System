@@ -16,7 +16,7 @@
             <form method="post" action="Register" >
                 <h1>Create Account</h1>
                 
-                <label>use your email for registeration</label>
+                <label>use your email for registration</label>
                 <input type="text" placeholder="Name" name="name" required >
                 <input type="email" placeholder="Email" name="email" required>
                 <input type="text" placeholder="User-Name" name="username" required>
