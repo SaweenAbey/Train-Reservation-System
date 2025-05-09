@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="css/adminStyle.css">
+    <link rel="stylesheet" href="CSS/TrainCrudCss/adminStyle.css">
 </head>
 <body>
     <div class="dashboard">
@@ -13,7 +13,7 @@
         </div>
         <div class="sidebar">
             <div class="profile">
-                <img src="css/avatar.png" alt="Admin Profile">
+                <img src="CSS/TrainCrudCss/avatar.png" alt="Admin Profile">
                 <span>John Doe</span>
             </div>
             <div class="menu">
