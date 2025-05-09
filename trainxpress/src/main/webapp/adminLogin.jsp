@@ -17,7 +17,7 @@
 
 body{
 
-    background-image: url("css/tLog.jpg");
+    background-image: url("CSS/TrainCrudCss/tLog.jpg");
     background-size: cover;
     backdrop-filter: blur(10px);
     display: flex;
