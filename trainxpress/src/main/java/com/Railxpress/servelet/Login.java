@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.Railxpress.model.Customer;
 import com.Railxpress.services.CustomerServices;
@@ -38,9 +39,13 @@ public class Login extends HttpServlet {
 		
 		CustomerServices service = new CustomerServices();
 		
-		boolean status = service.validate(cus);
+		int status = service.validate(cus);
 
-		if(status) {
+		if(status!=0) {
+			HttpSession session= request.getSession();
+			session.setAttribute("cid", service);
+			
+			
 			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
 			dispatch.forward(request, response);
 		} else {

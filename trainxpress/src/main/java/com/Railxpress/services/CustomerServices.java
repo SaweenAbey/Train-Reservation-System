@@ -10,10 +10,10 @@ import com.Railxpress.utils.DBconnect;
 
 public class CustomerServices {
 
-	public boolean validate(Customer cus) {
+	public int validate(Customer cus) {
 	
-		boolean status = false;
 		
+		int cid=0;
 		try {
 			String query = "SELECT * FROM customer WHERE email = '"+cus.getEmail()+"' AND password = '"+cus.getPassword()+"'";
 			
@@ -22,14 +22,15 @@ public class CustomerServices {
 			ResultSet rs = stmt.executeQuery(query);
 			
 			if(rs.next()) {
-				status = true;
+				
+				cid=rs.getInt("cid");
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return status;
+		return cid;
 		
 	}
 	

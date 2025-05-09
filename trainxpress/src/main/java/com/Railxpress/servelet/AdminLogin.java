@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.Railxpress.model.Admin;
 import com.Railxpress.services.AdminServices;
@@ -31,9 +32,12 @@ public class AdminLogin extends HttpServlet {
 		
 		AdminServices service = new AdminServices();
 		
-		boolean status = service.validate(admin);
+		int status = service.validate(admin);
 		
-		if(status) {
+		if(status!=0) {
+			HttpSession session = request.getSession();
+			session.setAttribute("id", service);
+			
 			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
 			dispatch.forward(request, response);
 		} else {

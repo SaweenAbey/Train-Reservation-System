@@ -11,10 +11,10 @@ import java.sql.ResultSet;
 
 public class AdminServices {
 
-	public boolean validate(Admin admin) {
+	public int validate(Admin admin) {
 		
-		boolean status = false;
 		
+		int id=0;
 		try {
 			
 			String query = "SELECT * FROM admin WHERE username = '"+ admin.getAdminUsername() +"' AND password = '"+ admin.getAdminPassword() +"'";
@@ -22,16 +22,16 @@ public class AdminServices {
 			Statement stmt = DBconnect.getConnection().createStatement();
 			
 			ResultSet rs = stmt.executeQuery(query);
-			
+			 
 			if(rs.next()) {
-				status = true;
+				id=rs.getInt("adminId");
 			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return status;
+		return id;
 		
 	}
 	
