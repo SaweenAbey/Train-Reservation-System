@@ -1,10 +1,12 @@
-package tServices;
+package com.Railxpress.services;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import tModel.Customer;
-import tUtils.DBConnect;
+import com.Railxpress.model.Customer;
+import com.Railxpress.utils.DBconnect;
+
+
 
 public class CustomerServices {
 
@@ -15,7 +17,7 @@ public class CustomerServices {
 		try {
 			String query = "SELECT * FROM customer WHERE email = '"+cus.getEmail()+"' AND password = '"+cus.getPassword()+"'";
 			
-			Statement stmt = DBConnect.getConnection().createStatement();
+			Statement stmt = DBconnect.getConnection().createStatement();
 			
 			ResultSet rs = stmt.executeQuery(query);
 			
@@ -37,7 +39,7 @@ public class CustomerServices {
 			
 			String query = "INSERT INTO customer(name,email,username,password) VALUES('"+cus.getName()+"','"+cus.getEmail()+"','"+cus.getCustomerUsername()+"','"+cus.getPassword()+"')";
 			
-			Statement stmt = DBConnect.getConnection().createStatement();
+			Statement stmt = DBconnect.getConnection().createStatement();
 			stmt.executeUpdate(query);
 			
 		} catch (Exception e) {

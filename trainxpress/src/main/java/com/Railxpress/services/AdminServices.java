@@ -1,10 +1,13 @@
-package tServices;
+package com.Railxpress.services;
 
 import java.sql.Statement;
+
+import com.Railxpress.model.Admin;
+import com.Railxpress.utils.DBconnect;
+
 import java.sql.ResultSet;
 
-import tModel.Admin;
-import tUtils.DBConnect;
+
 
 public class AdminServices {
 
@@ -16,7 +19,7 @@ public class AdminServices {
 			
 			String query = "SELECT * FROM admin WHERE username = '"+ admin.getAdminUsername() +"' AND password = '"+ admin.getAdminPassword() +"'";
 			
-			Statement stmt = DBConnect.getConnection().createStatement();
+			Statement stmt = DBconnect.getConnection().createStatement();
 			
 			ResultSet rs = stmt.executeQuery(query);
 			

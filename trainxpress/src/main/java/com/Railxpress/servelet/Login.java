@@ -1,4 +1,4 @@
-package tServlet;
+package com.Railxpress.servelet;
 
 import java.io.IOException;
 
@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Railxpress.model.Customer;
+import com.Railxpress.services.CustomerServices;
+
 //import org.apache.catalina.User;
 
-import tModel.Customer;
-import tServices.CustomerServices;
+
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {

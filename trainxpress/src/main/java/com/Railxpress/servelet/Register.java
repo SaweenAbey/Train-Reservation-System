@@ -1,4 +1,4 @@
-package tServlet;
+package com.Railxpress.servelet;
 
 import java.io.IOException;
 
@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tModel.Customer;
-import tServices.CustomerServices;
+import com.Railxpress.model.Customer;
+import com.Railxpress.services.CustomerServices;
+
+
 
 /**
  * Servlet implementation class Register
@@ -42,7 +44,7 @@ public class Register extends HttpServlet {
 		CustomerServices service = new CustomerServices();
 		service.register(cus);
 		
-		RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
+		RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
 		dispatch.forward(request, response);
 		
 	}

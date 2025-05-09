@@ -1,4 +1,4 @@
-package tServlet;
+package com.Railxpress.servelet;
 
 import java.io.IOException;
 
@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tModel.Admin;
-import tServices.AdminServices;
+import com.Railxpress.model.Admin;
+import com.Railxpress.services.AdminServices;
+
+
 
 @WebServlet("/AdminLogin")
 public class AdminLogin extends HttpServlet {
