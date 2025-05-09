@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px auto;
+            grid-template-rows: 60px auto;
+            height: 100vh;
+        }
+        .header {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background:linear-gradient(to right, #4CAF50, #8BC34A);
+            color: white;
+        }
+        .sidebar {
+            background: black;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #1BFC06;
+        }
+        .profile span {
+            display: block;
+            color: white;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .menu {
+            width: 100%;
+            flex-grow: 1;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            text-align: left;
+            background: #808080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #13C403;
+        }
+        .logout {
+            background: #e74c3c;
+            margin-top: auto;
+        }
+        
+        .logoutSec{
+        	margin-top:140px;
+        }
+        
+        .logout:hover {
+            background: #c0392b;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .dashboard-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 97%;
+            text-align: center;
+        }

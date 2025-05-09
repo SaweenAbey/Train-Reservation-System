@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: Arial;
+    background-color: #f9f9f9;
+    color: #333;
+}
+h3 {
+    font-size: 2em; 
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: #4CAF50; 
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}
+.button-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+
+.cssbuttons-io-button {
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.cssbuttons-io-button:hover {
+    background-color: #6c757d;
+}
+
+#routeTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+    table-layout: fixed;
+}
+
+#routeTable thead th {
+    background-color:green;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    width: auto;
+}
+
+#routeTable tbody td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#routeTable thead th, #routeTable tbody td {
+    width: calc(100% / 7);
+}
+
+#routeTable tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.cssbuttons-io-button,
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cssbuttons-io-button:hover,
+form input[type="submit"]:hover {
+    background-color:#f89816;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.update-button {
+    background-color: #007BFF;
+    margin-right: 10px;
+}
+
+.update-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #DC3545;
+}
+
+.delete-button:hover {
+    background-color: #a71d2a;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+.pagination button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.pagination button.active {
+    background-color: #0000ff;
+    font-weight: bold;
+    cursor: default;
+}
+.container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons form {
+    margin: 0;
+}
