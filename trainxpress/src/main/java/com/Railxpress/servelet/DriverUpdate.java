@@ -1,6 +1,8 @@
 package com.Railxpress.servelet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +43,10 @@ public class DriverUpdate extends HttpServlet {
 		System.out.println(driver.getLicenseNum());
 		DriverService service =new DriverService();
 		service.update(driver);
-		response.sendRedirect("DriverRead");
+		
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("admindashboard");
+//		dispatcher.forward(request, response);
+		response.sendRedirect("admindashboard");
 	}
 
 }

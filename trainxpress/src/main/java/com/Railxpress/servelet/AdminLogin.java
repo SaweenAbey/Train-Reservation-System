@@ -37,9 +37,9 @@ public class AdminLogin extends HttpServlet {
 		if(status!=0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", status);
-			
-			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
-			dispatch.forward(request, response);
+			response.sendRedirect("index");
+//			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
+//			dispatch.forward(request, response);
 		} else {
 			RequestDispatcher dispatch =  request.getRequestDispatcher("adminLogin.jsp");
 			dispatch.forward(request,  response);

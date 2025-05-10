@@ -43,7 +43,7 @@ public class Driverinsert extends HttpServlet {
 		DriverService service = new DriverService();
 		service.insertDriver(driver);
 		
-		response.sendRedirect("DriverRead");
+		response.sendRedirect("admindashboard");
 		
 		doGet(request, response);
 	}
