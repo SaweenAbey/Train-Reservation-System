@@ -23,9 +23,9 @@
             </div>
             <div class="menu">
                 <button class="btn" data-tab="tab1" onclick="openTab(event, 'tab1')" id="defaultOpen">Profile</button>
-                <button class="btn" data-tab="tab2" onclick="openTab(event, 'tab2')">Manage Routes</button>        
+                <button class="btn" data-tab="tab2" onclick="openTab(event, 'tab2')">Manage Trains</button>        
                 <button class="btn" data-tab="tab3" onclick="openTab(event, 'tab3')">Manage Drivers</button>
-                <button class="btn" data-tab="tab3">Settings</button>
+                <button class="btn" data-tab="tab">Settings</button>
                 <button class="btn" data-tab="tab4">Reports</button>
                 
                 
@@ -43,6 +43,57 @@
         </div>	
 		
         <div class="tab-content" id="tab2">
+        <h2 class="tabcontent-title">Train Details</h2>
+        	<button class="refresh-btn" onclick="#'">Add Driver</button><hr>
+         <table id="routeTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Train Name</th>
+                    <th>Engine Number</th>
+                    <th>Train Type</th>
+                    <th>Seat Count</th>
+                    <th>no. Of Wagons</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="trn" items="${admin}" >
+                <tr>
+                    <td>${trn.tid}</td>
+  					<td>${trn.tname}</td>
+  					<td>${trn.tenginenum}</td>
+  					<td>${trn.ttype}</td>
+  					<td>${trn.seatcount}</td>
+  					<td>${trn.noofwagons}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <form action="updateTrain.jsp" method="post" style="display: inline;">
+                                <input type="hidden" name="tid" value="${trn.tid}">
+                                <input type="hidden" name="tname" value="${trn.tname}">
+                                <input type="hidden" name="tenginenum" value="${trn.tenginenum}">
+                                <input type="hidden" name="ttype" value="${trn.ttype}">
+                                <input type="hidden" name="tseatcount" value="${trn.seatcount}">
+                                <input type="hidden" name="tnoofwagons" value="${trn.noofwagons}">
+                                <button type="submit" class="action-button update-button">
+                                    <i class="ri-file-edit-line"></i> Update
+                                </button>
+                            </form>
+                            
+                            <form method='post' action='Tdelete' style="display: inline;">
+  								<input type='hidden' name='tdelete' value='${trn.tid}'>
+  								<button class="action-button delete-button" type="submit" onclick="return confirm('Are You Sure?')">
+  								<i class="ri-delete-bin-2-line"></i>Delete</button>
+  							</form>
+                            
+                        </div>
+                        
+                    </td>
+                    
+                </tr>
+                </c:forEach>
+            </tbody>
+        </table>
         	
         </div>	
         
