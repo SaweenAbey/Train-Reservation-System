@@ -127,14 +127,24 @@
             <a href="ContactUs.jsp">Contact</a>
             
             <% 
-            if (session != null && session.getAttribute("cid") != null && (int) session.getAttribute("cid") != 0) {%>
-            
-            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
-            
-            
-            
+            if (session != null && session.getAttribute("cid") != null && (int) session.getAttribute("cid") != 0 && session.getAttribute("id")==null) {%>
+            	 
+	            <a href="#userdashboard">Dashboard</a>
+	            
+	            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
             <%}else{%>
-            <button class="btn login-btn" onclick="location.href='login.jsp'">Login</button><%} %>
+			            <% 
+			            if (session != null && session.getAttribute("id") != null && (int) session.getAttribute("id") != 0 && session.getAttribute("cid")==null) {%>
+			            	 
+				            <a href="admindashboard">Dashboard</a>
+
+				            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
+			            <%}else{%>
+			            <button class="btn login-btn" onclick="location.href='login.jsp'">Login</button><%} }%>
+            
+            
+            
+           
            
         </div>
     </nav>
