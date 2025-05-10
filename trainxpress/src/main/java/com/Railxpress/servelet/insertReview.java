@@ -42,10 +42,18 @@ public class insertReview extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Review review= new Review();
+		int cid=0;
+		HttpSession session =request.getSession(false);
+		if(session != null && session.getAttribute("cid") != null) {
+			 cid= (int)session.getAttribute("cid");
+		}
+		else {
+			response.sendRedirect("login.jsp");
+			return;
+		}
 		
-		HttpSession session =request.getSession();
-		session.setAttribute("cid", 1);
-		int cid=(int) session.getAttribute("cid");
+		
+		
 		
 		review.setCusId(cid);
 		review.setName(request.getParameter("name"));
@@ -56,8 +64,7 @@ public class insertReview extends HttpServlet {
 		service.insertReview(review);
 		
 		response.sendRedirect("insertReview");
-		/*RequestDispatcher dispatcher = request.getRequestDispatcher("insertReview.jsp");
-		dispatcher.forward(request, response);*/
+		
 	}
 
 }
