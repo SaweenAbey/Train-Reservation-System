@@ -366,8 +366,6 @@
             <div class="formsection">
                 <form>
                     <label class="container3mainHeader">Send us a Message</label>
-                    <label for="name" class="container3headers">Full Name</label>
-                    <input type="text" id="name" style="width:100%">
                     <label for="email" class="container3headers">Email</label>
                     <input type="email" id="email">
                     <label for="msg" class="container3headers">Message</label>

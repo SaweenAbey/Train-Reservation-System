@@ -30,7 +30,7 @@
                 <h1>Sign In</h1>
                 <label>Use Your Email and Password</label>
                 <br><br>
-                <input type="email" placeholder="Email" name="email">
+                <input type="text" placeholder="UserName" name="username">
                 <input type="password" placeholder="Password" name="password">
                 <a href="adminLogin.jsp" style="color:red;">Login as an Admin</a>
                 <button>Sign In</button>

@@ -44,8 +44,7 @@ public class Register extends HttpServlet {
 		CustomerServices service = new CustomerServices();
 		service.register(cus);
 		
-		RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
-		dispatch.forward(request, response);
+		response.sendRedirect("login.jsp");
 		
 	}
 

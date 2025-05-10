@@ -15,7 +15,7 @@ public class CustomerServices {
 		
 		int cid=0;
 		try {
-			String query = "SELECT * FROM customer WHERE email = '"+cus.getEmail()+"' AND password = '"+cus.getPassword()+"'";
+			String query = "SELECT * FROM customer WHERE username = '"+cus.getCustomerUsername()+"' AND password = '"+cus.getPassword()+"'";
 			
 			Statement stmt = DBconnect.getConnection().createStatement();
 			

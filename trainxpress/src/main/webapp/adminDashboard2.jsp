@@ -44,7 +44,7 @@
 		
         <div class="tab-content" id="tab2">
         <h2 class="tabcontent-title">Train Details</h2>
-        	<button class="refresh-btn" onclick="###'">Add Driver</button><hr>
+        	<button class="refresh-btn" onclick="window.location.href='addTrain.jsp'">Add Train</button><hr>
          <table id="routeTable">
             <thead>
                 <tr>

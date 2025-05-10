@@ -1,38 +1,42 @@
 package com.Railxpress.servelet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import com.Railxpress.model.Train;
+import com.Railxpress.services.TrainServices;
 
 
-@WebServlet("/LogOut")
-public class LogOut extends HttpServlet {
+
+@WebServlet("/Tdelete")
+public class Tdelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public LogOut() {
+   
+    public Tdelete() {
         super();
-       
     }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		HttpSession session = request.getSession(false);
-		if(session!=null) {
-			session.invalidate();
-		}
-		response.sendRedirect("index");
-	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+		Train trn = new Train();
+		
+		int tid = Integer.parseInt(request.getParameter("tdelete"));
+		
+		trn.setTid(tid);
+		
+		TrainServices serv = new TrainServices();
+		
+		serv.deleteTrain(trn);
+		
+		response.sendRedirect("admindashboard");
+		
 	}
 
 }

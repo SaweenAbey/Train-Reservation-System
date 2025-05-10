@@ -29,12 +29,12 @@ public class Login extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String email = request.getParameter("email");
+		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
 		Customer cus = new Customer();
 		
-		cus.setEmail(email);
+		cus.setCustomerUsername(username);
 		cus.setPassword(password);
 		
 		CustomerServices service = new CustomerServices();

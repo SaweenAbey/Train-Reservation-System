@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Railxpress.model.Driver;
+import com.Railxpress.model.Train;
 import com.Railxpress.services.DriverService;
+import com.Railxpress.services.TrainServices;
+
+
 
 
 
@@ -34,7 +38,11 @@ public class admindashboard extends HttpServlet {
 		request.setAttribute("driver", driver);
 		//add here
 		
-
+		TrainServices tserv = new TrainServices();
+		
+		ArrayList<Train> train = tserv.getAllTrains();
+		
+		request.setAttribute("admin", train);
 		
 		
 		
