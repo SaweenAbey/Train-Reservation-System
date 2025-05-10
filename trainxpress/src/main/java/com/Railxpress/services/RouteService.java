@@ -107,5 +107,28 @@ public class RouteService {
 			e.printStackTrace();
 		}
 	}
+	public static List<Troutemodl>Searchitm(String sstation,String estation){
+		ArrayList<Troutemodl>alsearch = new ArrayList<>();
+		try {
+			String query = "select start,end,departureTime,arrivalTime from trainroute  where start='"+sstation+"'and end='"+estation+"'";
+			Statement statement = DBconnect.getConnection().createStatement();
+			ResultSet rs = statement.executeQuery(query);
+			
+			while(rs.next()) {
+				Troutemodl rm = new Troutemodl();
+				rm.setSstation(rs.getString(1));
+				rm.setEstation(rs.getString(2));
+				rm.setDepTime(rs.getString(3));
+				rm.setArrTime(rs.getString(4));
+				
+				alsearch.add(rm);
+				
+				
+			}return alsearch;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 }
