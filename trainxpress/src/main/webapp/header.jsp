@@ -141,11 +141,6 @@
 				            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
 			            <%}else{%>
 			            <button class="btn login-btn" onclick="location.href='login.jsp'">Login</button><%} }%>
-            
-            
-            
-           
-           
         </div>
     </nav>
 </body>
