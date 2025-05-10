@@ -18,10 +18,15 @@
             </div>
             <div class="menu">
                 <button class="btn" onclick="redirectTo('page1.html')">Manage Users</button>
-                <button class="btn" onclick="redirectTo('page2.html')">Manage Routes</button>
+                
+                <form method="post" action="ReadAllRoute">
+                <button type="submit"class="btn">Manage Routes</button>
+                </form>
+                
                 <form method="post" action="TrainList">
                 <button type="submit" class="btn">Manage Trains</button>
                 </form>
+                
                 <button class="btn" onclick="redirectTo('page4.html')">Settings</button>
                 <button class="btn" onclick="redirectTo('page5.html')">Reports</button>
             </div>
