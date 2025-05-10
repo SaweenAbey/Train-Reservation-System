@@ -47,7 +47,7 @@
         </div>	
         
         <div class="tab-content" id="tab3">
-         	<h2 class="tabcontent-title">Driver Details2</h2>
+         	<h2 class="tabcontent-title">Driver Details</h2>
         	<button class="refresh-btn" onclick="window.location.href='driverInsert.jsp'">Add Driver</button><hr>
          	<table>
 			  <thead>
