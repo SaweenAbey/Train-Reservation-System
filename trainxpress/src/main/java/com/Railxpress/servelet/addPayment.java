@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.Railxpress.model.*;
 import com.Railxpress.services.*;
@@ -30,8 +31,11 @@ public class addPayment extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session= request.getSession();
+		
 		
 		Payment payment=new Payment();
+		payment.setCid((int)session.getAttribute("cid"));
 		payment.setName(request.getParameter("name"));
 		payment.setCardNo(request.getParameter("cardno"));
 		payment.setExp(request.getParameter("exp"));

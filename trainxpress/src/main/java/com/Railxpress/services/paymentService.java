@@ -12,7 +12,7 @@ import com.Railxpress.model.*;
 public class paymentService {
 	public void addPayment(Payment payment) {
 	    try {
-	        String query = "INSERT INTO payment (Name, CardNo, Exp, Cvc, Email) VALUES (?, ?, ?, ?, ?)";
+	        String query = "INSERT INTO payment (Name, CardNo, Exp, Cvc, Email) VALUES (?, ?, ?, ?,?, ?)";
 	        
 	        PreparedStatement statement = DBconnect.getConnection().prepareStatement(query);
 	        statement.setString(1, payment.getName());
@@ -20,7 +20,7 @@ public class paymentService {
 	        statement.setString(3, payment.getExp());
 	        statement.setInt(4, payment.getCvc());
 	        statement.setString(5, payment.getEmail());
-	        
+	        statement.setInt(6, payment.getCid());
 	        statement.executeUpdate();
 	        
 	    } catch (Exception e) {
