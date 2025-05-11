@@ -382,7 +382,7 @@
 				                            <button type="submit" class="update-button" onclick="showBookingForm();">Update </button>
 				                     	</form>
 				                            
-				                        <form method="post" action="DeleteTicket" style="display: inline;">
+				                        <form method="post" action="DeleteTicket" style="display: inline;"  onsubmit="return confirm('Are you sure?');">
 				  							<input type="hidden" name="deleteticket" value="${tick.bid}">
 				 							<button class="delete-button" type="submit">Delete</button>
 				  						</form>    
@@ -424,7 +424,7 @@
 			      			  
 			      			<td>
 			                	<div class="action-buttons">
-			            	    	<form action="PaymentUpdate.jsp" method="post" style="display: inline;">
+			            	    	<form action="PaymentUpdate.jsp" method="post" style="display: inline;"  onsubmit="return confirm('Are you sure?');">
 			                            <input type="hidden" name="name" value="${pay.name}">
 			                            <input type="hidden" name="cardNo" value="${pay.cardNo}">
 			                            <input type="hidden" name="exp" value="${pay.exp}">
@@ -482,7 +482,7 @@
 				                            <button type="submit" class="update-button" >Update </button>
 				                     	</form>
 				                            
-				                        <form method="post" action="ReviewDelete" style="display: inline;">
+				                        <form method="post" action="ReviewDelete" style="display: inline;"  onsubmit="return confirm('Are you sure?');">
 				  							<input type="hidden" name="reviewId" value="${review.reviewId}">
 				 							<button class="delete-button" type="submit">Delete</button>
 				  						</form>    
