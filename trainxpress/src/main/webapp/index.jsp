@@ -223,8 +223,8 @@
                         <li><a href="#">FAQs</a></li>
                         <li><a href="#">Help Center</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="Terms@cont.jsp">Terms & Conditions</a></li>
+                        <li><a href="RefundPolicy.jsp">Refund Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -237,7 +237,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 RailXpress. All rights reserved.</p>
+                <p>&copy; 2025 RailXpress. All rights reserved.</p>
             </div>
         </div>
     </footer>
