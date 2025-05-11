@@ -34,7 +34,7 @@
         <ul class="social">
         
           <li><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
-          <li><a href="#"><i class="ri-github-fill"></i></a></li>
+          <li><a href="https://github.com/SaweenAbey/Train-Reservation-System"><i class="ri-github-fill"></i></a></li>
           <li><a href="#"><i class="ri-youtube-fill"></i></a></li>
           
         </ul>
@@ -60,7 +60,7 @@
                     <div class="card-cont">
                         <h1>Hatton</h1>
                         <p>Hatton to Kandy</p>
-                        <a href="routeDetail.html" class="card-btn">View Details</a>
+                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
                     </div>
                 </div>
                 <div class="Route-card">
@@ -68,7 +68,7 @@
                     <div class="card-cont">
                         <h1>Colombo</h1>
                         <p>Colombo to Beliatta</p>
-                        <a href="routeDetail.html" class="card-btn">View Details</a>
+                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
                     </div>
                 </div>
                 <div class="Route-card">
@@ -76,7 +76,7 @@
                     <div class="card-cont">
                         <h1>Mirissa</h1>
                         <p>Mirissa to Kandy</p>
-                        <a href="routeDetail.html" class="card-btn">View Details</a>
+                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
                     </div>
                 </div>
             </div>
@@ -223,8 +223,8 @@
                         <li><a href="#">FAQs</a></li>
                         <li><a href="#">Help Center</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="Terms@cont.jsp">Terms & Conditions</a></li>
+                        <li><a href="RefundPolicy.jsp">Refund Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -237,7 +237,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 RailXpress. All rights reserved.</p>
+                <p>&copy; 2025 RailXpress. All rights reserved.</p>
             </div>
         </div>
     </footer>
