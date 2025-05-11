@@ -10,8 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Railxpress.model.Payment;
 import com.Railxpress.model.Review;
+import com.Railxpress.model.Ticket;
 import com.Railxpress.services.ReviewService;
+import com.Railxpress.services.paymentService;
+import com.Railxpress.services.ticketService;
 
 
 
@@ -31,6 +35,16 @@ public class UserDashboard extends HttpServlet {
 		ReviewService service= new ReviewService();
 		ArrayList<Review> review= service.getAllReviewUserSpecific();
 		request.setAttribute("review",review);
+		
+		
+		ticketService service2=new ticketService();
+		ArrayList<Ticket> ticket=service2.getAllTicket();
+		request.setAttribute("ticket",ticket);
+		
+		paymentService service3=new paymentService();
+		ArrayList<Payment> payment=service3.getAllPayment();
+		request.setAttribute("payment", payment);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("userDashboard2.jsp");
 		dispatcher.forward(request, response);
 	}
