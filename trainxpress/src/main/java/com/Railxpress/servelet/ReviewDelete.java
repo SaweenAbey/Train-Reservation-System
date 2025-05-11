@@ -32,7 +32,7 @@ public class ReviewDelete extends HttpServlet {
 		ReviewService service =new ReviewService();
 		
 		service.deleteReview(id);
-		doGet(request, response);
+		response.sendRedirect("UserDashboard");
 	}
 
 }

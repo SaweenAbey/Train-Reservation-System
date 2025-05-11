@@ -488,7 +488,7 @@
 				                            <button type="submit" class="update-button" >Update </button>
 				                     	</form>
 				                            
-				                        <form method="post" action="DeleteTicket" style="display: inline;">
+				                        <form method="post" action="ReviewDelete" style="display: inline;">
 				  							<input type="hidden" name="reviewId" value="${review.reviewId}">
 				 							<button class="delete-button" type="submit">Delete</button>
 				  						</form>    
