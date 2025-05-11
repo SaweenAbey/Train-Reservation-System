@@ -128,5 +128,35 @@ public class ticketService {
 		return price;
 	}
 	
+	public ArrayList<Ticket> getOneTicket(){
+		try {
+			ArrayList<Ticket> listTick=new ArrayList<Ticket>(); 
+			
+			String query="SELECT * FROM booking ";
+			
+			Statement statement=DBconnect.getConnection().createStatement();
+			ResultSet rs=statement.executeQuery(query);
+			
+			while(rs.next()) {
+				Ticket tick=new Ticket();
+				tick.setBid(rs.getInt("bid"));
+				tick.setLocation(rs.getString("location"));
+				tick.setDestination(rs.getString("destination"));
+				tick.setNoOfTicket(rs.getInt("noOfTicket"));
+				tick.setDate(rs.getString("date"));
+				tick.setPrice(rs.getString("price"));
+				tick.setCid(rs.getInt("cid"));
+				tick.setRouteId(rs.getInt("routeId"));
+				
+				listTick.add(tick);
+			}
+			return listTick;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 }
 
