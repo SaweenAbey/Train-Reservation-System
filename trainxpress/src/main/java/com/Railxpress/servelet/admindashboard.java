@@ -2,6 +2,7 @@ package com.Railxpress.servelet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Railxpress.model.Driver;
 import com.Railxpress.model.Train;
+import com.Railxpress.model.Troutemodl;
+import com.Railxpress.services.CustomerServices;
 import com.Railxpress.services.DriverService;
+import com.Railxpress.services.RouteService;
 import com.Railxpress.services.TrainServices;
 
 
@@ -37,12 +41,23 @@ public class admindashboard extends HttpServlet {
 		
 		request.setAttribute("driver", driver);
 		//add here
+		List <Troutemodl> allRoute = RouteService.getAllRout() ;
+		request.setAttribute("allRoute", allRoute);
+		
+		
 		
 		TrainServices tserv = new TrainServices();
 		
 		ArrayList<Train> train = tserv.getAllTrains();
 		
+		
+		CustomerServices service2= new CustomerServices();
+		System.out.println(service2.userCount());
+		request.setAttribute("userCount", service2.userCount());
 		request.setAttribute("admin", train);
+		
+		TrainServices service3= new TrainServices();
+		request.setAttribute("trainCount", service3.getTrainCount());
 		
 		
 		

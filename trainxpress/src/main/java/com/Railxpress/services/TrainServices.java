@@ -160,6 +160,22 @@ public class TrainServices {
 		}
 		
 	}
+	
+	public int getTrainCount() {
+		int count=0;
+		String query="select COUNT(tid) as count from train";
+		try {
+			PreparedStatement stmt=DBconnect.getConnection().prepareStatement(query);
+			ResultSet rs=stmt.executeQuery();
+			if(rs.next()) {
+				count=rs.getInt("count");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Train Count:"+count);
+		return count;
+	}
 
 }
 

@@ -41,9 +41,7 @@ public class RegRoute extends HttpServlet {
 		
 		RouteService service = new RouteService();
 		service.regRoute(route);
-		RequestDispatcher diss = request.getRequestDispatcher("Table.jsp");
-		
-		diss.forward(request, response);
+		response.sendRedirect("admindashboard");
 	}
 
 }

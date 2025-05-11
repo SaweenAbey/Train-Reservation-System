@@ -19,14 +19,14 @@
         <div class="sidebar">
             <div class="profile">
                 <img src="CSS/TrainCrudCss/avatar.png" alt="Admin Profile">
-                <span>John Doe</span>
+                <span><%=session.getAttribute("name") %></span>
             </div>
             <div class="menu">
                 <button class="btn" data-tab="tab1" onclick="openTab(event, 'tab1')" id="defaultOpen">Profile</button>
                 <button class="btn" data-tab="tab2" onclick="openTab(event, 'tab2')">Manage Trains</button>        
                 <button class="btn" data-tab="tab3" onclick="openTab(event, 'tab3')">Manage Drivers</button>
-                <button class="btn" data-tab="tab">Settings</button>
-                <button class="btn" data-tab="tab4">Reports</button>
+                <button class="btn" data-tab="tab4" onclick="openTab(event, 'tab4')">Manage Train Schedule</button>
+               
                 
                 
                 
@@ -47,8 +47,10 @@
 	                <div class="user-details">
 	                    <h2><%=session.getAttribute("name") %></h2>
 	                    <p><i class="fas fa-envelope"></i> User Name:<%=session.getAttribute("uname") %></p>
-	                    
-	                    
+	                    <c:set var="count" value="${userCount}"/>
+	                    <p> User Count:${count}</p>
+	                    <c:set var="count2" value="${trainCount}"/>
+	                    <p> Available Trains count:${count2}</p>
 	                </div>
 	            </div>
 			</div>
@@ -166,7 +168,57 @@
         </div>	
         
         <div class="tab-content" id="tab4">
-         	<h1>Sadeepa vhshjnskdvmkl</h1>
+         	<h2 class="tabcontent-title">Train Schedules</h2>
+        	<button class="refresh-btn" onclick="window.location.href='Train Route Reg.jsp'">Add Schedule</button><hr>
+         	<table>
+			  <thead>
+                <tr>
+                    <th>Route ID</th>
+                    <th>Starting Station</th>
+                    <th>Ending Station</th>
+                    <th>Departure time</th>
+                    <th>Arrive Price</th>
+                    <th>Ticket Price</th>
+                    <th>Train ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="allTrout" items="${allRoute}">
+                <tr>
+                    <td>${allTrout.rid}</td>
+                    <td>${allTrout.sstation}</td>
+                    <td>${allTrout.estation}</td>
+                    <td>${allTrout.depTime}</td>
+                    <td>${allTrout.arrTime}</td>
+                    <td>${allTrout.tprice}</td>
+                    <td>${allTrout.tid}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <form action="Update Route Details.jsp" method="post" style="display: inline;">
+                                <input type="hidden" name="rid" value="${allTrout.rid}">
+                                <input type="hidden" name="sstation" value="${allTrout.sstation}">
+                                <input type="hidden" name="estation" value="${allTrout.estation}">
+                                <input type="hidden" name="depTime" value="${allTrout.depTime}">
+                                <input type="hidden" name="arrTime" value="${allTrout.arrTime}">
+                                <input type="hidden" name="tprice" value="${allTrout.tprice}">
+                                <input type="hidden" name="tid" value="${allTrout.tid}">
+                                <button type="submit" class="action-button update-button">
+                                    <i class="ri-file-edit-line"></i> Update
+                                </button>
+                            </form>
+                            <form action="DeleteRoute" method="post" style="display: inline;">
+                                <input type="hidden" name="rid" value="${allTrout.rid}">
+                                <button type="submit" class="action-button delete-button">
+                                    <i class="ri-delete-bin-2-line"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                </c:forEach>
+            </tbody>
+			</table>
         </div>	
 	</div>
     

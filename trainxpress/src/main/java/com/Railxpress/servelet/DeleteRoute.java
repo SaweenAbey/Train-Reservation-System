@@ -37,11 +37,7 @@ public class DeleteRoute extends HttpServlet {
 		RouteService service = new RouteService();
 		service.deleteRoute(trout);
 		
-		RequestDispatcher dispacher = request.getRequestDispatcher("ReadAllRoute");
-		
-		
-		dispacher.forward(request, response);
-		doGet(request, response);
+		response.sendRedirect("admindashboard");
 	}
 
 }

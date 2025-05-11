@@ -42,7 +42,8 @@ public class UpdateRoute extends HttpServlet {
 		
 		RouteService service=new RouteService();
 		service.updateRoute(trout);
-		RequestDispatcher dispacher = request.getRequestDispatcher("ReadAllRoute");
+		
+		RequestDispatcher dispacher = request.getRequestDispatcher("admindashboard");
 		dispacher.forward(request, response);
 	}
 

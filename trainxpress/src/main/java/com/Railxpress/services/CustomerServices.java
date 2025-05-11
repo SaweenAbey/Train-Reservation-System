@@ -1,5 +1,6 @@
 package com.Railxpress.services;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -50,6 +51,23 @@ public class CustomerServices {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public int userCount() {
+		String query="SELECT COUNT(cid) as count from customer";
+		int count=0;
+		try {
+			PreparedStatement stmt =DBconnect.getConnection().prepareStatement(query);
+			ResultSet rs=stmt.executeQuery();
+			if(rs.next()) {
+				count=rs.getInt("count");
+				System.out.println("UserTotal:"+rs.getInt("count"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return count;
 	}
 	
 }
