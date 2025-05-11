@@ -7,13 +7,20 @@
 		<meta charset="UTF-8">
 		<title>Payment page</title>
 		<style>
+			body{
+				margin: 0px;
+				padding: 0px;
+				height: 100%;
+	            display: flex;
+	            flex-direction: column;
+			}
 			.page-content{
 				display: flex;
 				flex-wrap: nowrap;	
 				border: none;
 				width: 51%;	
-				height: 75%;
-				margin-top: 20px;
+				height: 800px;
+				margin-top: 100px;
 				margin-left: 400px;	
 				margin-bottom: 100px;	
 				box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
@@ -118,11 +125,28 @@
 				font-size: 12px;
 				text-align: left;
 			}
-			.price{
-				margin: 0px;
-				padding: 0px;
-				
-			}
+.total-amount {
+    font-weight: bold;
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    color: #16A34A;
+    font-size: 1.3em;
+    position: relative;
+    padding-left: 20px;
+}
+
+.price:before {
+    content: "₹";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #16A34A;
+}
 			.total{
 				margin: 0px;
 				padding: 0px;
@@ -133,7 +157,7 @@
 	
 	<body>
 		<c:import url="header.jsp" />
-		<br><br>
+		
 		 <div class="page-content">
 		 	<div class="content-area1">
 		 		<h2 style="color: green;">Make Your Payment...</h2><br>
@@ -186,6 +210,24 @@
 		 		<img src="CSS/PaymentCrud/payment_1.jpg" alt="payment-image">
 			</div>
 		</div>
+		
+		
+		
+		<div class="container4" style="background-color: #16A34A;">
+		    <footer style="text-align:center; padding: 20px; font-family: Inter; color:#ffffff;display:flex;justify-content: space-between;">
+		        <a href="#" class="home-link"><!--<img src="LOGO.png" alt="Logo">--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+		            <path d="M18 3.39996H6C4.89543 3.39996 4 4.29539 4 5.39996V17.4C4 18.5045 4.89543 19.4 6 19.4H18C19.1046 19.4 20 18.5045 20 17.4V5.39996C20 4.29539 19.1046 3.39996 18 3.39996Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		            <path d="M4 11.4H20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		            <path d="M12 3.39996V11.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		            <path d="M8 19.4L6 22.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		            <path d="M18 22.4L16 19.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		            <path d="M8 15.4H8.01" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		            <path d="M16 15.4H16.01" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		            </svg>RailXpress</a>
+		        &copy; 2025 RailXpress. All rights reserved.
+		    </footer>
+		</div>
+		
 		
 		
 		<script src="${pageContext.request.contextPath}/JS/paymentCrud/PaymentFormValidation.js"></script>

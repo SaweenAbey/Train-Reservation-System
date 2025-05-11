@@ -37,7 +37,7 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
             }
             
             if (exp.value.trim() === '') {
-                expError.textContent = 'Expiry is required';
+                expError.textContent = 'Required';
                 isValid = false;
             }
             
