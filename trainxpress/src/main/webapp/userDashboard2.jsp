@@ -261,7 +261,7 @@
 	    .delete-button:hover {
 	      background-color: #D52F23;
 	    }
-	    .refresh-btn {
+	    .redirect-btn {
 	      background-color: #238b45;
 	      color: white;
 	      border-radius: 4px;
@@ -340,9 +340,7 @@
 		
 		<div class="tab-content" id="tab2">
 		      <h1 class="tab-title">Booking Details</h1><br>
-			  <form method="post" action="readTicket">
-   				 <button type="submit" class="refresh-btn">Refresh</button>
-			  </form>
+			  <button class="redirect-btn" onclick="window.location.href='Booking.jsp'">Add Booking</button>
 
         	  <table>
 				    <thead>
@@ -398,11 +396,7 @@
 		</div>
 		
 		<div class="tab-content" id="tab3">
-			<h1 class="tab-title">Card Details</h1><br>
-			<form method="post" action="readPayment">
-   		    	<button type="submit" class="refresh-btn">Refresh</button>
-			</form>
-			
+			<h1 class="tab-title">Card Details</h1><br>	
         	<table>
 			    <thead>
 			      <tr>
@@ -430,7 +424,7 @@
 			      			  
 			      			<td>
 			                	<div class="action-buttons">
-			            	    	<form action="test(updatepayment).jsp" method="post" style="display: inline;">
+			            	    	<form action="PaymentUpdate.jsp" method="post" style="display: inline;">
 			                            <input type="hidden" name="name" value="${pay.name}">
 			                            <input type="hidden" name="cardNo" value="${pay.cardNo}">
 			                            <input type="hidden" name="exp" value="${pay.exp}">

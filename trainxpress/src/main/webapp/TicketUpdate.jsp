@@ -29,13 +29,15 @@
       border-radius: 16px;
       padding: 30px;
       margin-bottom: 50px;
+      margin-top: 50px;
+      margin-left: 280px;
       display: flex;
       gap: 30px;
       width: 1000px;
       height: auto; 
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
       position: relative;
-      margin-left: 250px;
+      
     }
 
     .form-section {
@@ -134,7 +136,7 @@
 <br><br>
   <div class="container">
     <div class="form-section">
-      <U><h2>Train Route - Registration</h2></U>
+      <U><h2>Update Ticket Details</h2></U>
       <form action="UpdateTicket" method="post" id="ticketForm">
 	      <div class="form-group">
 	        <label>BID<span class="non-editable-note"> (*editing restricted)</span>:</label>
