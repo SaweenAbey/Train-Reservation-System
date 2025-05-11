@@ -1,6 +1,7 @@
 package com.Railxpress.servelet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,11 +40,14 @@ public class Login extends HttpServlet {
 		
 		CustomerServices service = new CustomerServices();
 		
-		int status = service.validate(cus);
+		ArrayList status = service.validate(cus);
 
-		if(status!=0) {
+		if((int)status.get(0)!=0) {
 			HttpSession session= request.getSession();
-			session.setAttribute("cid", status);
+			session.setAttribute("cid", status.get(0));
+			session.setAttribute("name", status.get(1));
+			session.setAttribute("email", status.get(2));
+			session.setAttribute("uname", username);
 			System.out.println("session id:"+session.getAttribute("cid"));
 			response.sendRedirect("index");
 //			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");

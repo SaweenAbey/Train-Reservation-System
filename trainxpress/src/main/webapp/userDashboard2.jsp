@@ -327,12 +327,12 @@
 			<h1 class="tab-title">User Information</h1><br>
 	        <div class="dashboard-card" >
 	            <div class="user-info">
-	                <img src="" alt="User">
+	                <img src="CSS/TrainCrudCss/avatar.png" style="background-color: purple" alt="User">
 	                <div class="user-details">
-	                    <h2>Jane Doe</h2>
-	                    <p><i class="fas fa-envelope"></i> jane.doe@example.com</p>
-	                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-	                    <p><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+	                    <h2><%=session.getAttribute("name") %></h2>
+	                    <p><i class="fas fa-envelope"></i> User Name:<%=session.getAttribute("uname") %></p>
+	                    <p><i class="fas fa-phone"></i> Email:<%=session.getAttribute("email") %></p>
+	                    
 	                </div>
 	            </div>
 			</div>
