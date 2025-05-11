@@ -15,7 +15,8 @@ public class CustomerServices {
 	public ArrayList validate(Customer cus) {
 	
 		ArrayList cusDetails= new ArrayList();
-		int cid=0;
+		cusDetails.add(0);
+		
 		try {
 			String query = "SELECT * FROM customer WHERE username = '"+cus.getCustomerUsername()+"' AND password = '"+cus.getPassword()+"'";
 			
@@ -24,10 +25,10 @@ public class CustomerServices {
 			ResultSet rs = stmt.executeQuery(query);
 			
 			if(rs.next()) {
-				cusDetails.add(rs.getInt("cid"));
+				cusDetails.set(0,rs.getInt("cid"));
 				cusDetails.add(rs.getString("name"));
 				cusDetails.add(rs.getString("email"));
-				cid=rs.getInt("cid");
+				
 			}
 			
 		} catch (Exception e) {
