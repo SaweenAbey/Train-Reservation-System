@@ -13,7 +13,7 @@
 </head>
 <body>
 	<nav class="navbar">
-        <a href="#" class="home-link"><!--<img src="LOGO.png" alt="Logo">--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+        <a href="index" class="home-link"><!--<img src="LOGO.png" alt="Logo">--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
             <path d="M18 3.39996H6C4.89543 3.39996 4 4.29539 4 5.39996V17.4C4 18.5045 4.89543 19.4 6 19.4H18C19.1046 19.4 20 18.5045 20 17.4V5.39996C20 4.29539 19.1046 3.39996 18 3.39996Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M4 11.4H20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M12 3.39996V11.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -24,14 +24,14 @@
             </svg>RailXpress</a>
         
         <div class="nav-right">
-          <a href="#">Booking</a>
+          <a href="Booking">Booking</a>
             <a href="insertReview">Review</a>
             <a href="ContactUs.jsp">Contact</a>
             
             <% 
             if (session != null && session.getAttribute("cid") != null && (int) session.getAttribute("cid") != 0 && session.getAttribute("id")==null) {%>
             	 
-	            <a href="#userdashboard">Dashboard</a>
+	            <a href="UserDashboard">Dashboard</a>
 	            
 	            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
             <%}else{%>

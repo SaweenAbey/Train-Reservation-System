@@ -456,8 +456,8 @@
 		
 		<div class="tab-content" id="tab4">
         	<h1 class="tab-title">User Reviews</h1><br>
-        	<form method="post" action="readTicket">
-   				 <button type="submit" class="refresh-btn">Refresh</button>
+        	<form method="get" action="insertReview">
+   				 <button type="submit" class="refresh-btn">Add Review</button>
 			  </form>
 
         	  <table>

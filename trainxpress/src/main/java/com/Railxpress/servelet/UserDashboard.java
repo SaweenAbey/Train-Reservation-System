@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.Railxpress.model.Payment;
 import com.Railxpress.model.Review;
@@ -33,7 +34,10 @@ public class UserDashboard extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ReviewService service= new ReviewService();
-		ArrayList<Review> review= service.getAllReviewUserSpecific();
+		HttpSession session= request.getSession(false);
+		
+		int cid=(int)session.getAttribute("cid");
+		ArrayList<Review> review= service.getAllReviewUserSpecific(cid);
 		request.setAttribute("review",review);
 		
 		

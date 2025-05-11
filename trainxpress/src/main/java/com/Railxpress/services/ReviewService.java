@@ -115,11 +115,11 @@ public class ReviewService {
 		}
 	}
 	
-	public ArrayList<Review> getAllReviewUserSpecific() {
+	public ArrayList<Review> getAllReviewUserSpecific(int cid) {
 		try {
 			ArrayList<Review> review= new ArrayList<Review>();
 			
-			String query= "select * from review";
+			String query= "select * from review where cid='"+cid+"'";
 			Statement statement=DBconnect.getConnection().createStatement();
 			Statement statement2=DBconnect.getConnection().createStatement();
 			
