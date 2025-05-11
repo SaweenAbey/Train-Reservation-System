@@ -406,7 +406,6 @@
 			        <th>CVC</th>
 			        <th>Email</th>
 			        <th>Payment ID</th>
-			        <th>CID</th>
 			        <th></th>
 			        
 			      </tr>
@@ -451,7 +450,7 @@
 		<div class="tab-content" id="tab4">
         	<h1 class="tab-title">User Reviews</h1><br>
         	<form method="get" action="insertReview">
-   				 <button type="submit" class="refresh-btn">Add Review</button>
+   				 <button type="submit" class="redirect-btn">Add Review</button>
 			  </form>
 
         	  <table>
