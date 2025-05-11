@@ -129,7 +129,7 @@
             <% 
             if (session != null && session.getAttribute("cid") != null && (int) session.getAttribute("cid") != 0 && session.getAttribute("id")==null) {%>
             	 
-	            <a href="#userdashboard">Dashboard</a>
+	            <a href="UserDashboard">Dashboard</a>
 	            
 	            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
             <%}else{%>

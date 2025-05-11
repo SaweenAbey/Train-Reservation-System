@@ -456,6 +456,49 @@
 		
 		<div class="tab-content" id="tab4">
         	<h1 class="tab-title">User Reviews</h1><br>
+        	<form method="post" action="readTicket">
+   				 <button type="submit" class="refresh-btn">Refresh</button>
+			  </form>
+
+        	  <table>
+				    <thead>
+				      <tr>
+				        <th>Review Id</th>
+				        <th>Type</th>
+				        <th>Message</th>
+				        <th>Rating</th>
+				        <th></th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <c:forEach var="review" items="${review}">
+				      		<tr>
+				      			<td>${review.reviewId}</td>
+				      			<td>${review.type}</td>
+				      			<td>${review.message}</td>
+				      			<td>${review.rating}</td>
+				      			<td>
+				                	<div class="action-buttons">
+				            	    	<form  method="post" action="ReviewUpdate.jsp" style="display: inline;">
+				                        	<input type="hidden" name="reviewId" value="${review.reviewId}">
+				                            <input type="hidden" name="type" value="${review.type}">
+				                            <input type="hidden" name="message" value="${review.message}">
+				                            <input type="hidden" name="rating" value="${review.rating}">
+				                            	
+				                            <button type="submit" class="update-button" >Update </button>
+				                     	</form>
+				                            
+				                        <form method="post" action="DeleteTicket" style="display: inline;">
+				  							<input type="hidden" name="reviewId" value="${review.reviewId}">
+				 							<button class="delete-button" type="submit">Delete</button>
+				  						</form>    
+				                    </div>
+				                        
+				               	</td>
+				      		</tr>
+				      </c:forEach>
+				    </tbody>
+  				</table>
 		
 		</div>
 	</div>

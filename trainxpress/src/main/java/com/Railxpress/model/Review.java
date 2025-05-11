@@ -6,6 +6,7 @@ public class Review {
 	private String type;
 	private int rating;
 	private String name;
+	private int reviewId;
 	
 	public int getCusId() {
 		return cusId;
@@ -37,5 +38,12 @@ public class Review {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public int getReviewId() {
+		return reviewId;
+	}
+	public void setReviewId(int reviewId) {
+		this.reviewId = reviewId;
+	}
+	
 	
 }
