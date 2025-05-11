@@ -424,7 +424,7 @@
 			      			  
 			      			<td>
 			                	<div class="action-buttons">
-			            	    	<form action="PaymentUpdate.jsp" method="post" style="display: inline;"  onsubmit="return confirm('Are you sure?');">
+			            	    	<form action="PaymentUpdate.jsp" method="post" style="display: inline;" >
 			                            <input type="hidden" name="name" value="${pay.name}">
 			                            <input type="hidden" name="cardNo" value="${pay.cardNo}">
 			                            <input type="hidden" name="exp" value="${pay.exp}">
@@ -435,7 +435,7 @@
 			                            <button type="submit" class="update-button">Update </button>
 			                     	</form>
 			                            
-			                        <form method="post" action="DeletePayment" style="display: inline;">
+			                        <form method="post" action="DeletePayment" style="display: inline;"  onsubmit="return confirm('Are you sure?');">
 			  							<input type="hidden" name="deletepayment" value="${pay.pid}">
 			 							<button class="delete-button" type="submit">Delete</button>
 			  						</form>    
