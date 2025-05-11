@@ -60,7 +60,7 @@
                     <div class="card-cont">
                         <h1>Hatton</h1>
                         <p>Hatton to Kandy</p>
-                        <a href="routeDetail.html" class="card-btn">View Details</a>
+                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
                     </div>
                 </div>
                 <div class="Route-card">
@@ -68,7 +68,7 @@
                     <div class="card-cont">
                         <h1>Colombo</h1>
                         <p>Colombo to Beliatta</p>
-                        <a href="routeDetail.html" class="card-btn">View Details</a>
+                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
                     </div>
                 </div>
                 <div class="Route-card">
@@ -76,7 +76,7 @@
                     <div class="card-cont">
                         <h1>Mirissa</h1>
                         <p>Mirissa to Kandy</p>
-                        <a href="routeDetail.html" class="card-btn">View Details</a>
+                        <a href="route-infofont.jsp" class="card-btn">View Details</a>
                     </div>
                 </div>
             </div>
