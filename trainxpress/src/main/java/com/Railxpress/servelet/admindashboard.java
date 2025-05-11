@@ -59,11 +59,6 @@ public class admindashboard extends HttpServlet {
 		TrainServices service3= new TrainServices();
 		request.setAttribute("trainCount", service3.getTrainCount());
 		
-		
-		
-		
-		
-		
 		//end here
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("adminDashboard2.jsp");
