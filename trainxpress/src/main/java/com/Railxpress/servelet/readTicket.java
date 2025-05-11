@@ -38,7 +38,7 @@ public class readTicket extends HttpServlet {
 		request.setAttribute("ticket",ticket);
 		
 		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("TicketTable.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("userDashboard2.jsp");
 		dispatcher.forward(request, response);
 	}
 

@@ -30,7 +30,7 @@ public class readPayment extends HttpServlet {
 		ArrayList<Payment> payment=service.getAllPayment();
 		request.setAttribute("payment", payment);
 		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("PaymentTable.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("userDashboard2.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -41,7 +41,7 @@ public class readPayment extends HttpServlet {
 		ArrayList<Payment> payment=service.getAllPayment();
 		request.setAttribute("payment", payment);
 		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("PaymentTable.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("userDashboard2.jsp");
 		dispatcher.forward(request, response);
 	}
 
