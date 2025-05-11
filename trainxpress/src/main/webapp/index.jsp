@@ -34,7 +34,7 @@
         <ul class="social">
         
           <li><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
-          <li><a href="#"><i class="ri-github-fill"></i></a></li>
+          <li><a href="https://github.com/SaweenAbey/Train-Reservation-System"><i class="ri-github-fill"></i></a></li>
           <li><a href="#"><i class="ri-youtube-fill"></i></a></li>
           
         </ul>
