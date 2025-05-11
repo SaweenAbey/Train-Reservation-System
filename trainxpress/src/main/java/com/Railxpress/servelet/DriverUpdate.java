@@ -32,7 +32,7 @@ public class DriverUpdate extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Driver driver= new Driver();
-		
+		System.out.println(request.getParameter("driverId"));
 		driver.setDriverId(Integer.parseInt(request.getParameter("driverId")));
 		driver.setFname(request.getParameter("fname"));
 		driver.setLname(request.getParameter(("lname")));

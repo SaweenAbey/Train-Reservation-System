@@ -180,7 +180,7 @@
 			
 		  <div class="buttons">
 		  	<button type="submit">Update</button>
-	        <button type="button" onclick="window.location.href='userDashboard2.jsp'">Back</button>
+	        <button type="button" onclick="window.location.href='admindashboard'">Back</button>
 	      </div>
 	    </div>
 	    
@@ -273,18 +273,6 @@
   
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
