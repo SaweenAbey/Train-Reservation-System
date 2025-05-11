@@ -122,7 +122,7 @@
 
         <div class="nav-right">
         
-        	<a href="#">Booking</a>
+        	<a href="Booking">Booking</a>
             <a href="insertReview">Review</a>
             <a href="ContactUs.jsp">Contact</a>
             

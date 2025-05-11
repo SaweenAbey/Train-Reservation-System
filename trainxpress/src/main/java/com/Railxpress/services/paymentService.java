@@ -14,7 +14,7 @@ public class paymentService {
 	    try {
 	        String query = "INSERT INTO payment (Name, CardNo, Exp, Cvc, Email) VALUES (?, ?, ?, ?, ?)";
 	        
-	        PreparedStatement statement = db_connect.getConnection().prepareStatement(query);
+	        PreparedStatement statement = DBconnect.getConnection().prepareStatement(query);
 	        statement.setString(1, payment.getName());
 	        statement.setString(2, payment.getCardNo());
 	        statement.setString(3, payment.getExp());
@@ -34,7 +34,7 @@ public class paymentService {
 			
 			String query="SELECT * FROM payment";
 			
-			Statement statement=db_connect.getConnection().createStatement();
+			Statement statement=DBconnect.getConnection().createStatement();
 			ResultSet rs=statement.executeQuery(query);
 			
 			while(rs.next()) {
@@ -62,7 +62,7 @@ public class paymentService {
 			
 			String query="UPDATE payment SET Name='"+payment.getName()+"', CardNo='"+payment.getCardNo()+"', Exp='"+payment.getExp()+"', Cvc='"+payment.getCvc()+"', Email='"+payment.getEmail()+"' where Pid='"+payment.getPid()+"'";
 
-			Statement statement=db_connect.getConnection().createStatement();
+			Statement statement=DBconnect.getConnection().createStatement();
 			statement.executeUpdate(query);
 			
 		} catch (Exception e)	 {
@@ -75,7 +75,7 @@ public class paymentService {
 			
 			String query="DELETE FROM payment WHERE Pid='"+payment.getPid()+"'";
 			
-			Statement statement=db_connect.getConnection().createStatement();
+			Statement statement=DBconnect.getConnection().createStatement();
 			statement.executeUpdate(query);
 			
 		} catch (Exception e) {

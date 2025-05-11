@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.Railxpress.model.*;
 import com.Railxpress.services.*;
@@ -34,6 +35,10 @@ public class addTicket extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Ticket ticket= new Ticket();
+		HttpSession session= request.getSession();
+		ticket.setCid((int)session.getAttribute("cid"));
+		
+		
 		ticket.setLocation(request.getParameter("location"));
 		ticket.setDestination(request.getParameter("destination"));
 		ticket.setNoOfTicket(Integer.parseInt(request.getParameter("noOfTicket")));
@@ -41,9 +46,11 @@ public class addTicket extends HttpServlet {
 		ticket.setDate(request.getParameter("date"));
 	
 		ticketService service=new ticketService();
-		service.ticketMethod(ticket);
-		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("Payment.jsp");
+		int bid=service.ticketMethod(ticket);
+		System.out.println("Booking Id passed:"+bid);
+//		response.sendRedirect("PaymentServlet");
+		request.setAttribute("bid", bid);
+		RequestDispatcher dispatcher= request.getRequestDispatcher("PaymentServlet");
 		dispatcher.forward(request, response);
 	}
 

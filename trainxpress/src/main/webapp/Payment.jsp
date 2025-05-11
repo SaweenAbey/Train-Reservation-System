@@ -137,12 +137,14 @@
 		 <div class="page-content">
 		 	<div class="content-area1">
 		 		<h2 style="color: green;">Make Your Payment...</h2><br>
+		 		<c:set var="price" value="${price}"/>
 		 		
-		 		<label class="total-amount">Bill Amount: Rs.</label> 
-		 		<input type="text" class="price" name="price" id="price" disabled> <br><br>
 		 		
 		 		
 		 		<form method="POST" action="addPayment" id="paymentForm">
+			 		<label class="total-amount">Bill Amount: Rs.</label> 
+			 		<input type="text" class="price" name="price" id="price" disabled value="${price}"> <br><br>
+			 		
 		 			<label>Name on Card:</label><span id="nameError" class="error"></span> <br>
 		 			<input type="text" class="form-control" name="name" id="name"> <br>
 		 			
