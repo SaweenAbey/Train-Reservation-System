@@ -125,33 +125,29 @@
 				font-size: 12px;
 				text-align: left;
 			}
-.total-amount {
-    font-weight: bold;
-    color: #555;
-}
+			  /* GREEN THEME STYLES */
+  			.total-amount {
+			    font-size: 18px;
+			    font-weight: 600; /* Semi-bold */
+			    color: #1f7a4d; /* Dark green */
+			    margin-right: 10px;
+			    font-family: 'Segoe UI', sans-serif;
+  			}
 
-.price {
-    font-weight: bold;
-    color: #16A34A;
-    font-size: 1.3em;
-    position: relative;
-    padding-left: 20px;
-}
-
-.price:before {
-    content: "₹";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #16A34A;
-}
-			.total{
-				margin: 0px;
-				padding: 0px;
-				color: green;
-			}
+			  .price{
+			  	border: none;
+			  	background-color: #ebf8f2;
+			  }
+			
+			  /* Container enhancement */
+			  .price-group {
+			    background-color: #ebf8f2; /* Very light green */
+			    padding: 10px;
+			    border-radius: 10px;
+			    margin: 5px;
+			    border-left: 5px solid #38a169; /* Vibrant green accent */
+			    display: inline-block;
+			  }
 		</style>
 	</head>
 	
@@ -166,8 +162,11 @@
 		 		
 		 		
 		 		<form method="POST" action="addPayment" id="paymentForm">
-			 		<label class="total-amount">Bill Amount: Rs.</label> 
-			 		<input type="text" class="price" name="price" id="price" disabled value="${price}"> <br><br>
+		 			<div class="price-group">
+		 				<label class="total-amount">Bill Amount ➜ Rs.</label> 
+			 			<input type="text" class="price" name="price" id="price" disabled value="${price}"> <br><br>
+		 			</div>
+			 		
 			 		
 		 			<label>Name on Card:</label><span id="nameError" class="error"></span> <br>
 		 			<input type="text" class="form-control" name="name" id="name"> <br>
