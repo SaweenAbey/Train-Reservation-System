@@ -19,7 +19,7 @@
 				flex-wrap: nowrap;	
 				border: none;
 				width: 51%;	
-				height: 800px;
+				height: auto;
 				margin-top: 100px;
 				margin-left: 400px;	
 				margin-bottom: 100px;	
@@ -119,17 +119,16 @@
 			}
 			.error{
 				margin-top: -15px;
-				margin-left: 0px;
-				padding: 10px;
+				margin-left: 10px;
 				color: red;
 				font-size: 12px;
 				text-align: left;
 			}
-			  /* GREEN THEME STYLES */
+			 
   			.total-amount {
 			    font-size: 18px;
-			    font-weight: 600; /* Semi-bold */
-			    color: #1f7a4d; /* Dark green */
+			    font-weight: 600; 
+			    color: #1f7a4d; 
 			    margin-right: 10px;
 			    font-family: 'Segoe UI', sans-serif;
   			}
@@ -139,13 +138,12 @@
 			  	background-color: #ebf8f2;
 			  }
 			
-			  /* Container enhancement */
 			  .price-group {
-			    background-color: #ebf8f2; /* Very light green */
+			    background-color: #ebf8f2; 
 			    padding: 10px;
 			    border-radius: 10px;
-			    margin: 5px;
-			    border-left: 5px solid #38a169; /* Vibrant green accent */
+			    margin: 0px;
+			    border-left: 5px solid #38a169; 
 			    display: inline-block;
 			  }
 		</style>
@@ -157,17 +155,16 @@
 		 <div class="page-content">
 		 	<div class="content-area1">
 		 		<h2 style="color: green;">Make Your Payment...</h2><br>
+		 			
 		 		<c:set var="price" value="${price}"/>
-		 		
-		 		
 		 		
 		 		<form method="POST" action="addPayment" id="paymentForm">
 		 			<div class="price-group">
 		 				<label class="total-amount">Bill Amount ➜ Rs.</label> 
-			 			<input type="text" class="price" name="price" id="price" disabled value="${price}"> <br><br>
+			 			<input type="text" class="price" name="price" id="price" disabled value="${price}">
 		 			</div>
 			 		
-			 		
+			 		<br><br>
 		 			<label>Name on Card:</label><span id="nameError" class="error"></span> <br>
 		 			<input type="text" class="form-control" name="name" id="name"> <br>
 		 			
@@ -178,13 +175,15 @@
 		 			
 			 		<div class="expiry-cvc-container">
 					    <div class="expiry-field">
-					        <label>Expiry:</label><span id="expError" class="error"></span><br>
+					        <label>Expiry:</label><br>
+					        <span id="expError" class="error" style="margin-left: 0px;"></span>
 					        <input type="month" class="form-control" id="exp" name="exp" id="exp">
 					        
 					        
 					    </div>
 					    <div class="cvc-field">
-					        <label>CVC:</label> <span id="cvcError" class="error"></span><br>
+					        <label>CVC:</label><br>
+					        <span id="cvcError" class="error" style="margin-left: 0px;"></span>
 					        <input type="text" class="form-control" id="cvc" name="cvc" id="cvc">
 					       
 					        
@@ -229,13 +228,12 @@
 		
 		
 		
-		<script src="${pageContext.request.contextPath}/JS/paymentCrud/PaymentFormValidation.js"></script>
+		
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 			  const termsCheckbox = document.getElementById('terms-check');
 			  const saveCardBtn = document.getElementById('saveCardBtn');
 			  const payBtn = document.getElementById('payBtn');
-
 			  // Add event listener to checkbox
 			  termsCheckbox.addEventListener('change', function() {
 			    // Enable/disable buttons based on checkbox state
@@ -244,6 +242,178 @@
 			  });
 			});
 			
+			
+			//validation for the submit button
+			document.getElementById('paymentForm').addEventListener('submit', function(event) {
+	            // Prevent form submission
+	            event.preventDefault();
+	            
+	            // Get all input fields
+	            const name = document.getElementById('name');
+	            const cardno = document.getElementById('cardno');
+	            const exp = document.getElementById('exp');
+	            const cvc = document.getElementById('cvc');
+	            const email = document.getElementById('email');
+	            
+	            // Get all error spans
+	            const nameError = document.getElementById('nameError');
+	            const cardnoError = document.getElementById('cardnoError');
+	            const expError = document.getElementById('expError');
+	            const cvcError = document.getElementById('cvcError');
+	            const emailError = document.getElementById('emailError');
+	            
+	            // Reset error messages
+	            nameError.textContent = '';
+	            cardnoError.textContent = '';
+	            expError.textContent = '';
+	            cvcError.textContent = '';
+	            emailError.textContent= '';
+	            
+	            let isValid = true;
+	            
+	            // Validate name field
+				const nameVal = name.value.trim();
+	            if (!nameVal) {
+	                nameError.textContent = 'Name is required';
+	                isValid = false;
+	            }
+				else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(nameVal)){
+					nameError.textContent = 'Only letters allowed'
+					isValid = false;	
+				}
+	            
+	            //validate cardno field
+	            const cardnoVal = cardno.value.replace(/\s/g, '');
+	            if (!cardnoVal) {
+	                cardnoError.textContent = 'Card number is required';
+	                isValid = false;
+	            }
+	            else if(!/^\d{13,19}$/.test(cardnoVal)){
+	            	cardnoError.textContent = 'Invalid card number (13-19 digits)';
+	                isValid = false;
+	            }
+	            
+	            //validate expiry field
+	            const expVal = exp.value.trim();
+	            if (!expVal) {
+	                expError.textContent = 'Expiry is required';
+	                isValid = false;
+	            }
+	         	
+	            //validate cvc field
+	            const cvcVal = cvc.value.trim();
+	            if (!cvcVal) {
+	                cvcError.textContent = 'CVC is required';
+	                isValid = false;
+	            }
+	            else if (!/^\d{3,4}$/.test(cvcVal)) {
+	                cvcError.textContent = 'Must be 3-4 digits';
+	                isValid = false;
+	            }
+	            
+	            //validate email field
+	            const emailVal = email.value.trim();
+	            if (!emailVal) {
+	                emailError.textContent= 'Email is required';
+	                isValid = false;
+	            }
+	            else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+	                emailError.textContent = 'Invalid email format';
+	                isValid = false;
+	            }  
+	            
+	            // If all fields are valid, submit the form
+	            if (isValid) {
+					alert('Card saved successfully..!'); 
+	                this.submit();
+	            }
+	        });
+			
+			
+			//validation for the pay button
+			document.getElementById('payBtn').addEventListener('click', function(event) {
+	            // Prevent form submission
+	            event.preventDefault();
+	            
+	            // Get all input fields
+	            const name = document.getElementById('name');
+	            const cardno = document.getElementById('cardno');
+	            const exp = document.getElementById('exp');
+	            const cvc = document.getElementById('cvc');
+	            const email = document.getElementById('email');
+	            
+	            // Get all error spans
+	            const nameError = document.getElementById('nameError');
+	            const cardnoError = document.getElementById('cardnoError');
+	            const expError = document.getElementById('expError');
+	            const cvcError = document.getElementById('cvcError');
+	            const emailError = document.getElementById('emailError');
+	            
+	            // Reset error messages
+	            nameError.textContent = '';
+	            cardnoError.textContent = '';
+	            expError.textContent = '';
+	            cvcError.textContent = '';
+	            emailError.textContent= '';
+	            
+	            let isValid = true;
+	            
+	            // Validate name field
+				const nameVal = name.value.trim();
+	            if (!nameVal) {
+	                nameError.textContent = 'Name is required';
+	                isValid = false;
+	            }
+				else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(nameVal)){
+					nameError.textContent = 'Only letters allowed'
+					isValid = false;	
+				}
+	            
+	            //validate cardno field
+	            const cardnoVal = cardno.value.replace(/\s/g, '');
+	            if (!cardnoVal) {
+	                cardnoError.textContent = 'Card number is required';
+	                isValid = false;
+	            }
+	            else if(!/^\d{13,19}$/.test(cardnoVal)){
+	            	cardnoError.textContent = 'Invalid card number (13-19 digits)';
+	                isValid = false;
+	            }
+	            
+	            //validate expiry field
+	            const expVal = exp.value.trim();
+	            if (!expVal) {
+	                expError.textContent = 'Expiry is required';
+	                isValid = false;
+	            }
+	         	
+	            //validate cvc field
+	            const cvcVal = cvc.value.trim();
+	            if (!cvcVal) {
+	                cvcError.textContent = 'CVC is required';
+	                isValid = false;
+	            }
+	            else if (!/^\d{3,4}$/.test(cvcVal)) {
+	                cvcError.textContent = 'Must be 3-4 digits';
+	                isValid = false;
+	            }
+	            
+	            //validate email field
+	            const emailVal = email.value.trim();
+	            if (!emailVal) {
+	                emailError.textContent= 'Email is required';
+	                isValid = false;
+	            }
+	            else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+	                emailError.textContent = 'Invalid email format';
+	                isValid = false;
+	            }  
+	            
+	            // If all fields are valid, submit the form
+	          	if (isValid) {
+					window.location.href = "eticket.jsp"; 
+				}
+	        });
 			
 		</script>
 	</body>
