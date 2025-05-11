@@ -1,6 +1,7 @@
 package com.Railxpress.services;
 
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.Railxpress.model.Admin;
 import com.Railxpress.utils.DBconnect;
@@ -11,10 +12,10 @@ import java.sql.ResultSet;
 
 public class AdminServices {
 
-	public int validate(Admin admin) {
+	public ArrayList validate(Admin admin) {
 		
+		ArrayList adminDetails= new ArrayList();
 		
-		int id=0;
 		try {
 			
 			String query = "SELECT * FROM admin WHERE username = '"+ admin.getAdminUsername() +"' AND password = '"+ admin.getAdminPassword() +"'";
@@ -24,14 +25,15 @@ public class AdminServices {
 			ResultSet rs = stmt.executeQuery(query);
 			 
 			if(rs.next()) {
-				id=rs.getInt("adminId");
+				adminDetails.add(rs.getInt("adminId"));
+				adminDetails.add(rs.getString("name"));
 			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return id;
+		return adminDetails;
 		
 	}
 	

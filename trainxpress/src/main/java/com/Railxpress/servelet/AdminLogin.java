@@ -1,6 +1,7 @@
 package com.Railxpress.servelet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,11 +33,16 @@ public class AdminLogin extends HttpServlet {
 		
 		AdminServices service = new AdminServices();
 		
-		int status = service.validate(admin);
+		ArrayList status = service.validate(admin);
 		
-		if(status!=0) {
+		if((int)status.get(0)!=0) {
 			HttpSession session = request.getSession();
-			session.setAttribute("id", status);
+			
+			session.setAttribute("id", status.get(0));
+			session.setAttribute("name", status.get(1));
+			session.setAttribute("uname",username);
+			
+			
 			response.sendRedirect("index");
 //			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
 //			dispatch.forward(request, response);

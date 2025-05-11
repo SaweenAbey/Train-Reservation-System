@@ -39,7 +39,20 @@
         	</div>
         </div>
 		<div class="tab-content" id="tab1">
-         	<h1>Admin Details</h1>
+		
+         	<h1 class="tab-title">Admin Information</h1><br>
+	        <div class="dashboard-card" >
+	            <div class="user-info">
+	                
+	                <div class="user-details">
+	                    <h2><%=session.getAttribute("name") %></h2>
+	                    <p><i class="fas fa-envelope"></i> User Name:<%=session.getAttribute("uname") %></p>
+	                    
+	                    
+	                </div>
+	            </div>
+			</div>
+			
         </div>	
 		
         <div class="tab-content" id="tab2">
