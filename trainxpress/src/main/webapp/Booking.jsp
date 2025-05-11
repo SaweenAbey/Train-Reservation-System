@@ -309,36 +309,26 @@
     	<h2 class="table-title">Train Shedule</h2>
     	<br>
     	<table class="shedule">
-     			<tr>
-     				<th>Train ID/Name</th>
-     				<th>Departure Time</th>
-     				<th>Arrival Time</th>
-     				<th>Route</th>
-     			</tr>
-     			<tr>
-     				<td>1111-ABC</td>
-     				<td>8.30 a.m</td>
-     				<td>10.30 a.m</td>
-     				<td>Matara-Tangalle</td>
-     			</tr>
-     			<tr>
-     				<td>2222-XYZ</td>
-     				<td>12.00 p.m</td>
-     				<td>3.15 p.m</td>
-     				<td>Matara-Colombo</td>
-     			</tr>
-     			<tr>
-     				<td>2222-XYZ</td>
-     				<td>12.00 p.m</td>
-     				<td>3.15 p.m</td>
-     				<td>Matara-Colombo</td>
-     			</tr>
-     			<tr>
-     				<td>2222-XYZ</td>
-     				<td>12.00 p.m</td>
-     				<td>3.15 p.m</td>
-     				<td>Matara-Colombo</td>
-     			</tr>
+     		
+                <tr>
+                    <th>Route ID</th>
+                    <th>Departure time</th>
+                    <th>Arrival Time</th>
+                    <th>Starting Station</th>
+                    <th>Ending Station</th>
+                </tr>
+            
+            
+                <c:forEach var="allTrout" items="${allRoute}">
+                <tr>
+                    <td>${allTrout.rid}</td>
+                    <td>${allTrout.depTime}</td>
+                    <td>${allTrout.arrTime}</td>
+                    <td>${allTrout.sstation}</td>
+                    <td>${allTrout.estation}</td>
+                </tr>
+                </c:forEach>
+            
      		</table>
     </div>
     <br>
