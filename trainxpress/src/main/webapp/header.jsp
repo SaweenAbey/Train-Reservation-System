@@ -21,7 +21,7 @@
         font-family: 'Inter', sans-serif;
         display: flex;
         justify-content: space-between;
-        background-color: rgba(56, 142, 60, 0.85);
+        background-color: rgba(56, 142, 60);
         height: 60px;
         position: absolute; 
         top: 0;
