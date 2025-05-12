@@ -15,7 +15,7 @@ public class AdminServices {
 	public ArrayList validate(Admin admin) {
 		
 		ArrayList adminDetails= new ArrayList();
-		
+		adminDetails.add(0);
 		try {
 			
 			String query = "SELECT * FROM admin WHERE username = '"+ admin.getAdminUsername() +"' AND password = '"+ admin.getAdminPassword() +"'";
@@ -25,7 +25,7 @@ public class AdminServices {
 			ResultSet rs = stmt.executeQuery(query);
 			 
 			if(rs.next()) {
-				adminDetails.add(rs.getInt("adminId"));
+				adminDetails.set(0,rs.getInt("adminId"));
 				adminDetails.add(rs.getString("name"));
 			}
 			
