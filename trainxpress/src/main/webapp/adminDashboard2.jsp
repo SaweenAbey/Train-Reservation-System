@@ -35,7 +35,7 @@
                 
             </div>
             <div class="logoutSec">
-            <button class="btn logout" onclick="logout()">Logout</button>
+            <button class="btn logout" onclick="location.href='LogOut'">Logout</button>
         	</div>
         </div>
 		<div class="tab-content" id="tab1">
