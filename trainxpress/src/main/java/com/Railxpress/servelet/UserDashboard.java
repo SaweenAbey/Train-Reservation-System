@@ -46,7 +46,7 @@ public class UserDashboard extends HttpServlet {
 		request.setAttribute("ticket",ticket);
 		
 		paymentService service3=new paymentService();
-		ArrayList<Payment> payment=service3.getAllPayment();
+		ArrayList<Payment> payment=service3.getOnePayment(cid);
 		request.setAttribute("payment", payment);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("userDashboard2.jsp");

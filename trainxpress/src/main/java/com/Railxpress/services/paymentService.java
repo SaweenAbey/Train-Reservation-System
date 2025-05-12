@@ -82,4 +82,34 @@ public class paymentService {
 			e.printStackTrace();
 		}
 	}
+	public ArrayList<Payment> getOnePayment(int cid){
+		try {
+			ArrayList<Payment> listPay= new ArrayList<Payment>();
+			
+			String query="SELECT * FROM payment where Cid=?";
+			
+			PreparedStatement statement=DBconnect.getConnection().prepareStatement(query);
+			statement.setInt(1, cid);
+			ResultSet rs=statement.executeQuery();
+			
+			while(rs.next()) {
+				Payment pay=new Payment();
+				pay.setName(rs.getString("name"));
+				pay.setCardNo(rs.getString("cardno"));
+				pay.setExp(rs.getString("exp"));
+				pay.setCvc(rs.getInt("cvc"));
+				pay.setEmail(rs.getString("email"));
+				pay.setPid(rs.getInt("pid"));
+				pay.setCid(rs.getInt("cid"));
+				
+				listPay.add(pay);
+			}
+			return listPay;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 }
