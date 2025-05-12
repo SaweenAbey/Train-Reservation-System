@@ -42,7 +42,7 @@ public class UserDashboard extends HttpServlet {
 		
 		
 		ticketService service2=new ticketService();
-		ArrayList<Ticket> ticket=service2.getAllTicket();
+		ArrayList<Ticket> ticket=service2.getOneTicket(cid);
 		request.setAttribute("ticket",ticket);
 		
 		paymentService service3=new paymentService();

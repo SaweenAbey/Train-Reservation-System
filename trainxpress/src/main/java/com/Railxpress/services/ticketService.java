@@ -128,17 +128,19 @@ public class ticketService {
 		return price;
 	}
 	
-	public ArrayList<Ticket> getOneTicket(){
+	public ArrayList<Ticket> getOneTicket(int cid){
 		try {
 			ArrayList<Ticket> listTick=new ArrayList<Ticket>(); 
 			
-			String query="SELECT * FROM booking ";
+			String query="SELECT * FROM booking where cid=?";
 			
-			Statement statement=DBconnect.getConnection().createStatement();
-			ResultSet rs=statement.executeQuery(query);
+			PreparedStatement statement=DBconnect.getConnection().prepareStatement(query);
+			statement.setInt(1, cid);
+			ResultSet rs=statement.executeQuery();
 			
 			while(rs.next()) {
 				Ticket tick=new Ticket();
+				
 				tick.setBid(rs.getInt("bid"));
 				tick.setLocation(rs.getString("location"));
 				tick.setDestination(rs.getString("destination"));
