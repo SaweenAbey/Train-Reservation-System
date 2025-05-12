@@ -37,7 +37,7 @@ public class ReviewUpdate extends HttpServlet {
 		
 		ReviewService service = new ReviewService();
 		service.updateReview(review);
-		doGet(request, response);
+		response.sendRedirect("UserDashboard");
 	}
 
 }

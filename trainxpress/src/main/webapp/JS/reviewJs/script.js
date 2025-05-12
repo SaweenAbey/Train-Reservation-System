@@ -16,7 +16,7 @@
             reviewContainer.style.transform = `translateX(-${currentReviewSlide * 100}%)`;
         }
 
-        // Automatically move slides every 25ms
+        // Automatically move slides every 2.5s
         setInterval(() => {
             moveReviewSlide(1);
         }, 2500);

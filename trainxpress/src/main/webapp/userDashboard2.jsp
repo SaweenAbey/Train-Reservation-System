@@ -472,7 +472,7 @@
 				      			<td>${review.rating}</td>
 				      			<td>
 				                	<div class="action-buttons">
-				            	    	<form  method="post" action="ReviewUpdate.jsp" style="display: inline;">
+				            	    	<form  method="post" action="updateReview.jsp" style="display: inline;">
 				                        	<input type="hidden" name="reviewId" value="${review.reviewId}">
 				                            <input type="hidden" name="type" value="${review.type}">
 				                            <input type="hidden" name="message" value="${review.message}">

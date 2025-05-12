@@ -61,12 +61,11 @@
                 
                 <div style="width:692px;max-height:350px ;padding:20px;background-color: #ffffff; ">
                     
-                    <form action="insertReview" method="POST">
+                    <form action="insertReview" method="POST" id="reviewForm">
                         <h3>Add Review</h3>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message">Message Goes Here</textarea>
+                        <br>
+                        <label for="message" id="msg">Message:</label><span id="msgError" class="error"></span>
+                        <textarea id="message" name="message"></textarea>
                         <label for="rating">Ratings:</label>
                             <select name="rating" name="rating" id="rating">
                                 <option value="1">1-VeryPoor</option>
@@ -139,6 +138,29 @@
         
       </div>
 	<script src="JS/reviewJs/script.js"></script>
+	<script>
+			const msg=document.getElementById("message");
+			var validity1="true";
+			msg.addEventListener("input",function(){
+  				if(msg.value.trim()===""){
+  					msgError.textContent="Message is Required.";
+  					msg.style='border:solid red 3px'
+  						validity1="false";
+  				}else{
+  					validity1="true";
+  					msgError.textContent="";
+  					msg.style='border:solid greenyellow 3px';
+  				}
+  			})
+  			
+  			document.getElementById("reviewForm").addEventListener("submit",function(event){
+  				if(validity1=="false"){
+  					event.preventDefault(); 
+  				    alert("Please correct the errors before submitting.");
+  					
+  				}
+  			})
+	</script>
 
 </body>
 </html>
