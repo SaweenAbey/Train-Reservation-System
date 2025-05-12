@@ -17,7 +17,7 @@
       padding: 0;
       height: 100vh;
  
- /*     background-image: url('CSS/update_1.jpg'); */
+      background-image: url('CSS/DriverCrudCss/driverUpdate.jpg'); 
       background-repeat: no-repeat;
   	  background-size: cover;
       	  
@@ -25,7 +25,7 @@
 
     .container {
       backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.5);
    /*   background-color: white; */
       border-radius: 16px;
       padding: 30px;
@@ -137,41 +137,41 @@
 <br><br>
   <div class="container">
     <div class="form-section">
-      <U><h2>Update Payment Details</h2></U>
-      <form action="Driverinsert" method="post" id="paymentForm">
+      <U><h2>Add Train Driver</h2></U>
+      <form action="Driverinsert" method="post" id="driverform">
 	      
 	      
 	      <div class="form-group">
-	     	<label>First Name:</label><span id="nameError" class="error"></span>
-	 		<input type="text" class="form-control" name="fname"  id="name">  
+	     	<label>First Name:</label><span id="fnameError" class="error"></span>
+	 		<input type="text" class="form-control" name="fname"  id="firstname">  
 	      </div>
 	      
 	      <div class="form-group">
-	        <label>Last Name:</label><span id="cardnoError" class="error"></span>
-			<input type="text" class="form-control" name="lname"  id="cardno">
+	        <label>Last Name:</label><span id="lnameError" class="error"></span>
+			<input type="text" class="form-control" name="lname"  id="lastname">
 	      </div>
 	      
 	      <div class="form-group">
-	      <label>Address:</label><span id="expError" class="error"></span>
- 			<input type="text" class="form-control" name="address"  id="exp">
+	      <label>Address:</label><span id="addressError" class="error"></span>
+ 			<input type="text" class="form-control" name="address"  id="d_address">
 	      </div>
 	      
 	      <div class="form-group">
-	        <label>LicenseNum:</label><span id="cvcError" class="error"></span>
- 			<input type="text" class="form-control" name="licenseNum"  id="cvc">
+	        <label>LicenseNum:</label><span id="licenseError" class="error"></span>
+ 			<input type="text" class="form-control" name="licenseNum"  id="lnum">
 	      
 	      </div>
 	      
 	      <div class="form-group">
-	      	<label>Telephone Num:</label><span id="emailError" class="error"></span>
- 			<input type="text" class="form-control" name="telephone"  id="email">
+	      	<label>Telephone Num:</label><span id="telnumError" class="error"></span>
+ 			<input type="text" class="form-control" name="telephone"  id="telnum">
  	      
 	      </div>
 	      
 	      <div class="form-group">
 	      	<!--    <label>CID<span class="non-editable-note"> (*editing restricted)</span>:</label>     -->	 
-			<label>Age:</label><span id="emailError" class="error"></span>
-			<input type="number" class="form-control" name="age" >
+			<label>Age:</label><span id="ageError" class="error"></span>
+			<input type="number" class="form-control" name="age" id="d_age" >
 	      </div>
 			
 		  <div class="buttons">
@@ -202,70 +202,140 @@
         &copy; 2025 RailXpress. All rights reserved.
     </footer>
   </div>
-  <!-- 
   <script>
-	  document.getElementById('paymentForm').addEventListener('submit', function(event) {
-	      // Prevent form submission
-	      event.preventDefault();
-	      
-	      // Get all input fields
-	      const name = document.getElementById('name');
-	      const cardno = document.getElementById('cardno');
-	      const exp = document.getElementById('exp');
-	      const cvc = document.getElementById('cvc');
-	      const email = document.getElementById('email');
-	      
-	      // Get all error spans
-	      const nameError = document.getElementById('nameError');
-	      const cardnoError = document.getElementById('cardnoError');
-	      const expError = document.getElementById('expError');
-	      const cvcError = document.getElementById('cvcError');
-	      const emailError = document.getElementById('emailError');
-	      
-	      // Reset error messages
-	      nameError.textContent = '';
-	      cardnoError.textContent = '';
-	      expError.textContent = '';
-	      cvcError.textContent = '';
-	      emailError.textContent= '';
-	      
-	      let isValid = true;
-	      
-	      // Validate each field
-	      if (name.value.trim() === '') {
-	          nameError.textContent = 'Name is required';
-	          isValid = false;
-	      }
-	      
-	      if (cardno.value.trim() === '') {
-	          cardnoError.textContent = 'Card number is required';
-	          isValid = false;
-	      }
-	      
-	      if (exp.value.trim() === '') {
-	          expError.textContent = 'Expiry is required';
-	          isValid = false;
-	      }
-	      
-	      if (cvc.value.trim() === '') {
-	          cvcError.textContent = 'CVC is required';
-	          isValid = false;
-	      }
-	      
-	      if (email.value.trim() === '') {
-	          emailError.textContent= 'Email is required';
-	          isValid = false;
-	      }
-	      
-	      // If all fields are valid, submit the form
-	      if (isValid) {
-	          this.submit();
-	      }
-	  });
-		
-	  
+  		
+  			const fname=document.getElementById("firstname");
+  			const lname=document.getElementById("lastname");
+  			const address=document.getElementById("d_address");
+  			const licenseNum=document.getElementById("lnum");
+  			const telNum=document.getElementById("telnum");
+  			const age=document.getElementById("d_age");
+  			
+  			const fnameError=document.getElementById("fnameError");
+  			const lnameError=document.getElementById("lnameError");
+  			const addressError=document.getElementById("addressError");
+  			const licenseError=document.getElementById("licenseError");
+  			const telnumError=document.getElementById("telnumError");
+  			const ageError=document.getElementById("ageError");
+  			
+  			var validity1="true";
+  			var validity2="true";
+  			var validity3="true";
+  			var validity4="true";
+  			var validity5="true";
+  			var validity6="true";
+  			fname.addEventListener("input",function(){
+  				if(fname.value.trim()===""){
+  					fnameError.textContent="First Name is Required.";
+  					fname.style='border:solid red 3px'
+  						validity1="false";
+  				}else{
+  					validity1="true";
+  					fnameError.textContent="";
+  					fname.style='border:solid greenyellow 3px';
+  				}
+  				
+  				
+  			});
+  			
+  			lname.addEventListener("input",function(){
+  				
+  				if(lname.value.trim()===""){
+  					lnameError.textContent="Last Name is Required.";
+  					lname.style='border:solid red 3px'
+  						validity2="false";
+  				}else{
+  					lnameError.textContent="";
+  					lname.style='border:solid greenyellow 3px';
+  						validity2="true";
+  				}
+  			})
+  			address.addEventListener("input",function(){
+  				
+  				if(address.value.trim()===""){
+  					addressError.textContent="Address is Required.";
+  					address.style='border:solid red 3px'
+  						validity3="false";
+  				}else{
+  					addressError.textContent="";
+  					address.style='border:solid greenyellow 3px'
+  						validity3="true";
+  				}
+  			})
+  			const licensePattern = /^B\d{9}$/;
+  			licenseNum.addEventListener("input",function(){
+  				
+  				if(licenseNum.value.trim()===""){
+  					licenseError.textContent="License Num is Required.";
+  					licenseNum.style='border:solid red 3px';
+  					validity4="false";
+  				}else if(!licensePattern.test(licenseNum.value.trim())){
+  					licenseError.textContent="License number must start with 'B' followed by 9 digits.";
+  					licenseNum.style='border:solid red 3px';
+  					validity4="false";
+  				}
+  				else{
+  					validity4="true"
+  					licenseError.textContent="";
+  					licenseNum.style='border:solid greenyellow 3px';
+  				}
+  			})
+ 
+  			const phonePattern = /^[0-9]{10}$/;
+  			
+  			telNum.addEventListener("input",function(){
+  				if(telNum.value.trim()===""){
+  					telnumError.textContent="Telephone Num is Required.";
+  					telNum.style='border:solid red 3px';
+  					validity5="false";
+  				}else if(!phonePattern.test(telNum.value.trim())){
+  					telnumError.textContent="Telephone number must start with '0' followed by 9 digits.";
+  					telNum.style='border:solid red 3px';
+  					validity5="false";
+  				}
+  				else{
+  					validity5="true"
+  					telnumError.textContent="";
+  					telNum.style='border:solid greenyellow 3px';
+  				}
+  			})
+  			
+  			age.addEventListener("input",function(){
+  				if(age.value.trim()==""){
+  					ageError.textContent="Age is Required.";
+  					age.style='border:solid red 3px';
+  					validity6="false";
+  				}
+  				else if(age.value.trim()<=0){
+  					ageError.textContent="Age must be greater than 0";
+  					age.style='border:solid red 3px';
+  					validity6="false";
+  				}
+  				else{
+  					validity6="true"
+  					ageError.textContent="";
+  					age.style='border:solid greenyellow 3px';
+  				}
+  			})
+  			
+  			document.getElementById("driverform").addEventListener("submit",function(event){
+  				
+  				//force to trigger all validation
+  				fname.dispatchEvent(new Event("input"));
+  		        lname.dispatchEvent(new Event("input"));
+  		        address.dispatchEvent(new Event("input"));
+  		        licenseNum.dispatchEvent(new Event("input"));
+  		        telNum.dispatchEvent(new Event("input"));
+  		        age.dispatchEvent(new Event("input"));
+  		        
+  				if(validity1=="false"||validity2=="false" || validity3=="false" || validity4=="false"||validity5=="false"||validity6=="false"){
+  					event.preventDefault(); 
+  				    alert("Please correct the errors before submitting.");
+  					
+  				}
+  			})
+  			
   </script>
-  -->
   
 </body>
 </html>
