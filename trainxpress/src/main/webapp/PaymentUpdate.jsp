@@ -139,7 +139,7 @@
       <U><h2>Update Payment Details</h2></U>
       <form action="UpdatePayment" method="post" id="paymentForm">
 	      <div class="form-group">
-	      	<label>Payment ID<span class="non-editable-note"> (*editing restricted)</span>:</label>
+	      	<label>Payment Id:<span class="non-editable-note"> (*editing restricted)</span>:</label>
  			<input type="number" class="form-control" name="pid" value="${param.pid}" readonly>
 	       
 	      </div>
