@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/TrainCrudCss/loginStyle.css">
     <title>Login Page</title>
+    <script>
+    <%
+        int ck = 1; // default value
+        String checkParam = request.getParameter("check");
+        if (checkParam != null) {
+            try {
+                ck = Integer.parseInt(checkParam);
+            } catch (NumberFormatException e) {
+                ck = 1; // fallback in case of bad input
+            }
+        }
+    %>
+    if (<%= ck %> == 0) {
+        alert("Username Already Taken");
+    }
+</script>
 </head>
 
 <body>

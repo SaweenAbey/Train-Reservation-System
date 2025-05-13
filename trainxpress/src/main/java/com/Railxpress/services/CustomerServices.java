@@ -39,19 +39,36 @@ public class CustomerServices {
 		
 	}
 	
-	public void register(Customer cus) {
-		
+	public int register(Customer cus) {
+		int check=1;
 		try {
 			
 			String query = "INSERT INTO customer(name,email,username,password) VALUES('"+cus.getName()+"','"+cus.getEmail()+"','"+cus.getCustomerUsername()+"','"+cus.getPassword()+"')";
 			
 			Statement stmt = DBconnect.getConnection().createStatement();
-			stmt.executeUpdate(query);
+			
+			String query2="SELECT username from customer ";
+			Statement stmt2= DBconnect.getConnection().createStatement();
+			
+			ResultSet rs=stmt2.executeQuery(query2);
+			while(rs.next()) {
+				
+				if(rs.getString("username").equals(cus.getCustomerUsername())) {
+					check=0;
+				}
+			}
+			if(check==1) {
+				stmt.executeUpdate(query);
+			}
+			
+			
+			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		return check;
 	}
 	
 	public int userCount() {

@@ -50,8 +50,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("uname", username);
 			System.out.println("session id:"+session.getAttribute("cid"));
 			response.sendRedirect("index");
-//			RequestDispatcher dispatch = request.getRequestDispatcher("home.jsp");
-//			dispatch.forward(request, response);
+
 		} else {
 			RequestDispatcher dispatch = request.getRequestDispatcher("login.jsp");
 			dispatch.forward(request, response);
