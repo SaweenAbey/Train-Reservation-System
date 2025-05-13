@@ -110,9 +110,13 @@ public class ReviewService {
 			stmt.setInt(1, id);
 			
 			stmt.executeUpdate();
-		}catch(Exception e) {
-			
-		}
+		}catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
 	}
 	
 	public ArrayList<Review> getAllReviewUserSpecific(int cid) {
@@ -144,10 +148,14 @@ public class ReviewService {
 				review.add(rev);
 			}
 			return review;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
+		} catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
+		return null;
 	}
 	
 	public int getReveiwCount(int cid) {
@@ -162,9 +170,13 @@ public class ReviewService {
 				reviewCount=rs.getInt("count");
 			}
 			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		}catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
 		return reviewCount;
 	}
 	
