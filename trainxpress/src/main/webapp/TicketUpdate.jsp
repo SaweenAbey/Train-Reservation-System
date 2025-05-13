@@ -15,8 +15,7 @@
       margin: 0;
       padding: 0;
       height: 100vh;
- 
-      background-image: url('CSS/update_1.jpg');
+      background-image: url('CSS/DriverCrudCss/driverUpdate.jpg');
       background-repeat: no-repeat;
   	  background-size: cover;
       	  

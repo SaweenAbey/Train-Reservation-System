@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Page</title>
     <style>
+    	html{
+    		 scroll-behavior: smooth;
+    	}
         body {
             margin: 0;
             font-family: Arial,san-serif;
@@ -107,7 +110,7 @@
 	        background-size: cover;
 	        background-position: center;
 	        background-repeat: no-repeat;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             width: 30%;
             position: relative;
@@ -147,18 +150,18 @@
 		}
         .form-control {
        		background: transparent;
-            width: 70%;
+            width: 100%;
             padding: 8px;
             border: none;
             border-bottom: 1px solid black;
             border-radius: 5px;
             font-size: 16px;	
-            margin-left: 50px;
-            margin-bottom: 20px;
+            margin-left: 0px;
+            margin-bottom: 25px;
         }
         .modal-content button {
             width: 30%;
-            background: lightgreen;
+            background: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
@@ -233,7 +236,7 @@
 		}
 		hr {
 		    border: 0;
-		    height: 1px;
+		    height: 3px;
 		    background: linear-gradient(90deg, transparent, #4CAF50, transparent);
 		    margin: 10px 0 20px;
 		}
@@ -248,6 +251,13 @@
 		input:focus {
  		 	outline: none;
   			border-bottom: 2px solid gray;
+		}
+		.form-link {
+ 			color: green;
+  			text-decoration: none;
+		}
+		.form-link:hover {
+  			text-decoration: underline;
 		}
 	</style>
 	<c:import url="header.jsp" /> 
@@ -306,7 +316,7 @@
      	</div>
     </div>
     
-    <div class="table">
+    <div class="table" id="shedule-table">
     	<h2 class="table-title">Train Shedule</h2>
     	<br>
     	<table class="shedule">
@@ -338,7 +348,7 @@
         <div class="modal-content">
         	
             <span class="close-btn" onclick="closeBookingForm()">&#10006;</span>
-            <h2 class="form-title" style="text-align:center; padding:20px; color: green; -webkit-text-stroke: 1px lightgreen; text-stroke: 2px green;">Enter Booking Details</h2>
+            <h2 class="form-title" style="text-align:center; padding:20px; color: green;">Enter Booking Details</h2>
             <hr>
             
             <form method="POST" action="addTicket" id="ticketForm">
@@ -357,7 +367,8 @@
 	                    
 	            <label>Date:</label><span id="dateError" class="error"></span><br>
 	            <input type="date" name="date" class="form-control" id="date"><br> 
-	                        
+	             
+	            <a class="form-link" href="#shedule-table" onclick="closeBookingForm()">Click here for shedule</a><br>           
 	            <button type="submit">Confirm</button>
 	         </form>
 	         
@@ -381,10 +392,6 @@
 	</div>
     
     
-    
-    
-   
-	 <script src="${pageContext.request.contextPath}/JS/ticketCrud/TicketFormValidation.js"></script>
 	 <script>
     
     	//SlideShow javascript
@@ -419,6 +426,97 @@
                 modal.style.display = 'none';
             }, 300);
         }
+        
+        
+
+		//validation for the form
+		document.getElementById('ticketForm').addEventListener('submit', function(event) {
+            // Prevent form submission
+            event.preventDefault();
+            
+            // Get all input fields
+            const location = document.getElementById('location');
+            const destination = document.getElementById('destination');
+            const noOfTicket = document.getElementById('noOfTicket');
+            const routeId = document.getElementById('routeId');
+            const date = document.getElementById('date');
+            
+            // Get all error spans
+            const locationError = document.getElementById('locationError');
+            const destinationError = document.getElementById('destinationError');
+            const noOfTicketError = document.getElementById('noOfTicketError');
+            const routeIdError = document.getElementById('routeIdError');
+            const dateError = document.getElementById('dateError');
+            
+            // Reset error messages
+            locationError.textContent = '';
+            destinationError.textContent = '';
+            noOfTicketError.textContent = '';
+            routeIdError.textContent = '';
+            dateError.textContent= '';
+            
+            let isValid = true;
+            
+            // Validate location field
+			const locationVal = location.value.trim();
+            if (!locationVal) {
+            	locationError.textContent = 'Location is required';
+                isValid = false;
+            }
+			else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(locationVal)){
+				locationError.textContent = 'Only letters allowed'
+				isValid = false;	
+			}
+            
+            //validate destination field
+            const destinationVal = destination.value.replace(/\s/g, '');
+            if (!destinationVal) {
+            	destinationError.textContent = 'Destination is required';
+                isValid = false;
+            }
+            else if(!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(destinationVal)){
+            	destinationError.textContent = 'Only letters allowed';
+                isValid = false;
+            }
+        	
+            //validate noOfTicket field
+            const noOfTicketVal = noOfTicket.value.trim();
+            if (!noOfTicketVal) {
+            	noOfTicketError.textContent = 'Passenger count is required';
+                isValid = false;
+            }
+            else if(!/^\d+$/.test(noOfTicketVal)){
+            	noOfTicketError.textContent = 'Only numbers allowed';
+                isValid = false;
+            }
+            else if (!/^\d{1,2}$/.test(noOfTicketVal)) {
+            	noOfTicketError.textContent = 'Must be 1-2 digits';
+                isValid = false;
+            }
+            
+            //validate routeId field
+            const routeIdVal = routeId.value.trim();
+            if (!routeIdVal) {
+            	routeIdError.textContent = 'RouteId is required';
+                isValid = false;
+            }
+            else if(!/^\d+$/.test(routeIdVal)){
+            	routeIdError.textContent = 'Only numbers allowed';
+                isValid = false;
+            }
+                      
+            //validate date field
+            const dateVal = date.value.trim();
+            if (!dateVal) {
+            	dateError.textContent = 'Date is required';
+                isValid = false;
+            }
+            
+            // If all fields are valid, submit the form
+            if (isValid) {
+                this.submit();
+            }
+        });
         
     </script>
  
