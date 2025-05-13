@@ -16,7 +16,7 @@
       height: 100vh;
  	  background-repeat: no-repeat;
   	  background-size: cover;
-      background-image: url('homecont/gallery-1.jpg');	 
+  /*    background-image: url('homecont/gallery-1.jpg');	 */
     }
 
     .container {
@@ -239,12 +239,10 @@
 			const nameVal = name.value.trim();
 	      if (!nameVal) {
 	          nameError.textContent = 'Name is required';
-	          name.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }
 		  else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(nameVal)){
 			  nameError.textContent = 'Only letters allowed'
-			  name.style.borderBottom = '2px solid red';
 			  isValid = false;	
 		  }
 	      
@@ -252,12 +250,10 @@
 	      const cardnoVal = cardno.value.replace(/\s/g, '');
 	      if (!cardnoVal) {
 	          cardnoError.textContent = 'Card number is required';
-	          cardno.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }
 	      else if(!/^\d{13,19}$/.test(cardnoVal)){
 	      	  cardnoError.textContent = 'Invalid card number (13-19 digits)';
-	      	  cardno.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }
 	      
@@ -265,7 +261,6 @@
 	      const expVal = exp.value.trim();
 	      if (!expVal) {
 	          expError.textContent = 'Expiry is required';
-	          exp.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }
 	   	
@@ -273,12 +268,10 @@
 	      const cvcVal = cvc.value.trim();
 	      if (!cvcVal) {
 	          cvcError.textContent = 'CVC is required';
-	          cvc.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }
 	      else if (!/^\d{3,4}$/.test(cvcVal)) {
 	          cvcError.textContent = 'Must be 3-4 digits';
-	          cvc.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }
 	      
@@ -286,12 +279,10 @@
 	      const emailVal = email.value.trim();
 	      if (!emailVal) {
 	          emailError.textContent= 'Email is required';
-	          email.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }
 	      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
 	          emailError.textContent = 'Invalid email format';
-	          email.style.borderBottom = '2px solid red';
 	          isValid = false;
 	      }  
 	      

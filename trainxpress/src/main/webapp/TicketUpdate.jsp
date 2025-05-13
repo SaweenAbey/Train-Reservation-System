@@ -16,7 +16,7 @@
       height: 100vh;
       background-repeat: no-repeat;
   	  background-size: cover;
-      background-image: url('homecont/gallery-1.jpg');
+  /*    background-image: url('homecont/gallery-1.jpg'); */
     }
 
     .container {
@@ -234,12 +234,10 @@
 			const locationVal = location.value.trim();
 	      if (!locationVal) {
 	      		locationError.textContent = 'Location is required';
-	      		location.style.borderBottom = '2px solid red';
 	          	isValid = false;
 	      }
 			else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(locationVal)){
 				locationError.textContent = 'Only letters allowed'
-				location.style.borderBottom = '2px solid red';
 				isValid = false;	
 			}
 	      
@@ -247,12 +245,10 @@
 	      const destinationVal = destination.value.replace(/\s/g, '');
 	      if (!destinationVal) {
 	      		destinationError.textContent = 'Destination is required';
-	      		destination.style.borderBottom = '2px solid red';
 	          	isValid = false;
 	      }
 	      else if(!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(destinationVal)){
 	      		destinationError.textContent = 'Only letters allowed';
-	      		destination.style.borderBottom = '2px solid red';
 	         	isValid = false;
 	      }
 	  	
@@ -260,17 +256,14 @@
 	      const noOfTicketVal = noOfTicket.value.trim();
 	      if (!noOfTicketVal) {
 	      		noOfTicketError.textContent = 'Passenger count is required';
-	      		noOfTicket.style.borderBottom = '2px solid red';
 	          	isValid = false;
 	      }
 	      else if(!/^\d+$/.test(noOfTicketVal)){
 	      		noOfTicketError.textContent = 'Only numbers allowed';
-	      		noOfTicket.style.borderBottom = '2px solid red';
 	         	isValid = false;
 	      }
 	      else if(!/^\d{1,2}$/.test(noOfTicketVal)) {
 	      		noOfTicketError.textContent = 'Must be 1-2 digits';
-	      		noOfTicket.style.borderBottom = '2px solid red';
 	          	isValid = false;
 	      }
 	                     
@@ -278,7 +271,6 @@
 	      const dateVal = date.value.trim();
 	      if (!dateVal) {
 	      		dateError.textContent = 'Date is required';
-	      		date.style.borderBottom = '2px solid red';
 	          	isValid = false;
 	      }
 	      
