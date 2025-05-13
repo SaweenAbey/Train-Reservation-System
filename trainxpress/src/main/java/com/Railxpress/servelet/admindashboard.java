@@ -16,6 +16,7 @@ import com.Railxpress.model.Train;
 import com.Railxpress.model.Troutemodl;
 import com.Railxpress.services.CustomerServices;
 import com.Railxpress.services.DriverService;
+import com.Railxpress.services.ReviewService;
 import com.Railxpress.services.RouteService;
 import com.Railxpress.services.TrainServices;
 
@@ -38,28 +39,23 @@ public class admindashboard extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DriverService service= new DriverService();
 		ArrayList<Driver> driver=service.readAll();
-		
 		request.setAttribute("driver", driver);
-		//add here
+		
+		int driverCount=service.getDriverCount();
+		request.setAttribute("driverCount",driverCount);		
+		
 		List <Troutemodl> allRoute = RouteService.getAllRout() ;
 		request.setAttribute("allRoute", allRoute);
 		
-		
-		
-		TrainServices tserv = new TrainServices();
-		
+		TrainServices tserv = new TrainServices();		
 		ArrayList<Train> train = tserv.getAllTrains();
-		
+		request.setAttribute("admin", train);
 		
 		CustomerServices service2= new CustomerServices();
-		System.out.println(service2.userCount());
 		request.setAttribute("userCount", service2.userCount());
-		request.setAttribute("admin", train);
 		
 		TrainServices service3= new TrainServices();
 		request.setAttribute("trainCount", service3.getTrainCount());
-		
-		//end here
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("adminDashboard2.jsp");
 		dispatcher.forward(request, response);

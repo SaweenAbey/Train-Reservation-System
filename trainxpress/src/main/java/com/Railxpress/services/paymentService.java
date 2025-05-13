@@ -112,4 +112,21 @@ public class paymentService {
 		}
 		
 	}
+	public int getCardCount(int cid) {
+		int cardCount=0;
+		String query="select COUNT(Pid) as count from payment where Cid=?";
+		try {
+			PreparedStatement stmt=DBconnect.getConnection().prepareStatement(query);
+			stmt.setInt(1, cid);
+			
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				cardCount=rs.getInt("count");
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return cardCount;
+	}
 }

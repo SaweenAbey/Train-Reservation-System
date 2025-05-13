@@ -150,4 +150,22 @@ public class ReviewService {
 		}
 	}
 	
+	public int getReveiwCount(int cid) {
+		String query= "select count(reviewId) as count from review where cid=?";
+		int reviewCount=0;
+		try {
+			PreparedStatement stmt=DBconnect.getConnection().prepareStatement(query);
+			stmt.setInt(1, cid);
+			
+			ResultSet rs=stmt.executeQuery();
+			if(rs.next()) {
+				reviewCount=rs.getInt("count");
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return reviewCount;
+	}
+	
 }

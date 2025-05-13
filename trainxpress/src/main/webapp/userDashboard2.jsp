@@ -351,16 +351,17 @@
 			<div class="dashboard-card">
 				<h2 style="margin-left: 5px;">User Activity</h2>
 				<div class="activity-card">
+				<c:set var="bookingCount" value="${bookingCount}"/>
 					<div class="activity-card1">
-			        	<p>Number of Bookings Added: 10</p>
+			        	<p>Number of Bookings Added:${bookingCount}</p>
 			        </div>
-			                    	
+			     <c:set var="cardCount" value="${cardCount}"/>               	
 			        <div class="activity-card1">
-			            <p>Number of Cards Saved: 10</p>
+			            <p>Number of Cards Saved: ${cardCount}</p>
 			        </div>
-			                    	
+			      <c:set var="reviewCount" value="${reviewCount}"/>              	
 			        <div class="activity-card1">
-			            <p>Number of Reviews Added: 10</p>
+			            <p>Number of Reviews Added:${reviewCount}</p>
 			        </div>
 				</div>
 			

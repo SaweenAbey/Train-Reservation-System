@@ -109,4 +109,20 @@ public class DriverService {
 			e.printStackTrace();
 		}
 	}
+	public int getDriverCount() {
+		String query="select COUNT(driverId) as count from driver";
+		int reviewCount=0;
+		try {
+			PreparedStatement stmt= DBconnect.getConnection().prepareStatement(query);
+			ResultSet rs=stmt.executeQuery();
+			if(rs.next()) {
+				reviewCount=rs.getInt("count");
+			}
+			
+			
+		}catch(Exception e) {
+			
+		}
+		return reviewCount;
+	}
 }

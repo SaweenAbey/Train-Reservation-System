@@ -160,5 +160,25 @@ public class ticketService {
 		}
 	}
 	
+	public int getBookingCount(int cid) {
+		int bookingCount=0;
+		String query="select COUNT(bid) as count  from booking where cid=?";
+		
+		try {
+			PreparedStatement stmt=DBconnect.getConnection().prepareStatement(query);
+			stmt.setInt(1, cid);
+			
+			ResultSet rs=stmt.executeQuery();
+			if(rs.next()) {
+				bookingCount=rs.getInt("count");
+			}
+		}catch(Exception e) {
+			
+		}
+		
+		
+		return bookingCount;
+	}
+	
 }
 

@@ -38,16 +38,28 @@ public class UserDashboard extends HttpServlet {
 		
 		int cid=(int)session.getAttribute("cid");
 		ArrayList<Review> review= service.getAllReviewUserSpecific(cid);
+		
+		int countReview=service.getReveiwCount(cid);
+		request.setAttribute("reviewCount", countReview);
 		request.setAttribute("review",review);
 		
 		
 		ticketService service2=new ticketService();
 		ArrayList<Ticket> ticket=service2.getOneTicket(cid);
+		
+		int count1=service2.getBookingCount(cid);
+		request.setAttribute("bookingCount",count1);
 		request.setAttribute("ticket",ticket);
 		
 		paymentService service3=new paymentService();
 		ArrayList<Payment> payment=service3.getOnePayment(cid);
+		
+		int cardCount=service3.getCardCount(cid);
+		
+		request.setAttribute("cardCount", cardCount);
 		request.setAttribute("payment", payment);
+		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("userDashboard2.jsp");
 		dispatcher.forward(request, response);

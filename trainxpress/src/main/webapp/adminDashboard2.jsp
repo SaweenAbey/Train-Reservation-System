@@ -43,7 +43,7 @@
 	                <div class="user-details">
 	                    <h2><%=session.getAttribute("name") %></h2>
 	                    <p>User Name: <%=session.getAttribute("uname") %></p>
-	                    <p>E-mail: <%=session.getAttribute("email") %></p>
+	                   
 	                    
 	                </div>
 	            </div>
@@ -53,15 +53,20 @@
 				<h2 style="margin-left: 5px;">User Activity</h2>
 				<div class="activity-card">
 					<div class="activity-card1">
-			        	<p>Number of Bookings Added: 10</p>
+						<c:set var="count" value="${userCount}"/>
+	                    <p> Current Users:${count}</p>
+			        	
 			        </div>
 			                    	
 			        <div class="activity-card1">
-			            <p>Number of Cards Saved: 10</p>
+			        	<c:set var="count2" value="${trainCount}"/>
+	                    <p> Available Trains:${count2}</p>
+			            
 			        </div>
 			                    	
 			        <div class="activity-card1">
-			            <p>Number of Reviews Added: 10</p>
+			            <c:set var="count3" value="${driverCount}"/>
+	                    <p> Availabe Drivers:${count3}</p>
 			        </div>
 				</div>
 			
@@ -81,20 +86,7 @@
 	
 	
 		
-   <!-- 	<h1 class="tab-title">Admin Information</h1><br>
-	        <div class="dashboard-card" >
-	            <div class="user-info">
-	                
-	                <div class="user-details">
-	                    <h2><%=session.getAttribute("name") %></h2>
-	                    <p><i class="fas fa-envelope"></i> User Name:<%=session.getAttribute("uname") %></p>
-	                    <c:set var="count" value="${userCount}"/>
-	                    <p> User Count:${count}</p>
-	                    <c:set var="count2" value="${trainCount}"/>
-	                    <p> Available Trains count:${count2}</p>
-	                </div>
-	            </div>
-			</div>   -->     
+       
 			
         </div>	
 		
