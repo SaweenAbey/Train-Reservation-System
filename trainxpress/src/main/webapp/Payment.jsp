@@ -199,7 +199,7 @@
 		 			<input type="email" class="form-control" name="email" id="email"> <br>
 		 			
 		 			<input type="checkbox" id="terms-check" name="terms" required>
-  					<label>I agree to the <a href="#####" target="_blank" class="terms-link">terms and conditions</a></label><br>
+  					<label>I agree to the <a href="Terms@cont.jsp" target="_blank" class="terms-link">terms and conditions</a></label><br>
   					<input type="checkbox" id="updates" name="updates">
   					<label>I wish to receive email updates</label><br>
   					
