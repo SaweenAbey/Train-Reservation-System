@@ -10,6 +10,15 @@
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link href="CSS/ReviewCss/reviewCss.css" rel="stylesheet">
+    <style>
+    		.error{
+					margin: 0px;
+					padding: 0px;
+					color: red;
+					font-size: 12px;
+					text-align: left;
+			}
+    </style>
 </head>
 <body>
 	<nav class="navbar">
@@ -64,7 +73,7 @@
                     <form action="insertReview" method="POST" id="reviewForm">
                         <h3>Add Review</h3>
                         <br>
-                        <label for="message" id="msg">Message:</label><span id="msgError" class="error"></span>
+                        <label for="message" id="msg">Message:</label><span id="msgError" class="error" ></span>
                         <textarea id="message" name="message"></textarea>
                         <label for="rating">Ratings:</label>
                             <select name="rating" name="rating" id="rating">
@@ -154,6 +163,7 @@
   			})
   			
   			document.getElementById("reviewForm").addEventListener("submit",function(event){
+  				msg.dispatchEvent(new Event("input"));
   				if(validity1=="false"){
   					event.preventDefault(); 
   				    alert("Please correct the errors before submitting.");
