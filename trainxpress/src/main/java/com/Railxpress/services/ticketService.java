@@ -3,6 +3,9 @@ package com.Railxpress.services;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.SQLSyntaxErrorException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -45,10 +48,19 @@ public class ticketService {
 				}
 				
 				
-			} catch (Exception e) {
+			} catch (SQLIntegrityConstraintViolationException e) {
+				System.out.println("Constraint violation: " + e.getMessage());
+			}
+			catch (SQLSyntaxErrorException e) {
+				System.out.println("Syntax error in the SQL query: " + e.getMessage());
+			}
+			catch (SQLException e) {
+				System.out.println("Database error: " + e.getMessage());
+			}
+			catch (Exception e){
 				e.printStackTrace();
 			}
-		System.out.println("bid from tickerService:"+ticket.getBid());
+		
 		return ticket.getBid();
 	}
 	
@@ -76,21 +88,57 @@ public class ticketService {
 			}
 			return listTick;
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLSyntaxErrorException e) {
+			System.out.println("Syntax error in the SQL query: " + e.getMessage());
+		    return null;
+		}
+		catch (SQLException e){
+			System.out.println("Database error: " + e.getMessage());
 			return null;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		    return null;
 		}
 	}
 	
 	public void updateTicket(Ticket ticket) {
 		try {
 			
-			String query="UPDATE booking SET bid='"+ticket.getBid()+"', location='"+ticket.getLocation()+"', destination='"+ticket.getDestination()+"', noOfTicket='"+ticket.getNoOfTicket()+"', date='"+ticket.getDate()+"', Price='"+ticket.getPrice()+"' where bid='"+ticket.getBid()+"'";
+			String query="UPDATE booking SET bid= ? , location= ?, destination= ? , noOfTicket= ? , date= ?, Price= ? where bid= ? ";
+			PreparedStatement preparedStatement = DBconnect.getConnection().prepareStatement(query);
 			
-			Statement statement=DBconnect.getConnection().createStatement();
-			statement.executeUpdate(query);
+			String query2="SELECT price from trainroute where routeId=?";
+			PreparedStatement statement2=DBconnect.getConnection().prepareStatement(query2);
 			
-		} catch (Exception e) {
+			preparedStatement.setInt(1, ticket.getBid());
+			preparedStatement.setString(2, ticket.getLocation());
+			preparedStatement.setString(3, ticket.getDestination());
+			preparedStatement.setInt(4, ticket.getNoOfTicket());
+			preparedStatement.setString(5, ticket.getDate());
+			
+			statement2.setInt(1, ticket.getRouteId());
+			ResultSet rs= statement2.executeQuery();
+			if(rs.next()) {
+				float pr=Float.parseFloat(rs.getString("price"))*ticket.getNoOfTicket();
+				ticket.setPrice(String.valueOf(pr));
+			}
+			
+			preparedStatement.setString(6, ticket.getPrice());
+			preparedStatement.setInt(7, ticket.getBid());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch (SQLIntegrityConstraintViolationException e) {
+			System.out.println("Constraint violation: " + e.getMessage());
+		}
+		catch (SQLSyntaxErrorException e){
+			 System.out.println("Syntax error in the SQL query: " + e.getMessage());
+		}
+		catch (SQLException e) {
+			 System.out.println("Database error: " + e.getMessage());
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

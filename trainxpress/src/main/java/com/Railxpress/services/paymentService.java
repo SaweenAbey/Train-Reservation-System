@@ -2,6 +2,9 @@ package com.Railxpress.services;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.SQLSyntaxErrorException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -23,8 +26,17 @@ public class paymentService {
 	        statement.setInt(6, payment.getCid());
 	        statement.executeUpdate();
 	        
-	    } catch (Exception e) {
-	        e.printStackTrace();
+	    } catch (SQLIntegrityConstraintViolationException e) {
+	    	System.out.println("Constraint violation: " + e.getMessage());
+	    }
+	    catch (SQLSyntaxErrorException e){
+	    	System.out.println("Syntax error in the SQL query: " + e.getMessage());
+	    }
+	    catch (SQLException e) {
+	    	System.out.println("Database error: " + e.getMessage());
+	    }
+	    catch (Exception e) {
+	    	e.printStackTrace();
 	    }
 	}
 	
@@ -51,21 +63,45 @@ public class paymentService {
 			}
 			return listPay;
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLSyntaxErrorException e) {
+			System.out.println("Syntax error in the SQL query: " + e.getMessage());
+		    return null;
+		}
+		catch (SQLException e){
+			System.out.println("Database error: " + e.getMessage());
 			return null;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		    return null;
 		}
 	}
 	
 	public void updatePayment(Payment payment) {
 		try {
 			
-			String query="UPDATE payment SET Name='"+payment.getName()+"', CardNo='"+payment.getCardNo()+"', Exp='"+payment.getExp()+"', Cvc='"+payment.getCvc()+"', Email='"+payment.getEmail()+"' where Pid='"+payment.getPid()+"'";
+			String query="UPDATE payment SET Name= ?, CardNo=? , Exp= ?, Cvc=?, Email= ? where Pid=?";
 
-			Statement statement=DBconnect.getConnection().createStatement();
-			statement.executeUpdate(query);
+			PreparedStatement preparedStatement = DBconnect.getConnection().prepareStatement(query);
+			preparedStatement.setString(1, payment.getName());
+			preparedStatement.setString(2, payment.getCardNo());
+			preparedStatement.setString(3, payment.getExp());
+			preparedStatement.setInt(4, payment.getCvc());
+			preparedStatement.setString(5, payment.getEmail());
+			preparedStatement.setInt(6, payment.getPid());
 			
-		} catch (Exception e)	 {
+			preparedStatement.executeUpdate();
+			
+		} catch (SQLIntegrityConstraintViolationException e) {
+			System.out.println("Constraint violation: " + e.getMessage());
+		}
+		catch (SQLSyntaxErrorException e){
+			 System.out.println("Syntax error in the SQL query: " + e.getMessage());
+		}
+		catch (SQLException e) {
+			 System.out.println("Database error: " + e.getMessage());
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
