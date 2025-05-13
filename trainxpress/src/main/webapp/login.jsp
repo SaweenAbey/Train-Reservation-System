@@ -29,7 +29,7 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form method="post" action="Register" >
+            <form method="post" action="Register" onsubmit="return validateRegisterForm()">
                 <h1>Create Account</h1>
                 
                 <label>use your email for registration</label>
