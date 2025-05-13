@@ -66,7 +66,7 @@
       font-size: 18px;
     }
 
-    .form-group input {
+    .form-group input ,select{
       width: 100%;
       padding: 10px;
       border-radius: 8px;
@@ -152,7 +152,15 @@
         
         <div class="form-group">
           <label>Type:</label><span id="typeError" class="error"></span>
-          <input type="text" class="form-control" name="ttype" value="${param.ttype}" id="trainType">
+          <select id="trainType" name="ttype" required>
+                    <option value="Normal" ${param.ttype == 'Normal' ? 'selected' : ''}>Normal</option>
+                    <option value="Express" ${param.ttype == 'Express' ? 'selected' : ''}>Express</option>
+                </select>
+                
+                
+          
+          
+          
         </div>
         
         <div class="form-group">

@@ -10,7 +10,7 @@
 <body>
     <header class="details-header">
         <h1>Popular Route Details</h1>
-        <a href="index.html" class="back-btn"><i class="ri-arrow-left-line"></i> Back to Home</a>
+        <a href="index" class="back-btn"><i class="ri-arrow-left-line"></i> Back to Home</a>
     </header>
     <section class="route-details">
         <div class="route-image">

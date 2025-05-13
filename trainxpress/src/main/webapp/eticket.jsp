@@ -101,9 +101,12 @@
             </div>
         </div>
         
-        <div class="download-btn">
+        <div class="download-btn" style="display:flex;gap:10px;">
             <button onclick="downloadTicket()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 <i class="ri-download-2-fill"></i> Download Receipt
+            </button>
+            <button onclick="window.location.href='index'" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 ">
+                🏠 Home
             </button>
         </div>
     </div>

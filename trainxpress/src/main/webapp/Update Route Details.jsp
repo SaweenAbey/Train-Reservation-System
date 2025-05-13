@@ -171,7 +171,7 @@
 	    <div class="image-section">
 	      <img src="Formcont/www.jpeg" alt="Train Registration">
 	      <div class="buttons">
-	        <button type="button">Back</button>
+	        <button type="button" onclick="window.location.href='admindashboard'">Back</button>
 	        <button type="submit">Update</button>
 	      </div>
 	    </div>

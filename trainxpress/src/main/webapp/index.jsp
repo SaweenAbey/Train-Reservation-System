@@ -29,7 +29,7 @@
           <h3>Exploring The World</h3>
           <p>Plan your journey, reserve your seats, and explore Sri Lanka with comfort and convenience. 
           RailXpress brings you a modern, reliable, and hassle-free online train reservation experience—anywhere, anytime.</p>
-          <a href="#">Book Ticket</a>
+          <a href="Booking">Book Ticket</a>
         </div>
         <ul class="social">
         

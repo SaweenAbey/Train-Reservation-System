@@ -36,8 +36,9 @@ public class DeleteTicket extends HttpServlet {
 		ticketService service = new ticketService();
 		service.deleteTicket(tick);
 		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("readTicket");
-		dispatcher.forward(request, response);
+		response.sendRedirect("UserDashboard");
+//		RequestDispatcher dispatcher= request.getRequestDispatcher("UserDashboard");
+//		dispatcher.forward(request, response);
 	}
 
 }

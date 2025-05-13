@@ -37,8 +37,8 @@ public class DeletePayment extends HttpServlet {
 		paymentService service=new paymentService();
 		service.deletePayment(pay);
 		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("readPayment");
-		dispatcher.forward(request, response);
+		response.sendRedirect("UserDashboard");
+		
 	}
 
 }

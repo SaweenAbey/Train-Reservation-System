@@ -139,7 +139,7 @@
 			  	color: #1f7a4d;
 			  	font-size: 18px;
 			  	margin-left: -10px;
-			  	width: 20%;
+			  	width: 25%;
 			  	
 			  }
 			
@@ -166,7 +166,7 @@
 		 		<form method="POST" action="addPayment" id="paymentForm">
 		 			<div class="price-group">
 		 				<label class="total-amount">Bill Amount ➜ Rs.</label> 
-			 			<input type="text" class="price" name="price" id="price" disabled value="${price}" >
+			 			<input type="text" class="price" name="price" id="price" disabled value="${price}0 /=" >
 		 			</div>
 			 		
 			 		<br><br>
@@ -199,7 +199,7 @@
 		 			<input type="email" class="form-control" name="email" id="email"> <br>
 		 			
 		 			<input type="checkbox" id="terms-check" name="terms" required>
-  					<label>I agree to the <a href="Terms@cont.jsp" target="_blank" class="terms-link">terms and conditions</a></label><br>
+  					<label>I agree to the <a href="Terms@contCopy.jsp"  class="terms-link">terms and conditions</a></label><br>
   					<input type="checkbox" id="updates" name="updates">
   					<label>I wish to receive email updates</label><br>
   					
