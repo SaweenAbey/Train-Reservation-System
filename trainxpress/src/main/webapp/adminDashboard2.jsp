@@ -24,10 +24,10 @@
                 <span><%=session.getAttribute("name") %></span>
             </div>
             <div class="menu">
-                <button class="btn" data-tab="tab1" onclick="openTab(event, 'tab1')" id="defaultOpen">Profile</button>
-                <button class="btn" data-tab="tab2" onclick="openTab(event, 'tab2')">Manage Trains</button>        
-                <button class="btn" data-tab="tab3" onclick="openTab(event, 'tab3')">Manage Drivers</button>
-                <button class="btn" data-tab="tab4" onclick="openTab(event, 'tab4')">Manage Train Schedule</button>
+                <button class="btn" data-tab="tab1" onclick="openTab(event, 'tab1')" id="defaultOpen" style="font-weight:normal;">Profile</button>
+                <button class="btn" data-tab="tab2" onclick="openTab(event, 'tab2')" style="font-weight:normal;">Manage Trains</button>        
+                <button class="btn" data-tab="tab3" onclick="openTab(event, 'tab3')" style="font-weight:normal;">Manage Drivers</button>
+                <button class="btn" data-tab="tab4" onclick="openTab(event, 'tab4')" style="font-weight:normal;">Manage Train Schedule</button>
              
             </div>
   <!--      <div class="logoutSec">
