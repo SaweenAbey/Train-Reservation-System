@@ -168,7 +168,7 @@
         
         <div class="buttons">
           <button type="submit">Submit</button>
-           <button class="back-button" onclick="window.history.back()">← Back</button>
+           <button type="button" class="back-button" onclick="window.location.href='admindashboard'">← Back</button>
         </div>
       </form>
     </div>
