@@ -111,6 +111,8 @@
 	        background-position: center;
 	        background-repeat: no-repeat;
             padding: 20px;
+            padding-right: 30px;
+            padding-left: 30px;
             border-radius: 10px;
             width: 30%;
             position: relative;
@@ -131,23 +133,6 @@
             cursor: pointer;
             color: #C6EDC3;
         }
-        .row {
-            display: flex;
-            gap: 50px;
-        }
-        .col1{
-            flex: 1;
-        	display: flex;
-    		flex-direction: column;
-   			gap: 20px; 
-        }
-        .col2{
-        	flex: 1;
-        	display: flex;
-    		flex-direction: column;
-   			gap: 20px; 
-   			margin-right: 10px;
-		}
         .form-control {
        		background: transparent;
             width: 100%;
@@ -179,7 +164,6 @@
             display: flex;
            	flex-wrap: nowrap;
 			padding:0px;
-            
         }
         .text-area1{
         	margin-left: 50px;
@@ -192,48 +176,42 @@
         	padding: 20px;
         	padding-bottom: 0px;
         }
-		h2{
-			color: green;
-			
-		}
-		.page-list{
-			list-style-type: none;
-			float: none;
-		}
-		.shedule{
-  			border-collapse: collapse;
- 			width: 100%;
-		}
-		.shedule td, .shedule th{
-			border: 1px solid #ddd;
-  			padding: 8px;
-		}
-		.shedule tr:nth-child(even){
-			background-color: #C6EDC3;
-		}
-	
-		.shedule tr:hover {
-			background-color: white;
-		}
-
-		.shedule th {
-			padding-top: 12px;
-			padding-bottom: 12px;
-			text-align: center;
-			background-color: green;
-			color: white;
-		}
-		.contactinfo{
-			font-size: 18px;
-		}
 		.table{
 			margin-left: 50px;
-			margin-right: 50px;
-			margin-bottom: 20px;
+			margin-right: 80px;
+			margin-bottom: 50px;
 		}	
 		.table-title{
-			text-align: center;
+			color: #2e7d32;
+			font-size: 2em;
+		    border-bottom: 2px solid #a5d6a7;
+		    padding-bottom: 8px;
+		    margin-bottom: 20px;
+		    margin: 20px;			
 		}
+		
+		table {
+	      width: 100%;
+	      border-collapse: collapse;
+	      margin: 20px;
+	    }
+	
+	    th {
+	      background-color: green;
+	      color: white;
+	    }
+	
+	    th, td {
+	      padding: 12px 16px;
+	      text-align: center;
+	      border-bottom: 1px solid #ddd;
+	
+	    }
+	
+	    td {
+	      font-size: 16px;
+	    }
+	    
 		hr {
 		    border: 0;
 		    height: 3px;
@@ -259,6 +237,89 @@
 		.form-link:hover {
   			text-decoration: underline;
 		}
+		.about-us{
+			color: #2e7d32;
+			font-size: 2em;
+		    border-bottom: 2px solid #a5d6a7;
+		    padding-bottom: 8px;
+		    margin-bottom: 20px;
+		}
+		.why-choose-us{
+			color: #2e7d32;
+			font-size: 2em;
+		    border-bottom: 2px solid #a5d6a7;
+		    padding-bottom: 8px;
+		    margin-bottom: 20px;
+		}
+		.contact-us{
+			color: #2e7d32;
+			font-size: 2em;
+		    border-bottom: 2px solid #a5d6a7;
+		    padding-bottom: 8px;
+		    margin-bottom: 20px;
+		}
+		.page-paragraph{
+			background-color: #e8f5e9;
+		    padding: 20px;
+		    border-radius: 8px;
+		    margin-bottom: 30px;
+		    border-left: 5px solid #4caf50;
+		    line-height: 1.6;
+		    color: #333;
+		}
+		.page-list{
+			list-style-type: none;
+    		padding: 0;
+		}
+		.page-list li {
+		    padding: 10px 15px;
+		    margin-bottom: 8px;
+		    background-color: #e8f5e9;
+		    border-radius: 5px;
+		    position: relative;
+		    padding-left: 40px;
+		    transition: all 0.3s ease;
+		}
+		
+		.page-list li:hover {
+		    background-color: #c8e6c9;
+		    transform: translateX(5px);
+		}
+		
+		.page-list li:before {
+		    content: "✓";
+		    color: #2e7d32;
+		    font-weight: bold;
+		    position: absolute;
+		    left: 15px;
+		}
+		.contact-info {
+			  background-color: #e9f7ec; /* Light green background */
+			  border-left: 4px solid #66bb6a; /* Accent green border */
+			  padding: 16px 20px;
+			  border-radius: 10px;
+			  width: 540px;
+			  height: 190px;
+			  font-family: 'Segoe UI', sans-serif;
+			  box-shadow: 0 2px 6px rgba(0, 128, 0, 0.1);
+		}
+		.contact-item {
+			  display: flex;
+			  align-items: center;
+			  margin-bottom: 12px;
+			  color: black;
+		}
+			
+		.contact-item:last-child {
+			  margin-bottom: 0;
+		}
+			
+		.contact-item .icon {
+			  font-size: 20px;
+			  margin-right: 10px;
+		}
+		
+		
 	</style>
 	<c:import url="header.jsp" /> 
 </head>
@@ -278,7 +339,7 @@
             <h1>🎫 Book Your Tickets</h1>
             <p>Fast & Secure Booking</p>
             <div class="buttons">
-                <button class="home-btn">Home Page 🏠</button>
+                <button class="home-btn" onclick="window.location.href='index.jsp'">Home Page 🏠</button>
                 <button class="book-btn" onclick="showBookingForm()">Book Now ❇️</button>
             </div>
         </div>
@@ -287,38 +348,54 @@
     <div class="page-content">
     
     	<div class="text-area1">
-    		<h2 class="page-title">About Us</h2>
-    		<br>
-			<p>	
-				Welcome to RailXpress, your one-stop destination for hassle-free train ticket booking!<br> 
-            	We are dedicated to making railway travel easier, faster, and more convenient for everyone. <br> 
-                With our user-friendly platform, you can search, book, and manage your train tickets effortlessly. <br> 
-                Whether you're planning a business trip, a family vacation, or a daily commute, <br> 
-                we ensure a seamless booking experience with real-time availability, secure payment <br>options, and instant ticket confirmations.
-            </p>
-            <br><br>
-            <h2 class="page-title">Why Choose Us?</h2>
-            <br>
+    		<h2 class="about-us">About Us</h2>
+    		<div class="page-paragraph">
+    			<p>	
+					Welcome to RailXpress, your one-stop destination for hassle-free train ticket booking!<br> 
+	            	We are dedicated to making railway travel easier, faster, and more convenient for everyone. <br> 
+	                With our user-friendly platform, you can search, book, and manage your train tickets effortlessly. <br> 
+	                Whether you're planning a business trip, a family vacation, or a daily commute, <br> 
+	                we ensure a seamless booking experience with real-time availability, secure payment <br>options, and instant ticket confirmations.
+            	</p>
+    		</div>
+    		
+            <h2 class="why-choose-us">Why Choose Us?</h2>
      		<ul class="page-list">
-     			<li>🟩Easy & Fast Booking</li>
-     			<li>🟩Real-Time Seat Availability</li>
-     			<li>🟩Secure Payments</li>
-     			<li>🟩24/7 Customer Support</li>
-     			<li>🟩Eco-Friendly</li>
+     			<li>Easy & Fast Booking</li>
+     			<li>Real-Time Seat Availability</li>
+     			<li>Secure Payments</li>
+     			<li>24/7 Customer Support</li>
+     			<li>Eco-Friendly</li>
      		</ul>
      		<br>
     	</div>
-    	
-     	<div class="text-area2">
-	     	<p class="contactinfo"> 📧support.@RailXpress.me</p>
-	     	<p class="contactinfo">	📬EH Cooray Building, No.24: 5th Floor, E.H.Cooray Tower, B535, Matara</p>
-	     	<p class="contactinfo">	🌐www.RailXpress.com</p>
-     	</div>
+    	   
+    	   
+    	<div style="margin-left: 100px; margin-top: 20px;">   
+	    	<h2 class="contact-us">Contact Us</h2>  	
+	     	<div class="contact-info">     		  
+				  <div class="contact-item">
+				    <span class="icon">📧</span>
+				    <span>support.@RailXpress.me</span>
+				  </div>
+				  
+				  <div class="contact-item">
+				    <span class="icon">🏢</span>
+				    <span>EH Cooray Building, No.24: 5th Floor, E.H.Cooray Tower, B535, Matara</span>
+				  </div>
+				  
+				  <div class="contact-item">
+				    <span class="icon">🌐</span>
+				    <span>www.RailXpress.com</span>
+				  </div>		  
+			</div>
+		</div>
+     	
     </div>
     
     <div class="table" id="shedule-table">
     	<h2 class="table-title">Train Shedule</h2>
-    	<br>
+    	
     	<table class="shedule">
      		
                 <tr>
@@ -340,7 +417,7 @@
                 </tr>
                 </c:forEach>
             
-     		</table><br><br><br>
+     	  </table>
     </div>
     <br>
     <!-- Booking Form Modal -->
