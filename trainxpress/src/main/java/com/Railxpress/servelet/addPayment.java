@@ -45,7 +45,7 @@ public class addPayment extends HttpServlet {
 		paymentService service=new paymentService();
 		service.addPayment(payment);
 		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("PaymentTable.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("eticket.jsp");
 		dispatcher.forward(request, response);
 	}
 

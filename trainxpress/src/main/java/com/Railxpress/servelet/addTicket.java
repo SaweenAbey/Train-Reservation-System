@@ -33,9 +33,17 @@ public class addTicket extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	   
+
+	    
 		
 		Ticket ticket= new Ticket();
 		HttpSession session= request.getSession();
+		
+	    session.setAttribute("source", request.getParameter("location"));
+	    session.setAttribute("des", request.getParameter("destination"));
+	    session.setAttribute("ticket", request.getParameter("noOfTicket"));
+	    
 		ticket.setCid((int)session.getAttribute("cid"));
 		
 		
@@ -44,7 +52,10 @@ public class addTicket extends HttpServlet {
 		ticket.setNoOfTicket(Integer.parseInt(request.getParameter("noOfTicket")));
 		ticket.setRouteId(Integer.parseInt(request.getParameter("routeId")));
 		ticket.setDate(request.getParameter("date"));
-	
+		
+		
+		
+
 		ticketService service=new ticketService();
 		int bid=service.ticketMethod(ticket);
 		System.out.println("Booking Id passed:"+bid);

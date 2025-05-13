@@ -17,7 +17,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('pexels-genine-alyssa-pedreno-andrada-1263127-2403209.jpg');
+            background-image: url('./homecont/pexels-genine-alyssa-pedreno-andrada-1263127-2403209.jpg');
             background-size: cover;
             background-position: center;
             color: #333;
@@ -41,17 +41,29 @@
             margin: 8px 0;
             color: #555;
         }
-        .qr-code {
-            margin-top: 20px;
+        .qr-code-container {
+            margin: 20px 0;
             display: flex;
             justify-content: center;
+            align-items: center;
+        }
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #eee;
         }
         .qr-code img {
-            width: 120px;
-            height: 120px;
+            max-width: 100%;
+            max-height: 100%;
         }
         .download-btn {
-            margin-top: 15px;
+            margin-top: 20px;
         }
         #notification {
             position: fixed;
@@ -65,6 +77,9 @@
             display: none;
             z-index: 999;
         }
+        #ticket-content {
+            /* This is the part that will be captured */
+        }
     </style>
 </head>
 <body onload="getready()">
@@ -72,73 +87,82 @@
     <!-- Notification -->
     <div id="notification">🎉 E-Ticket image is ready. Download started!</div>
 
-    <div class="ticket" id="ticket">
-        <h2>Train E-Ticket</h2>
-        <p><strong>Station:</strong> <%= session.getAttribute("source") %></p>
-		<p><strong>Destination:</strong> <%= session.getAttribute("des") %></p>
-		<p><strong>Ticket Value:</strong> Rs.<%= session.getAttribute("rice") %></p>
+    <div class="ticket">
+        <div id="ticket-content">
+            <h2>Train E-Ticket</h2>
+            <p><strong>Station:</strong> <%= session.getAttribute("source") %></p>
+            <p><strong>Destination:</strong> <%= session.getAttribute("des") %></p>
+            <p><strong>Num of Booking Ticket:</strong><%= session.getAttribute("ticket") %></p>
 
-
-        <div class="qr-code">
-            <img id="qrCode" src="" alt="QR Code">
+            <div class="qr-code-container">
+                <div class="qr-code">
+                    <img id="qrCode" src="" alt="QR Code">
+                </div>
+            </div>
+        </div>
+        
+        <div class="download-btn">
+            <button onclick="downloadTicket()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <i class="ri-download-2-fill"></i> Download Receipt
+            </button>
         </div>
     </div>
-        <div class="download-btn">
-            <button onclick="downloadTicket()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"><i class="ri-download-2-fill"></i>Download Receipt</button>
-        </div>
 
+    <script>
+    async function getready() {
+        const sid = "<%= session.getAttribute("source") %>";
+        const did = "<%= session.getAttribute("des") %>";
+        const tid = "<%= session.getAttribute("ticket") %>";
+        const qrData = sid + " to " + did + " - Num of tickets." + tid;
 
-   <script>
-   async function getready() {
-	    const sid = "${param.source}";
-	    const did = "${param.des}";
-	    const tid = "${param.rice}";
-	    const qrData = sid + " to " + did + " - Rs." + tid;
+        const qrCode = document.getElementById('qrCode');
 
-	    const qrCode = document.getElementById('qrCode');
+        // Fetch QR code as Blob and convert to Base64
+        const response = await fetch("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(qrData), {
+            mode: 'cors'
+        });
+        const blob = await response.blob();
 
-	    // Fetch QR code as Blob and convert to Base64
-	    const response = await fetch("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(qrData), {
-	        mode: 'cors'
-	    });
-	    const blob = await response.blob();
-
-	    const reader = new FileReader();
-	    reader.onloadend = function () {
-	        qrCode.src = reader.result;
-	    };
-	    reader.readAsDataURL(blob);
-
-   }
-
-function downloadTicket() {
-    const ticket = document.getElementById("ticket");
-
-    // Ensure image is fully loaded
-    const qrImage = document.getElementById('qrCode');
-    if (!qrImage.complete || qrImage.naturalHeight === 0) {
-        qrImage.onload = () => captureTicket(ticket);
-    } else {
-        captureTicket(ticket);
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            qrCode.src = reader.result;
+        };
+        reader.readAsDataURL(blob);
     }
-}
 
-function captureTicket(ticket) {
-    html2canvas(ticket).then(canvas => {
-        const link = document.createElement("a");
-        link.download = "Train_E-Ticket.png";
-        link.href = canvas.toDataURL();
-        link.click();
+    function downloadTicket() {
+        const ticketContent = document.getElementById("ticket-content");
+        const downloadBtn = document.querySelector(".download-btn");
 
-        const note = document.getElementById("notification");
-        note.style.display = "block";
-        setTimeout(() => {
-            note.style.display = "none";
-        }, 3000);
-    });
-}
-</script>
+        // Hide the download button temporarily
+        downloadBtn.style.display = "none";
 
+        // Ensure image is fully loaded
+        const qrImage = document.getElementById('qrCode');
+        if (!qrImage.complete || qrImage.naturalHeight === 0) {
+            qrImage.onload = () => captureTicket(ticketContent, downloadBtn);
+        } else {
+            captureTicket(ticketContent, downloadBtn);
+        }
+    }
 
+    function captureTicket(contentElement, buttonElement) {
+        html2canvas(contentElement).then(canvas => {
+            const link = document.createElement("a");
+            link.download = "Train_E-Ticket.png";
+            link.href = canvas.toDataURL();
+            link.click();
+
+            // Show the button again
+            buttonElement.style.display = "block";
+
+            const note = document.getElementById("notification");
+            note.style.display = "block";
+            setTimeout(() => {
+                note.style.display = "none";
+            }, 3000);
+        });
+    }
+    </script>
 </body>
 </html>
