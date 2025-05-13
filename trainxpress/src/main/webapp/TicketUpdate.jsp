@@ -15,16 +15,15 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('CSS/DriverCrudCss/driverUpdate.jpg');
       background-repeat: no-repeat;
   	  background-size: cover;
       	  
     }
 
     .container {
-      backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.2);
-   /*   background-color: white; */
+ /*     backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.2); */
+   	  background-color: white;
       border-radius: 16px;
       padding: 30px;
       margin-bottom: 50px;
@@ -68,14 +67,13 @@
       margin: 0px;
       font-size: 18px;
     }
-
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 10px;
-      border: 1px solid black;
-      outline: none;
+    .form-control{
+    	border: none;
+    	border-bottom: 1px solid black;
+    	width: 100%;
+      	padding: 10px;
+      	border-radius: 8px;
+      	margin-top: 10px;
     }
     .buttons {   
       justify-items: center;
@@ -105,7 +103,7 @@
     }
 
     .image-section img {
-      margin-top: 50px;
+      margin-top: 0px;
       width: 100%;
       height: auto;
       border-radius: 12px;
@@ -115,6 +113,11 @@
       border: 1px dashed red;
       color: #666;
       cursor: not-allowed;
+	}
+	input:focus {
+ 	  outline: none;
+      box-shadow: 5px 5px 3px lightgray;
+  	  border-bottom: 2px solid gray;
 	}
 	.error{
 		margin: 0px;
@@ -189,7 +192,7 @@
   
   <div class="container4" style="background-color: #16A34A;">
     <footer style="text-align:center; padding: 20px; font-family: Inter; color:#ffffff;display:flex;justify-content: space-between;">
-        <a href="#" class="home-link"><!--<img src="LOGO.png" alt="Logo">--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+        <a href="index.jsp" class="home-link"><!--<img src="LOGO.png" alt="Logo">--> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
             <path d="M18 3.39996H6C4.89543 3.39996 4 4.29539 4 5.39996V17.4C4 18.5045 4.89543 19.4 6 19.4H18C19.1046 19.4 20 18.5045 20 17.4V5.39996C20 4.29539 19.1046 3.39996 18 3.39996Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M4 11.4H20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M12 3.39996V11.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
