@@ -20,7 +20,7 @@
         }
     %>
     if (<%= ck %> == 0) {
-        alert("Username Already Taken");
+        alert("Username Already Taken,Try Another");
     }
 </script>
 </head>
@@ -85,15 +85,21 @@
         container.classList.remove("active");
     });
 
-    function checkPasswords(){
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("re-password").value;
+    function validateRegisterForm() {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("re-password").value;
 
-            if(password != confirmPassword){
-                alert("Passwords do not match");
-                return false;
-            }    
-            return true;
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+
+        return true;
     }
     </script>
 </body>
