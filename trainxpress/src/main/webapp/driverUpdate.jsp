@@ -329,6 +329,9 @@
   				    alert("Please correct the errors before submitting.");
   					
   				}
+  				else{
+  					alert("Update Successfull");
+  				}
   			})
   			
   </script>
