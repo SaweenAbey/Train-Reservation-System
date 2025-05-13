@@ -391,7 +391,7 @@
 				    <tbody>
 				      <c:forEach var="tick" items="${ticket}">
 				      		<tr>
-				      			<td>${tick.bid}</td>
+				      			<td>#${tick.bid}</td>
 				      			<td>${tick.location}</td>
 				      			<td>${tick.destination}</td>
 				      			<td>${tick.noOfTicket}</td>
@@ -451,7 +451,7 @@
 			      			<td>${pay.exp}</td>
 			      			<td>${pay.cvc}</td>
 			      			<td>${pay.email}</td>
-			      			<td>${pay.pid}</td>
+			      			<td>#${pay.pid}</td>
 			      	<!--  	<td>${pay.cid}</td> -->
 			      			  
 			      			<td>

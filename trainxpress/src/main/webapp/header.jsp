@@ -85,6 +85,7 @@
         cursor: pointer;
         font-weight: bold;
         border-radius: 4px;
+        margin-right: 10px;
     }
 
     .login-btn {
@@ -139,14 +140,14 @@
             	 
 	            <a href="UserDashboard">Dashboard</a>
 	            
-	            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
+	            <button class="btn login-btn" onclick="location.href='LogOut'">Logout</button>
             <%}else{%>
 			            <% 
 			            if (session != null && session.getAttribute("id") != null && (int) session.getAttribute("id") != 0 && session.getAttribute("cid")==null) {%>
 			            	 
 				            <a href="admindashboard">Dashboard</a>
 
-				            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
+				            <button class="btn login-btn" onclick="location.href='LogOut'">Logout</button>
 			            <%}else{%>
 			            <button class="btn login-btn" onclick="location.href='login.jsp'">Login</button><%} }%>
         </div>
