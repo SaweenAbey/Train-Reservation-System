@@ -16,7 +16,7 @@
       padding: 0;
       height: 100vh;
  
- /*     background-image: url('CSS/update_1.jpg'); */
+   	  background-image: url('CSS/DriverCrudCss/driverUpdate.jpg'); 
       background-repeat: no-repeat;
   	  background-size: cover;
       	  
@@ -206,7 +206,9 @@
   </div>
   
   <script>
-	  document.getElementById('paymentForm').addEventListener('submit', function(event) {
+  
+		//Form validation
+		document.getElementById('paymentForm').addEventListener('submit', function(event) {
 	      // Prevent form submission
 	      event.preventDefault();
 	      
@@ -233,34 +235,60 @@
 	      
 	      let isValid = true;
 	      
-	      // Validate each field
-	      if (name.value.trim() === '') {
+	      // Validate name field
+			const nameVal = name.value.trim();
+	      if (!nameVal) {
 	          nameError.textContent = 'Name is required';
 	          isValid = false;
 	      }
+			else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(nameVal)){
+				nameError.textContent = 'Only letters allowed'
+				isValid = false;	
+			}
 	      
-	      if (cardno.value.trim() === '') {
+	      //validate cardno field
+	      const cardnoVal = cardno.value.replace(/\s/g, '');
+	      if (!cardnoVal) {
 	          cardnoError.textContent = 'Card number is required';
 	          isValid = false;
 	      }
+	      else if(!/^\d{13,19}$/.test(cardnoVal)){
+	      	cardnoError.textContent = 'Invalid card number (13-19 digits)';
+	          isValid = false;
+	      }
 	      
-	      if (exp.value.trim() === '') {
+	      //validate expiry field
+	      const expVal = exp.value.trim();
+	      if (!expVal) {
 	          expError.textContent = 'Expiry is required';
 	          isValid = false;
 	      }
-	      
-	      if (cvc.value.trim() === '') {
+	   	
+	      //validate cvc field
+	      const cvcVal = cvc.value.trim();
+	      if (!cvcVal) {
 	          cvcError.textContent = 'CVC is required';
 	          isValid = false;
 	      }
-	      
-	      if (email.value.trim() === '') {
-	          emailError.textContent= 'Email is required';
+	      else if (!/^\d{3,4}$/.test(cvcVal)) {
+	          cvcError.textContent = 'Must be 3-4 digits';
 	          isValid = false;
 	      }
 	      
+	      //validate email field
+	      const emailVal = email.value.trim();
+	      if (!emailVal) {
+	          emailError.textContent= 'Email is required';
+	          isValid = false;
+	      }
+	      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+	          emailError.textContent = 'Invalid email format';
+	          isValid = false;
+	      }  
+	      
 	      // If all fields are valid, submit the form
 	      if (isValid) {
+				alert('Card saved successfully..!'); 
 	          this.submit();
 	      }
 	  });

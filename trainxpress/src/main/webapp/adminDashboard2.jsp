@@ -28,12 +28,14 @@
                 <button class="btn" data-tab="tab2" onclick="openTab(event, 'tab2')" style="font-weight:normal;">Manage Trains</button>        
                 <button class="btn" data-tab="tab3" onclick="openTab(event, 'tab3')" style="font-weight:normal;">Manage Drivers</button>
                 <button class="btn" data-tab="tab4" onclick="openTab(event, 'tab4')" style="font-weight:normal;">Manage Train Schedule</button>
-             
+             	<button class="btn" data-tab="tab5" onclick="openTab(event, 'tab5')" style="font-weight:normal;">new tab</button>
             </div>
   <!--      <div class="logoutSec">
             	<button class="btn logout" onclick="location.href='LogOut'">Logout</button>
         	</div>   -->
         </div>
+        
+        
 		<div class="tab-content" id="tab1">
 			
 			<div class="dashboard-card" >
@@ -71,23 +73,7 @@
 				</div>
 			
 			</div>
-			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-       
-			
+					
         </div>	
 		
         <div class="tab-content" id="tab2">
@@ -253,7 +239,15 @@
             </tbody>
 			</table>
         </div>	
-	</div>
+
+        <div class="tab-content" id="tab5">
+    		<h2>Sadeepa</h2>
+    	</div>
+    	
+    	
+    	
+	</div> <!-- end of the dashboard div -->
+    
     
     
     	
