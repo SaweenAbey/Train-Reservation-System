@@ -7,7 +7,6 @@
   <title>Payment Update</title>
   <style>
     * {
-      box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
 
@@ -15,18 +14,18 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-repeat: no-repeat;
+ 	  background-repeat: no-repeat;
   	  background-size: cover;
-      	  
+      background-image: url('homecont/gallery-1.jpg');	 
     }
 
     .container {
       backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.4);
    /*   background-color: white; */
       border-radius: 16px;
       padding: 30px;
-      margin-bottom: 50px;
+      margin-bottom: 12px;
       margin-top: 50px;
       margin-left: 280px;
       display: flex;
@@ -65,7 +64,7 @@
       display: block;
       color: #030000;
       margin: 0px;
-      font-size: 18px;
+      font-size: 15px;
     }
     .form-control{
     	border: none;
@@ -116,14 +115,13 @@
 	}
 	input:focus {
  	  outline: none;
-      box-shadow: 5px 5px 3px lightgray;
   	  border-bottom: 2px solid gray;
 	}
 	.error{
 		margin: 0px;
 		padding: 0px;
 		color: red;
-		font-size: 12px;
+		font-size: 10px;
 		text-align: left;
 	}
 	.non-editable-note {

@@ -305,22 +305,18 @@
         </div>
         <div class="sidebar-menu">
             <div class="menu-item" onclick="openTab(event, 'tab1')" id="defaultOpen" data-tab="tab1">
-                <i class="fas fa-user"></i>
                 <span>Profile</span>
             </div>
             
             <div class="menu-item" onclick="openTab(event, 'tab2')" data-tab="tab2">
-                <i class="fas fa-cog"></i>
                 <span>Booking Details</span>
             </div>
             
             <div class="menu-item" onclick="openTab(event, 'tab3')" data-tab="tab3">
-                <i class="fas fa-cog"></i>
                 <span>Card Information</span>
             </div>
             
             <div class="menu-item" onclick="openTab(event, 'tab4')" data-tab="tab4">
-                <i class="fas fa-cog"></i>
                 <span>User Reviews</span>
             </div>
             
@@ -429,7 +425,7 @@
 		
 		<div class="tab-content" id="tab3">
 			<h1 class="tab-title">Card Details</h1><br>	
-			
+			<button class="redirect-btn" onclick="window.location.href='Payment.jsp'">Add Payment</button>
         	<table>
 			    <thead>
 			      <tr>

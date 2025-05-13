@@ -4,10 +4,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Update Payment</title>
+  <title>Update Ticket</title>
   <style>
   * {
-      box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
 
@@ -17,13 +16,13 @@
       height: 100vh;
       background-repeat: no-repeat;
   	  background-size: cover;
-      	  
+      background-image: url('homecont/gallery-1.jpg');
     }
 
     .container {
- /*     backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.2); */
-   	  background-color: white;
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.4);
+   /*	  background-color: white; */
       border-radius: 16px;
       padding: 30px;
       margin-bottom: 50px;
@@ -65,7 +64,7 @@
       display: block;
       color: #030000;
       margin: 0px;
-      font-size: 18px;
+      font-size: 15px;
     }
     .form-control{
     	border: none;
@@ -103,7 +102,7 @@
     }
 
     .image-section img {
-      margin-top: 0px;
+      margin-top: 50px;
       width: 100%;
       height: auto;
       border-radius: 12px;
@@ -116,14 +115,14 @@
 	}
 	input:focus {
  	  outline: none;
-      box-shadow: 5px 5px 3px lightgray;
+  /*    box-shadow: 5px 5px 3px lightgray; */
   	  border-bottom: 2px solid gray;
 	}
 	.error{
 		margin: 0px;
 		padding: 0px;
 		color: red;
-		font-size: 12px;
+		font-size: 10px;
 		text-align: left;
 	}
 	.non-editable-note {
@@ -234,45 +233,53 @@
 	      // Validate location field
 			const locationVal = location.value.trim();
 	      if (!locationVal) {
-	      	locationError.textContent = 'Location is required';
-	          isValid = false;
+	      		locationError.textContent = 'Location is required';
+	      		location.style.borderBottom = '2px solid red';
+	          	isValid = false;
 	      }
 			else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(locationVal)){
 				locationError.textContent = 'Only letters allowed'
+				location.style.borderBottom = '2px solid red';
 				isValid = false;	
 			}
 	      
 	      //validate destination field
 	      const destinationVal = destination.value.replace(/\s/g, '');
 	      if (!destinationVal) {
-	      	destinationError.textContent = 'Destination is required';
-	          isValid = false;
+	      		destinationError.textContent = 'Destination is required';
+	      		destination.style.borderBottom = '2px solid red';
+	          	isValid = false;
 	      }
 	      else if(!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(destinationVal)){
-	      	destinationError.textContent = 'Only letters allowed';
-	          isValid = false;
+	      		destinationError.textContent = 'Only letters allowed';
+	      		destination.style.borderBottom = '2px solid red';
+	         	isValid = false;
 	      }
 	  	
 	      //validate noOfTicket field
 	      const noOfTicketVal = noOfTicket.value.trim();
 	      if (!noOfTicketVal) {
-	      	noOfTicketError.textContent = 'Passenger count is required';
-	          isValid = false;
+	      		noOfTicketError.textContent = 'Passenger count is required';
+	      		noOfTicket.style.borderBottom = '2px solid red';
+	          	isValid = false;
 	      }
 	      else if(!/^\d+$/.test(noOfTicketVal)){
-	      	noOfTicketError.textContent = 'Only numbers allowed';
-	          isValid = false;
+	      		noOfTicketError.textContent = 'Only numbers allowed';
+	      		noOfTicket.style.borderBottom = '2px solid red';
+	         	isValid = false;
 	      }
-	      else if (!/^\d{1,2}$/.test(noOfTicketVal)) {
-	      	noOfTicketError.textContent = 'Must be 1-2 digits';
-	          isValid = false;
+	      else if(!/^\d{1,2}$/.test(noOfTicketVal)) {
+	      		noOfTicketError.textContent = 'Must be 1-2 digits';
+	      		noOfTicket.style.borderBottom = '2px solid red';
+	          	isValid = false;
 	      }
 	                     
 	      //validate date field
 	      const dateVal = date.value.trim();
 	      if (!dateVal) {
-	      	dateError.textContent = 'Date is required';
-	          isValid = false;
+	      		dateError.textContent = 'Date is required';
+	      		date.style.borderBottom = '2px solid red';
+	          	isValid = false;
 	      }
 	      
 	      // If all fields are valid, submit the form
