@@ -336,7 +336,7 @@
         </div>
         
         <div class="hero-content">
-            <h1>🎫 Book Your Tickets</h1>
+            <h1><span class="icon">🎫</span> Book Your Tickets</h1>
             <p>Fast & Secure Booking</p>
             <div class="buttons">
                 <button class="home-btn" onclick="window.location.href='index.jsp'">Home Page 🏠</button>
