@@ -284,6 +284,7 @@
 	      
 	      // If all fields are valid, submit the form
 	      if (isValid) {
+	    	  alert('Update successful..!'); 
 	          this.submit();
 	      }
 	  });

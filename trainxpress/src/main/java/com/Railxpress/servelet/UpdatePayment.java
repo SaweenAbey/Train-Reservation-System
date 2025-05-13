@@ -44,7 +44,7 @@ public class UpdatePayment extends HttpServlet {
 		paymentService service=new paymentService();
 		service.updatePayment(pay);
 		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("readPayment");
+		RequestDispatcher dispatcher= request.getRequestDispatcher("UserDashboard");
 		dispatcher.forward(request, response);
 	}
 

@@ -54,8 +54,7 @@ public class UserDashboard extends HttpServlet {
 		paymentService service3=new paymentService();
 		ArrayList<Payment> payment=service3.getOnePayment(cid);
 		
-		int cardCount=service3.getCardCount(cid);
-		
+		int cardCount=service3.getCardCount(cid);		
 		request.setAttribute("cardCount", cardCount);
 		request.setAttribute("payment", payment);
 		

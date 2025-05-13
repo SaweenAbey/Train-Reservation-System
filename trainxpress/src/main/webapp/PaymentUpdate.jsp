@@ -297,7 +297,7 @@
 	      
 	      // If all fields are valid, submit the form
 	      if (isValid) {
-				alert('Card saved successfully..!'); 
+			  alert('Update successful..!'); 
 	          this.submit();
 	      }
 	  });

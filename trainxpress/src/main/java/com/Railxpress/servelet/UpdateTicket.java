@@ -46,7 +46,7 @@ public class UpdateTicket extends HttpServlet {
 		ticketService service=new ticketService();
 		service.updateTicket(tick);
 		
-		RequestDispatcher dispatcher= request.getRequestDispatcher("readTicket");
+		RequestDispatcher dispatcher= request.getRequestDispatcher("UserDashboard");
 		dispatcher.forward(request, response);
 	}
 
