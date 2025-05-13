@@ -203,59 +203,81 @@
   </div>
   
   <script>
-		  document.getElementById('ticketForm').addEventListener('submit', function(event) {
-		      // Prevent form submission
-		      event.preventDefault();
-		      
-		      // Get all input fields
-		      const location = document.getElementById('location');
-		      const destination = document.getElementById('destination');
-		      const noOfTicket = document.getElementById('noOfTicket');
-		      const date = document.getElementById('date');
-		  
-		      
-		      // Get all error spans
-		      const locationError = document.getElementById('locationError');
-		      const destinationError = document.getElementById('destinationError');
-		      const noOfTicketError = document.getElementById('noOfTicketError');
-		      const dateError = document.getElementById('dateError');
-
-		      
-		      // Reset error messages
-		      locationError.textContent = '';
-		      destinationError.textContent = '';
-		      noOfTicketError.textContent = '';
-		      dateError.textContent = '';
-		      
-		      
-		      let isValid = true;
-		      
-		      // Validate each field
-		      if (location.value.trim() === '') {
-		    	  locationError.textContent = 'Location is required';
-		          isValid = false;
-		      }
-		      
-		      if (destination.value.trim() === '') {
-		    	  destinationError.textContent = 'Destination is required';
-		          isValid = false;
-		      }
-		      
-		      if (noOfTicket.value.trim() === '') {
-		    	  noOfTicketError.textContent = 'No of passengers is required';
-		          isValid = false;
-		      }
-		      
-		      if (date.value.trim() === '') {
-		    	  dateError.textContent = 'date is required';
-		          isValid = false;
-		      }
-		     		      
-		      // If all fields are valid, submit the form
-		      if (isValid) {
-		          this.submit();
-		      }
-		  });
+	//validation for the form
+		document.getElementById('ticketForm').addEventListener('submit', function(event) {
+	      // Prevent form submission
+	      event.preventDefault();
+	      
+	      // Get all input fields
+	      const location = document.getElementById('location');
+	      const destination = document.getElementById('destination');
+	      const noOfTicket = document.getElementById('noOfTicket');
+	      const date = document.getElementById('date');
+	      
+	      // Get all error spans
+	      const locationError = document.getElementById('locationError');
+	      const destinationError = document.getElementById('destinationError');
+	      const noOfTicketError = document.getElementById('noOfTicketError');
+	      const dateError = document.getElementById('dateError');
+	      
+	      // Reset error messages
+	      locationError.textContent = '';
+	      destinationError.textContent = '';
+	      noOfTicketError.textContent = '';
+	      dateError.textContent= '';
+	      
+	      let isValid = true;
+	      
+	      // Validate location field
+			const locationVal = location.value.trim();
+	      if (!locationVal) {
+	      	locationError.textContent = 'Location is required';
+	          isValid = false;
+	      }
+			else if (!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(locationVal)){
+				locationError.textContent = 'Only letters allowed'
+				isValid = false;	
+			}
+	      
+	      //validate destination field
+	      const destinationVal = destination.value.replace(/\s/g, '');
+	      if (!destinationVal) {
+	      	destinationError.textContent = 'Destination is required';
+	          isValid = false;
+	      }
+	      else if(!/^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(destinationVal)){
+	      	destinationError.textContent = 'Only letters allowed';
+	          isValid = false;
+	      }
+	  	
+	      //validate noOfTicket field
+	      const noOfTicketVal = noOfTicket.value.trim();
+	      if (!noOfTicketVal) {
+	      	noOfTicketError.textContent = 'Passenger count is required';
+	          isValid = false;
+	      }
+	      else if(!/^\d+$/.test(noOfTicketVal)){
+	      	noOfTicketError.textContent = 'Only numbers allowed';
+	          isValid = false;
+	      }
+	      else if (!/^\d{1,2}$/.test(noOfTicketVal)) {
+	      	noOfTicketError.textContent = 'Must be 1-2 digits';
+	          isValid = false;
+	      }
+	                     
+	      //validate date field
+	      const dateVal = date.value.trim();
+	      if (!dateVal) {
+	      	dateError.textContent = 'Date is required';
+	          isValid = false;
+	      }
+	      
+	      // If all fields are valid, submit the form
+	      if (isValid) {
+	          this.submit();
+	      }
+	  });
+	  
 			
   </script>
   
