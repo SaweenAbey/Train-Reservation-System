@@ -39,8 +39,8 @@
 			<div class="dashboard-card" >
 	        	<h2 style="text-align: left;">User Information</h2><br>
 	            <div class="user-info">
+	            	<img src="CSS/TrainCrudCss/avatar.png" style="background-color: purple" alt="User">
 	                <div class="user-details">
-	                	<img src="CSS/TrainCrudCss/avatar.png" style="background-color: purple" alt="User">
 	                    <h2><%=session.getAttribute("name") %></h2>
 	                    <p>User Name: <%=session.getAttribute("uname") %></p>
 	                    <p>E-mail: <%=session.getAttribute("email") %></p>
@@ -48,7 +48,24 @@
 	                </div>
 	            </div>
 			</div>
-		
+			
+			<div class="dashboard-card">
+				<h2 style="margin-left: 5px;">User Activity</h2>
+				<div class="activity-card">
+					<div class="activity-card1">
+			        	<p>Number of Bookings Added: 10</p>
+			        </div>
+			                    	
+			        <div class="activity-card1">
+			            <p>Number of Cards Saved: 10</p>
+			        </div>
+			                    	
+			        <div class="activity-card1">
+			            <p>Number of Reviews Added: 10</p>
+			        </div>
+				</div>
+			
+			</div>
 			
 	
 	
