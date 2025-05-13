@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <title>Train Route - Registration</title>
   <style>
-    * {
+   * {
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
@@ -14,24 +14,30 @@
     body {
       margin: 0;
       padding: 0;
-      background: url("CSS/pic (5).jpg") no-repeat center center/cover;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+ 
+      background-image: url('homecont/gallery-1.jpg'); 
+      background-repeat: no-repeat;
+  	  background-size: cover;
+      	  
     }
 
     .container {
       backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.5);
+   /*   background-color: white; */
       border-radius: 16px;
       padding: 30px;
+      margin-bottom: 50px;
+      margin-top: 50px;
+      margin-left: 280px;
       display: flex;
       gap: 30px;
       width: 1000px;
-      height: 780px; 
+      height: auto; 
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      margin-top: 250px;
+      position: relative;
+      
     }
 
     .form-section {
@@ -60,7 +66,7 @@
     .form-group label {
       display: block;
       color: #030000;
-      margin-bottom: 9px;
+      margin: 0px;
       font-size: 18px;
     }
 
@@ -68,23 +74,15 @@
       width: 100%;
       padding: 10px;
       border-radius: 8px;
-      border: none;
+      margin-top: 10px;
+      border: 1px solid black;
       outline: none;
     }
-
-    .error {
-      color: #ff6b6b;
-      font-size: 15px;
-      margin-top: 5px;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .buttons {   
       justify-items: center;
       align-items: center;
-      margin-top: 20px;
-      width: 100%;
+      margin-top: 0px;
+      margin-left: 110px;
     }
 
     .buttons button {
@@ -95,7 +93,8 @@
       background-color: #0a8e1e;
       color: white;
       transition: 0.3s;
-      
+      margin-left: 10px;
+      margin-right: 10px;
     }
 
     .buttons button:hover {
@@ -104,19 +103,27 @@
 
     .image-section {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
     .image-section img {
-      max-width: 100%;
-      max-height: 100%;
+      margin-top: 50px;
+      width: 100%;
       height: auto;
       border-radius: 12px;
-      object-fit: cover;
     }
+    input[readonly] {
+   	  background-color: #f5f5f5;
+      border: 1px dashed red;
+      color: #666;
+      cursor: not-allowed;
+	}
+	.error{
+		margin: 0px;
+		padding: 0px;
+		color: red;
+		font-size: 12px;
+		text-align: left;
+	}
   </style>
 </head>
 <body>

@@ -7,13 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/TrainCrudCss/loginStyle.css">
     <title>Login Page</title>
+    <script>
+    <%
+        int ck = 1; // default value
+        String checkParam = request.getParameter("check");
+        if (checkParam != null) {
+            try {
+                ck = Integer.parseInt(checkParam);
+            } catch (NumberFormatException e) {
+                ck = 1; // fallback in case of bad input
+            }
+        }
+    %>
+    if (<%= ck %> == 0) {
+        alert("Username Already Taken,Try Another");
+    }
+</script>
 </head>
 
 <body>
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form method="post" action="Register" >
+            <form method="post" action="Register" onsubmit="return validateRegisterForm()">
                 <h1>Create Account</h1>
                 
                 <label>use your email for registration</label>
@@ -69,15 +85,21 @@
         container.classList.remove("active");
     });
 
-    function checkPasswords(){
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("re-password").value;
+    function validateRegisterForm() {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("re-password").value;
 
-            if(password != confirmPassword){
-                alert("Passwords do not match");
-                return false;
-            }    
-            return true;
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+
+        return true;
     }
     </script>
 </body>

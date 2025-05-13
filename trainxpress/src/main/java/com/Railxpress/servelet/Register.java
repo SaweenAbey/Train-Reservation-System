@@ -42,9 +42,10 @@ public class Register extends HttpServlet {
 		cus.setPassword(password);
 		
 		CustomerServices service = new CustomerServices();
-		service.register(cus);
+		int unique=service.register(cus);
 		
-		response.sendRedirect("login.jsp");
+		
+		response.sendRedirect("login.jsp?check="+unique);
 		
 	}
 
