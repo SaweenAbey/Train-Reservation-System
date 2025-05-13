@@ -20,6 +20,7 @@
             padding: 15px;
             background:linear-gradient(to right, #4CAF50, #8BC34A);
             color: white;
+           
         }
         .sidebar {
             background: black;
@@ -28,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            height: 100%;
+    		
         }
         .profile {
             text-align: center;
@@ -166,6 +167,7 @@
 	      cursor: pointer;
 	      align-items: left;
 	      margin-left: 10px;
+	      
     	}
 	    .tabcontent-title{
 	    	text-align:center;

@@ -136,6 +136,11 @@
 			  .price{
 			  	border: none;
 			  	background-color: #ebf8f2;
+			  	color: #1f7a4d;
+			  	font-size: 18px;
+			  	margin-left: -10px;
+			  	width: 20%;
+			  	
 			  }
 			
 			  .price-group {
@@ -161,7 +166,7 @@
 		 		<form method="POST" action="addPayment" id="paymentForm">
 		 			<div class="price-group">
 		 				<label class="total-amount">Bill Amount ➜ Rs.</label> 
-			 			<input type="text" class="price" name="price" id="price" disabled value="${price}">
+			 			<input type="text" class="price" name="price" id="price" disabled value="${price}" >
 		 			</div>
 			 		
 			 		<br><br>

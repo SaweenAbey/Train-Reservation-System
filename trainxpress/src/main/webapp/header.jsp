@@ -71,7 +71,7 @@
         background-color: #292929;
     }
 
-    .btn {
+    .btnss {
         padding: 8px 14px;
         border: none;
         cursor: pointer;
@@ -138,9 +138,9 @@
 			            	 
 				            <a href="admindashboard">Dashboard</a>
 
-				            <button class="btn login-btn" onclick="location.href='LogOut'">LogOut</button>
+				            <button class="btnss login-btn" onclick="location.href='LogOut'">LogOut</button>
 			            <%}else{%>
-			            <button class="btn login-btn" onclick="location.href='login.jsp'">Login</button><%} }%>
+			            <button class="btnss login-btn" onclick="location.href='login.jsp'">Login</button><%} }%>
         </div>
     </nav>
 </body>
