@@ -80,7 +80,7 @@
 		
         <div class="tab-content" id="tab2">
         <h2 class="tabcontent-title">Train Details</h2>
-        	<button class="refresh-btn" onclick="window.location.href='addTrain.jsp'">Add Train</button>
+        	<button class="refresh-btn" onclick="window.location.href='addTrain.jsp'" style="margin-bottom: 12px;">Add Train</button>
          <table id="routeTable">
             <thead>
                 <tr>
@@ -118,7 +118,7 @@
                             
                             <form method='post' action='Tdelete' style="display: inline;">
   								<input type='hidden' name='tdelete' value='${trn.tid}'>
-  								<button class="action-button delete-button" type="submit" onclick="return confirm('Are You Sure?')">
+  								<button style="padding-left:20px;" class="action-button delete-button" type="submit" onclick="return confirm('Are You Sure?')">
   								<i class="ri-delete-bin-2-line"></i>Delete</button>
   							</form>
                             
