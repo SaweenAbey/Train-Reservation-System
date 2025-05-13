@@ -228,7 +228,7 @@
                             </form>
                             <form action="DeleteRoute" method="post" style="display: inline;">
                                 <input type="hidden" name="rid" value="${allTrout.rid}">
-                                <button type="submit" class="action-button delete-button">
+                                <button type="submit" class="action-button delete-button"onsubmit="return confirm('Are you sure?');">
                                     <i class="ri-delete-bin-2-line"></i> Delete
                                 </button>
                             </form>
