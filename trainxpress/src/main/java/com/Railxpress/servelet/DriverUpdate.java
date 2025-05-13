@@ -44,8 +44,7 @@ public class DriverUpdate extends HttpServlet {
 		DriverService service =new DriverService();
 		service.update(driver);
 		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("admindashboard");
-//		dispatcher.forward(request, response);
+
 		response.sendRedirect("admindashboard");
 	}
 

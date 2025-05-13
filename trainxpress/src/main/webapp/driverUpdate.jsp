@@ -286,7 +286,7 @@
   				}
   			})
  
-  			const phonePattern = /^[0-9]{10}$/;
+  			const phonePattern = /^0[0-9]{9}$/;
   			
   			telNum.addEventListener("input",function(){
   				if(telNum.value.trim()===""){
