@@ -123,6 +123,7 @@
 				color: red;
 				font-size: 12px;
 				text-align: left;
+				font-weight: bold;
 			}
 			 
   			.total-amount {

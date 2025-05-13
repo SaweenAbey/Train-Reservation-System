@@ -235,6 +235,7 @@
 			color: red;
 			font-size: 12px;
 			text-align: left;
+			font-weight: bold;
 		}
 		input:focus {
  		 	outline: none;
@@ -339,10 +340,10 @@
 
     <section class="hero">
         <div class="slideshow">
-            <div class="slide active" style="background-image: url('CSS/BookingCrud/train_4.jpg');"></div>
+            <div class="slide active" style="background-image: url('CSS/BookingCrud/train_1.jpg');"></div>
             <div class="slide" style="background-image: url('CSS/BookingCrud/train_2.jpg');"></div>
             <div class="slide" style="background-image: url('CSS/BookingCrud/train_3.jpg');"></div>
-            <div class="slide" style="background-image: url('CSS/BookingCrud/train_1.jpg');"></div>
+            <div class="slide" style="background-image: url('CSS/BookingCrud/train_4.jpg');"></div>
         </div>
         
         <div class="hero-content">

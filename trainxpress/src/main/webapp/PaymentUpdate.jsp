@@ -25,7 +25,7 @@
    /*   background-color: white; */
       border-radius: 16px;
       padding: 30px;
-      margin-bottom: 12px;
+      margin-bottom: 50px;
       margin-top: 50px;
       margin-left: 280px;
       display: flex;
@@ -123,11 +123,13 @@
 		color: red;
 		font-size: 10px;
 		text-align: left;
+		font-weight: bold;
 	}
 	.non-editable-note {
 		color: red;
 		font-size: 0.8em;
 		font-style: italic;
+		font-weight: bold;
 	}
   </style>
 </head>

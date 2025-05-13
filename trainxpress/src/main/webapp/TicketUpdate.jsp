@@ -124,11 +124,13 @@
 		color: red;
 		font-size: 10px;
 		text-align: left;
+		font-weight: bold;
 	}
 	.non-editable-note {
 		color: red;
 		font-size: 0.8em;
 		font-style: italic;
+		font-weight: bold;
 	}
   </style>
 </head>

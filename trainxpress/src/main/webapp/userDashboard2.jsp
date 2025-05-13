@@ -429,12 +429,12 @@
         	<table>
 			    <thead>
 			      <tr>
+			       	<th>Payment ID</th>
 			        <th>Name on Card</th>
 			        <th>Card Number</th>
 			        <th>Expiry</th>
 			        <th>CVC</th>
 			        <th>Email</th>
-			        <th>Payment ID</th>
 			        <th></th>
 			        
 			      </tr>
@@ -442,12 +442,12 @@
 			    <tbody>
 			      <c:forEach var="pay" items="${payment}">
 			      		<tr>
+			      			<td>#${pay.pid}</td>
 			      			<td>${pay.name}</td>
 			      			<td>${pay.cardNo}</td>
 			      			<td>${pay.exp}</td>
 			      			<td>${pay.cvc}</td>
-			      			<td>${pay.email}</td>
-			      			<td>#${pay.pid}</td>
+			      			<td>${pay.email}</td>      			
 			      	<!--  	<td>${pay.cid}</td> -->
 			      			  
 			      			<td>
@@ -495,7 +495,7 @@
 				    <tbody>
 				      <c:forEach var="review" items="${review}">
 				      		<tr>
-				      			<td>${review.reviewId}</td>
+				      			<td>#${review.reviewId}</td>
 				      			<td>${review.type}</td>
 				      			<td>${review.message}</td>
 				      			<td>${review.rating}</td>
