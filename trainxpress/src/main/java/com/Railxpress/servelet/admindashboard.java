@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Railxpress.model.Driver;
+import com.Railxpress.model.Inquiry;
 import com.Railxpress.model.Train;
 import com.Railxpress.model.Troutemodl;
 import com.Railxpress.services.CustomerServices;
 import com.Railxpress.services.DriverService;
+import com.Railxpress.services.InquiryServices;
 import com.Railxpress.services.ReviewService;
 import com.Railxpress.services.RouteService;
 import com.Railxpress.services.TrainServices;
@@ -50,6 +52,10 @@ public class admindashboard extends HttpServlet {
 		TrainServices tserv = new TrainServices();		
 		ArrayList<Train> train = tserv.getAllTrains();
 		request.setAttribute("admin", train);
+		
+		InquiryServices Inqservice = new InquiryServices();
+		ArrayList<Inquiry> inq = Inqservice.inquiryList();	
+		request.setAttribute("inquiry", inq);
 		
 		CustomerServices service2= new CustomerServices();
 		request.setAttribute("userCount", service2.userCount());

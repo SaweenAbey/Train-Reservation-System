@@ -29,6 +29,8 @@
                 <button class="btn" data-tab="tab3" onclick="openTab(event, 'tab3')" style="font-weight:normal;">Manage Drivers</button>
                 <button class="btn" data-tab="tab4" onclick="openTab(event, 'tab4')" style="font-weight:normal;">Manage Train Schedule</button>
              	<button class="btn" data-tab="tab5" onclick="openTab(event, 'tab5')" style="font-weight:normal;">View Reviews</button>
+             	<button class="btn" data-tab="tab6" onclick="openTab(event, 'tab6')" style="font-weight:normal;">View Inquiries</button>
+             	
             </div>
   <!--      <div class="logoutSec">
             	<button class="btn logout" onclick="location.href='LogOut'">Logout</button>
@@ -268,6 +270,49 @@
 			</table>
 
     	</div>
+    	
+    	
+    	<div class="tab-content" id="tab6">
+        <h2 class="tabcontent-title">Inquiry Details</h2>
+         <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User-Email</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="inq" items="${inquiry}" >
+                <tr>
+                    <td>#${inq.inqId}</td>
+					<td>${inq.email}</td>
+					<td>${inq.message}</td>
+					<td>${inq.status}</td>
+                    <td style="display:flex; justify-content:center;">
+                        <div class="action-buttons">
+                            <form action="updateInquiry.jsp" method="post" style="display: inline;">
+                                <input type="hidden" name="inqid" value="${inq.inqId}">
+                                <input type="hidden" name="email" value="${inq.email}">
+                                <input type="hidden" name="message" value="${inq.message}">
+                                <input type="hidden" name="status" value="${inq.status}">
+                                <button type="submit" class="action-button update-button">
+                                    <i class="ri-file-edit-line"></i> Update
+                                </button>
+                            </form>
+ 
+                        </div>
+                        
+                    </td>
+                    
+                </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+        	
+        </div>	
     	
     	
     	

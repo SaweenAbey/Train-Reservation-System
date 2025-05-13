@@ -34,7 +34,7 @@ public class InquiryUpdate extends HttpServlet {
 		
 		service.updateStatus(inq);
 		
-		RequestDispatcher dispatch = request.getRequestDispatcher("InquiryList");
+		RequestDispatcher dispatch = request.getRequestDispatcher("admindashboard");
 		
 		dispatch.forward(request, response);
 		
