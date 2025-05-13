@@ -204,7 +204,7 @@
   					<label>I wish to receive email updates</label><br>
   					
 	            	<button type="submit" class="submit-btn" id="saveCardBtn" disabled>Save Card & Pay</button>
-	            	<button type="button" class="pay-btn" id="payBtn" disabled>Pay</button>
+	            	<button type="button" class="pay-btn" id="payBtn" disabled onclick="window.location.href='eticket.jsp'">Pay</button>
 	           		
 		 		</form>
 		 		
