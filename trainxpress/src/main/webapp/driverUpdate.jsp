@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Payment Update</title>
+  <title>Driver Update</title>
   <style>
     * {
       box-sizing: border-box;

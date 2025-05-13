@@ -11,7 +11,7 @@
 
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <title>TrainXpress</title>
+    <title>RailXpress</title>
 <%@ include file="header.jsp" %>
 </head>
 
@@ -20,7 +20,7 @@
     <div id="scroll-indicator"></div>
     <section class="showcase">
         <header>
-          <h2 class="logo">Welcome to TrainXpress..</h2>
+          <h2 class="logo">Welcome to RailXpress..</h2>
         </header>
         <video src="./homecont/video.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
