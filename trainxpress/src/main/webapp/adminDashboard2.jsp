@@ -35,8 +35,36 @@
         	</div>   -->
         </div>
 		<div class="tab-content" id="tab1">
+			
+			<div class="dashboard-card" >
+	        	<h2 style="text-align: left;">User Information</h2><br>
+	            <div class="user-info">
+	                <div class="user-details">
+	                	<img src="CSS/TrainCrudCss/avatar.png" style="background-color: purple" alt="User">
+	                    <h2><%=session.getAttribute("name") %></h2>
+	                    <p>User Name: <%=session.getAttribute("uname") %></p>
+	                    <p>E-mail: <%=session.getAttribute("email") %></p>
+	                    
+	                </div>
+	            </div>
+			</div>
 		
-         	<h1 class="tab-title">Admin Information</h1><br>
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+   <!-- 	<h1 class="tab-title">Admin Information</h1><br>
 	        <div class="dashboard-card" >
 	            <div class="user-info">
 	                
@@ -49,7 +77,7 @@
 	                    <p> Available Trains count:${count2}</p>
 	                </div>
 	            </div>
-			</div>
+			</div>   -->     
 			
         </div>	
 		

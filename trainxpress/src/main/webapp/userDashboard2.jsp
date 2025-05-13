@@ -344,7 +344,7 @@
 	                    <p>User Name: <%=session.getAttribute("uname") %></p>
 	                    <p>E-mail: <%=session.getAttribute("email") %></p>
 	                    
-	                </div>
+	              	</div>
 	            </div>
 			</div>
 			
