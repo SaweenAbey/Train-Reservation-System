@@ -3,6 +3,7 @@ package com.Railxpress.services;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.Railxpress.model.Driver;
@@ -27,9 +28,13 @@ public class DriverService {
 			stmt.setInt(6,driver.getAge());
 			
 			stmt.executeUpdate();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		}catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
 
 	}
 	
@@ -53,9 +58,14 @@ public class DriverService {
 				driverList.add(driver);
 			}
 			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		}catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
+		
 		return driverList;
 	}
 	
@@ -74,9 +84,13 @@ public class DriverService {
 			
 			stmt.executeUpdate();
 			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		}catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
 	}
 	
 	public void delete(int id) {
@@ -88,9 +102,13 @@ public class DriverService {
 			stmt.setInt(1, id);
 			stmt.executeUpdate();
 			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		}catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
 	}
 	public int getDriverCount() {
 		String query="select COUNT(driverId) as count from driver";
@@ -103,9 +121,13 @@ public class DriverService {
 			}
 			
 			
-		}catch(Exception e) {
-			
-		}
+		}catch (SQLException e) {
+	        e.printStackTrace(); // Catches database-related exceptions
+	    } catch (NullPointerException e) {
+	        System.out.println("Null value encountered: " + e.getMessage()); // Catches null pointer exceptions
+	    } catch (ClassNotFoundException e) {
+	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
+	    }
 		return reviewCount;
 	}
 }
