@@ -34,8 +34,16 @@
                 display: flex;
                 align-items: center;
             }
+            .homelink {
+                color: white;
+                text-decoration: none;
+                padding: 0 15px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
 
-            .home-link:hover {
+            .homelink:hover {
             background-color: #292929 ;
             }
 
@@ -171,7 +179,11 @@
                flex-shrink: 0;
                margin-top: 10px;;
             }
-            
+            #submitbtn:hover{
+               background-color:green;
+               cursor: pointer
+            }
+  
      
             .review-slider {
             position: relative;
