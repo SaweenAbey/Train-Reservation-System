@@ -14,7 +14,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: url("Formcont/pic (5).jpg") no-repeat center center/cover;
+      background: url("CSS/pic (5).jpg") no-repeat center center/cover;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -31,6 +31,7 @@
       width: 1000px;
       height: 780px; 
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      margin-top: 250px;
     }
 
     .form-section {
