@@ -30,24 +30,7 @@ public class DriverService {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-//		String query = "INSERT INTO driver (name,nic,age,phone) VALUES(?,?,?,?)";
-//		
-//		try (PreparedStatement pStatement = DBconnect.getConnection().prepareStatement(query) ){
-//			//String query = "INSERT INTO driver (name,nic,age,phone) VALUES('"+driver.getName()+"','"+driver.getNic()+"','"+driver.getAge()+"','"+driver.getPhone()+"')";
-//			//Statement statement = DBconnect.getConnection().createStatement();
-//			//statement.executeUpdate(query);
-//			pStatement.setString(1,driver.getName());
-//			pStatement.setString(2,driver.getNic());
-//			pStatement.setInt(3,driver.getAge());
-//			pStatement.setInt(4,driver.getPhone());
-//			
-//			pStatement.executeUpdate();
-//			System.out.println("Inserted");   /*Use executeQuery() for SELECT queries.
-//												Use executeUpdate() for INSERT, UPDATE, DELETE.*/
-//			
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+
 	}
 	
 	public ArrayList<Driver> readAll() {
