@@ -25,7 +25,7 @@ public class ReviewService {
 			
 			while(rs.next()) {
 				Review rev=new Review();
-		
+				rev.setReviewId(rs.getInt("reviewId"));
 				rev.setCusId(rs.getInt("cid"));
 				rev.setMessage(rs.getString("message"));
 				rev.setRating(rs.getInt("rating"));
