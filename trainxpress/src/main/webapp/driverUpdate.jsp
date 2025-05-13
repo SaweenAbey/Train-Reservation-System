@@ -311,8 +311,8 @@
   					age.style='border:solid red 3px';
   					validity6="false";
   				}
-  				else if(age.value.trim()<=0){
-  					ageError.textContent="Age must be greater than 0";
+  				else if(age.value.trim()<=18 || age.value.trim()>55){
+  					ageError.textContent="Age must be greater than 18 and below 56";
   					age.style='border:solid red 3px';
   					validity6="false";
   				}
