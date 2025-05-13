@@ -16,7 +16,6 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('CSS/DriverCrudCss/driverUpdate.jpg');
       background-repeat: no-repeat;
       background-size: cover;  
     }
@@ -174,7 +173,7 @@
     </div>
     
     <div class="image-section">
-      <img src="TrainDP.jpeg" alt="Train Registration" >
+      <img src="CSS/TrainCrudCss/TrainDP.jpeg" alt="Train Registration" >
     </div>
   </div>
   
