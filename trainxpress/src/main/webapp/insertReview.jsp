@@ -154,6 +154,7 @@
   			})
   			
   			document.getElementById("reviewForm").addEventListener("submit",function(event){
+  				msg.dispatchEvent(new Event("input"));
   				if(validity1=="false"){
   					event.preventDefault(); 
   				    alert("Please correct the errors before submitting.");
