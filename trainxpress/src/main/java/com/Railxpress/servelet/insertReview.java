@@ -48,7 +48,8 @@ public class insertReview extends HttpServlet {
 			 cid= (int)session.getAttribute("cid");
 		}
 		else {
-			response.sendRedirect("login.jsp");
+			int val=0;
+			response.sendRedirect("login.jsp?loggin="+val);
 			return;
 		}
 		
