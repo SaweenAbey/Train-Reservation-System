@@ -5,8 +5,8 @@
     if (session.getAttribute("cid") == null) {
 %>
     <script>
-        alert("You must login first.");
-        window.location.href = "Login"; // or your login servlet
+        alert("You must login as a Customer first.");
+        window.location.href = "index"; // or your login servlet
     </script>
 <%
     }
