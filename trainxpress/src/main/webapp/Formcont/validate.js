@@ -25,7 +25,15 @@ function validateName(){
     }
 }
 function validateEName(){
+	var name = document.getElementById('start').value;
     var ename = document.getElementById('end').value;
+	if(name==ename){
+		
+			eError.style = "color: red;";
+		     eError.innerHTML = "Start location and Destinaltion location are same";
+		     return false;
+		
+	}
     if(ename.length == 0){
         eError.style = "color: red;";
         eError.innerHTML = "Name is required";
