@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const rowsPerPage = 20;
+    const rowsPerPage = 13;
     const table = document.getElementById('routeTable');
     const pagination = document.getElementById('pagination');
     const rows = table.querySelectorAll('tbody tr');

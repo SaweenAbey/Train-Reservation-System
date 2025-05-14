@@ -2,14 +2,14 @@ package com.Railxpress.model;
 
 public class Ticket {
 
-	int bid;
-	String location;
-	String destination;
-	int noOfTicket;
-	String date;
-	String price;
-	int cid;
-	int routeId;
+	private int bid;
+	private String location;
+	private String destination;
+	private int noOfTicket;
+	private String date;
+	private String price;
+	private int cid;
+	private int routeId;
 	
 	public int getBid() {
 		return bid;

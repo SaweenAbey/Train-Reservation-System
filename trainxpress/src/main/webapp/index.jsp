@@ -197,30 +197,23 @@
      <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>RailConnect</h3>
+            	<div class="footer-column">
+                    <h3>RailXpress</h3>
                     <p>Your trusted partner for comfortable and reliable train travel across the country.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Trains</a></li>
-                        <li><a href="#">Bookings</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="TrainList">Trains</a></li>
+                        <li><a href="Booking">Bookings</a></li>
+                        <li><a href="ContactUs.jsp">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Support</h3>
                     <ul>
-                        <li><a href="#">FAQs</a></li>
+                        <li><a href="Terms@cont.jsp">FAQs</a></li>
                         <li><a href="#">Help Center</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="Terms@cont.jsp">Terms & Conditions</a></li>
@@ -230,9 +223,9 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Train Street, Railway City</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                        <li><i class="fas fa-envelope"></i> info@railconnect.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i>EH Cooray Building, No.24: 5th Floor, E.H.Cooray Tower, B535, Matara</li>
+                        <li><i class="fas fa-phone"></i> (+94)0704596989</li>
+                        <li><i class="fas fa-envelope"></i> supporto@railxpress.me</li>
                     </ul>
                 </div>
             </div>

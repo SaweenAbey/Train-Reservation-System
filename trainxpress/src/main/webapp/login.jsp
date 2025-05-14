@@ -22,6 +22,9 @@
     if (<%= ck %> == 0) {
         alert("Username Already Taken,Try Another");
     }
+    if(<%=request.getParameter("loggin")%>!=null && <%=request.getParameter("loggin")%>==0){
+    	 alert("You have to log in first");
+    }
 </script>
 </head>
 

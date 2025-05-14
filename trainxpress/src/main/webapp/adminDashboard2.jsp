@@ -228,9 +228,9 @@
                                     <i class="ri-file-edit-line"></i> Update
                                 </button>
                             </form>
-                            <form action="DeleteRoute" method="post" style="display: inline;">
+                            <form action="DeleteRoute" method="post" style="display: inline;"onsubmit="return confirm('Are you sure?');">
                                 <input type="hidden" name="rid" value="${allTrout.rid}">
-                                <button type="submit" class="action-button delete-button"onsubmit="return confirm('Are you sure?');">
+                                <button type="submit" class="action-button delete-button">
                                     <i class="ri-delete-bin-2-line"></i> Delete
                                 </button>
                             </form>
