@@ -1,13 +1,13 @@
 package com.Railxpress.model;
 
 public class Payment {
-	String name;
-	String cardNo;
-	String exp;
-	int cvc;
-	String email;
-	int pid;
-	int cid;
+	private String name;
+	private String cardNo;
+	private String exp;
+	private int cvc;
+	private String email;
+	private int pid;
+	private int cid;
 	
 	public String getName() {
 		return name;
