@@ -197,6 +197,10 @@
      <footer>
         <div class="container">
             <div class="footer-content">
+            	<div class="footer-column">
+                    <h3>RailXpress</h3>
+                    <p>Your trusted partner for comfortable and reliable train travel across the country.</p>
+                </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
@@ -220,7 +224,7 @@
                     <h3>Contact Us</h3>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i>EH Cooray Building, No.24: 5th Floor, E.H.Cooray Tower, B535, Matara</li>
-                        <li><i class="fas fa-phone"></i> </li>(+94)0704596989
+                        <li><i class="fas fa-phone"></i> (+94)0704596989</li>
                         <li><i class="fas fa-envelope"></i> supporto@railxpress.me</li>
                     </ul>
                 </div>

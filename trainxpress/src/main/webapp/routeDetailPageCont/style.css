@@ -1,4 +1,9 @@
-/* Header */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 .details-header {
     background-color: #4caf50;
     color: white;
