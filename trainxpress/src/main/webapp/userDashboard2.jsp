@@ -368,7 +368,7 @@
 		
 		<div class="tab-content" id="tab2">
 		      <h1 class="tab-title">Booking Details</h1><br>
-			  <button class="redirect-btn" onclick="window.location.href='Booking.jsp'">Add Booking</button>
+			  <button class="redirect-btn" onclick="window.location.href='Booking'">Add Booking</button>
 
         	  <table>
 				    <thead>
