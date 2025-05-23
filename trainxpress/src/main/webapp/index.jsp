@@ -22,7 +22,13 @@
         <header>
           <h2 class="logo">Welcome to RailXpress..</h2>
         </header>
-        <video src="./homecont/video.mp4" muted loop autoplay></video>
+        <iframe 
+    src="https://www.youtube.com/embed/WmzPVT7-nyg?autoplay=1&mute=1&loop=1&playlist=WmzPVT7-nyg&controls=0&modestbranding=1&rel=0" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    style="position: absolute; top: 60px; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
+</iframe>
         <div class="overlay"></div>
         <div class="text">
           <h2>Never Stop To </h2> 
@@ -163,7 +169,7 @@
                 <% int count=0; %>
 	            <c:forEach var="rev" items="${review}">
 	                <div class="review-card">
-	                    <img src="homecont/re (<%=++count %>).jpg" alt="User 1">
+	                    <img src="CSS/ReviewCss/re (<%=++count %>).jpg" alt="User 1">
 	                    <div class="review-content">
 	                        <h3>${rev.name}</h3>
 	                        <div class="stars">
