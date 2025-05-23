@@ -22,7 +22,7 @@
         <header>
           <h2 class="logo">Welcome to RailXpress..</h2>
         </header>
- 		<video src="./homecont/video.mp4" muted loop autoplay></video>
+ 		<video src="./homecont/Video.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
         <div class="text">
           <h2>Never Stop To </h2> 
