@@ -22,13 +22,7 @@
         <header>
           <h2 class="logo">Welcome to RailXpress..</h2>
         </header>
-        <iframe 
-    src="https://www.youtube.com/embed/WmzPVT7-nyg?autoplay=1&mute=1&loop=1&playlist=WmzPVT7-nyg&controls=0&modestbranding=1&rel=0" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen
-    style="position: absolute; top: 60px; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
-</iframe>
+ 		<video src="./homecont/video.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
         <div class="text">
           <h2>Never Stop To </h2> 
