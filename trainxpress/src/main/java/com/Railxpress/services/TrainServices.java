@@ -49,12 +49,17 @@ public class TrainServices {
 				
 			}
 			
+			rs.close();
+			stmt.close();
+		
 			return listTrain;
+		
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
+		
 		
 	}
 
@@ -76,6 +81,9 @@ public class TrainServices {
 			pstmt.setInt(5,trn.getNoofwagons());
 
 			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
 
 			
 		} catch (SQLException e) {
@@ -106,6 +114,8 @@ public class TrainServices {
 			
 			pstmt.executeUpdate();
 			
+			pstmt.close();
+			conn.close();
 			
 		} catch (SQLIntegrityConstraintViolationException e) {
 			
@@ -143,6 +153,9 @@ public class TrainServices {
 			pstmt.setInt(6, trn.getTid());
 
 			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
 			
 			
 		} catch (SQLIntegrityConstraintViolationException e) {
