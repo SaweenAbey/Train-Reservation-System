@@ -36,6 +36,7 @@ public class RouteService {
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
+		
 	}
 
 	public static List<Troutemodl> getAllRout(){
