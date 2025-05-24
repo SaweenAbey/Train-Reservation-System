@@ -17,7 +17,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('./homecont/pexels-genine-alyssa-pedreno-andrada-1263127-2403209.jpg');
+            background-image: url('./homecont/pic (4).jpg');
             background-size: cover;
             background-position: center;
             color: #333;
