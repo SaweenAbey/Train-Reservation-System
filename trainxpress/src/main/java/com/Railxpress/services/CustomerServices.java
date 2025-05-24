@@ -30,7 +30,8 @@ public class CustomerServices {
 				cusDetails.add(rs.getString("email"));
 				
 			}
-			
+		rs.close();
+		stmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -57,18 +58,22 @@ public class CustomerServices {
 					check=0;
 				}
 			}
+			rs.close();
 			if(check==1) {
 				stmt.executeUpdate(query);
 			}
+
 			
-			
-			
+			stmt.close();
+			stmt2.close();
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		return check;
+
 	}
 	
 	public int userCount() {
@@ -81,6 +86,8 @@ public class CustomerServices {
 				count=rs.getInt("count");
 				System.out.println("UserTotal:"+rs.getInt("count"));
 			}
+			rs.close();
+			stmt.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

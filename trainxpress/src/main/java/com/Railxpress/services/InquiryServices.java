@@ -22,6 +22,10 @@ public class InquiryServices {
 			Statement stmt = DBconnect.getConnection().createStatement();
 			
 			stmt.executeUpdate(query);
+			
+			
+			stmt.close();
+			
 			 
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -58,7 +62,9 @@ public class InquiryServices {
 				list.add(inq);
 				
 			}
-		
+			rs.close();
+			stmt.close();
+			
 		return list;
 	
 		} catch (SQLIntegrityConstraintViolationException e) {
@@ -83,6 +89,9 @@ public class InquiryServices {
 			pstmt.setInt(2, inq.getInqId());
 
 			pstmt.executeUpdate();
+			
+			
+			pstmt.close();
 			
 		}catch(Exception e) {
 			e.printStackTrace();

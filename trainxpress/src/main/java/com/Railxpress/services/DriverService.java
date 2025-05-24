@@ -28,6 +28,10 @@ public class DriverService {
 			stmt.setInt(6,driver.getAge());
 			
 			stmt.executeUpdate();
+			
+			stmt.close();
+			conn.close();
+			
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions
 	    } catch (NullPointerException e) {
@@ -35,7 +39,7 @@ public class DriverService {
 	    } catch (ClassNotFoundException e) {
 	        System.out.println("Database driver not found: " + e.getMessage()); // Catches class not found exceptions
 	    }
-
+		
 	}
 	
 	public ArrayList<Driver> readAll() {
@@ -57,7 +61,9 @@ public class DriverService {
 				driver.setAge(rs.getInt("age"));
 				driverList.add(driver);
 			}
-			
+			rs.close();
+			stmt.close();
+			conn.close();
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions
 	    } catch (NullPointerException e) {
@@ -83,7 +89,9 @@ public class DriverService {
 			stmt.setInt(7, driver.getDriverId());
 			
 			stmt.executeUpdate();
-			
+
+			stmt.close();
+			conn.close();
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions
 	    } catch (NullPointerException e) {
@@ -102,6 +110,8 @@ public class DriverService {
 			stmt.setInt(1, id);
 			stmt.executeUpdate();
 			
+			stmt.close();
+			conn.close();
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions
 	    } catch (NullPointerException e) {
@@ -120,6 +130,8 @@ public class DriverService {
 				reviewCount=rs.getInt("count");
 			}
 			
+			rs.close();
+			stmt.close();
 			
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions

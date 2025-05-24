@@ -46,7 +46,9 @@ public class ticketService {
 				if(rs2.next()) {
 					ticket.setBid(rs2.getInt("max"));
 				}
-				
+				rs.close();
+				statement2.close();
+				statement.close();
 				
 			} catch (SQLIntegrityConstraintViolationException e) {
 				System.out.println("Constraint violation: " + e.getMessage());
@@ -86,6 +88,8 @@ public class ticketService {
 				
 				listTick.add(tick);
 			}
+			rs.close();
+			statement.close();
 			return listTick;
 			
 		} catch (SQLSyntaxErrorException e) {
@@ -128,7 +132,9 @@ public class ticketService {
 			preparedStatement.setInt(7, ticket.getBid());
 			
 			preparedStatement.executeUpdate();
-			
+			rs.close();
+			statement2.close();
+			preparedStatement.close();
 		} catch (SQLIntegrityConstraintViolationException e) {
 			System.out.println("Constraint violation: " + e.getMessage());
 		}
@@ -151,6 +157,8 @@ public class ticketService {
 			Statement statement=DBconnect.getConnection().createStatement();
 			statement.executeUpdate(query);
 
+			statement.close();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -169,6 +177,9 @@ public class ticketService {
 			if(rs.next()) {
 				price=rs.getString("price");
 			}
+			rs.close();
+			stmt.close();
+			conn.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -200,6 +211,9 @@ public class ticketService {
 				
 				listTick.add(tick);
 			}
+			rs.close();
+			statement.close();
+		
 			return listTick;
 			
 		} catch (Exception e) {
@@ -220,6 +234,9 @@ public class ticketService {
 			if(rs.next()) {
 				bookingCount=rs.getInt("count");
 			}
+			rs.close();
+			stmt.close();
+			
 		}catch(Exception e) {
 			
 		}

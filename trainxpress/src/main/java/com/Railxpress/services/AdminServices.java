@@ -28,6 +28,9 @@ public class AdminServices {
 				adminDetails.set(0,rs.getInt("adminId"));
 				adminDetails.add(rs.getString("name"));
 			}
+			rs.close();
+			stmt.close();
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();

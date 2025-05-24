@@ -1,3 +1,4 @@
+//IT23748330 Abeysekara S.U
 package com.Railxpress.services;
 
 import java.sql.Connection;
@@ -16,18 +17,21 @@ import com.Railxpress.utils.DBconnect;
 public class RouteService {
 	public void regRoute(Troutemodl rout) {
 		try {
-		    String query = "INSERT INTO trainroute(start, end, arrivalTime, departureTime, price,trainId) VALUES (?, ?, ?, ?, ?,?)";
-		    PreparedStatement preparedStatement = DBconnect.getConnection().prepareStatement(query);
+		    String query = "INSERT INTO trainroute(start, end, arrivalTime, departureTime, price,trainId) VALUES (?, ?, ?, ?, ?,?)"; //sql query sing bind values 
+		    PreparedStatement preparedStatement = DBconnect.getConnection().prepareStatement(query); //make connction with pewpared stetement 
 		    
 		    preparedStatement.setString(1, rout.getSstation());
 		    preparedStatement.setString(2, rout.getEstation());
 		    preparedStatement.setString(3, rout.getDepTime());
 		    preparedStatement.setString(4, rout.getArrTime());
 		    preparedStatement.setDouble(5, rout.getTprice());
-		    preparedStatement.setInt(6, rout.getTid());
+		    preparedStatement.setInt(6, rout.getTid());    //assign values
 
-		    preparedStatement.executeUpdate();
-		} catch (SQLIntegrityConstraintViolationException e) {
+		    preparedStatement.executeUpdate();  //executes 
+		    
+		    preparedStatement.close();
+
+		} catch (SQLIntegrityConstraintViolationException e) {                                //generates errors handling
 		    System.out.println("Constraint violation: " + e.getMessage());
 		} catch (SQLSyntaxErrorException e) {
 		    System.out.println("Syntax error in the SQL query: " + e.getMessage());
@@ -39,8 +43,8 @@ public class RouteService {
 		
 	}
 
-	public static List<Troutemodl> getAllRout(){
-		ArrayList<Troutemodl>allTrout = new ArrayList<Troutemodl>();
+	public static List<Troutemodl> getAllRout(){                 //make list 
+		ArrayList<Troutemodl>allTrout = new ArrayList<Troutemodl>(); //make arraylist
 		try {
 			String query = "select * from trainroute ";
 			Statement statement = DBconnect.getConnection().createStatement();
@@ -58,7 +62,11 @@ public class RouteService {
 				
 				allTrout.add(rm);
 				
-			}return allTrout;
+			}
+			rs.close();
+			statement.close();
+			return allTrout;
+			
 			
 		} catch (SQLSyntaxErrorException e) {
 		    System.out.println("Syntax error in the SQL query: " + e.getMessage());
@@ -86,6 +94,9 @@ public class RouteService {
 	        preparedStatement.setInt(7, rout.getRid());
 
 	        preparedStatement.executeUpdate();
+	        
+	        preparedStatement.close();
+			
 	    } catch (SQLIntegrityConstraintViolationException e) {
 	        System.out.println("Constraint violation: " + e.getMessage());
 	    } catch (SQLSyntaxErrorException e) {
@@ -104,7 +115,7 @@ public class RouteService {
 			Statement statement = DBconnect.getConnection().createStatement();
 			statement.executeUpdate(query);
 			
-			
+			statement.close();	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -126,7 +137,10 @@ public class RouteService {
 				alsearch.add(rm);
 				
 				
-			}return alsearch;
+			}
+			rs.close();
+			statement.close();
+			return alsearch;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

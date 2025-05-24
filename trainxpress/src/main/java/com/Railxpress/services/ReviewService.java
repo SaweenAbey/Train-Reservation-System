@@ -40,7 +40,12 @@ public class ReviewService {
 				}
 				
 				review.add(rev);
+			
 			}
+			rs.close();
+			statement.close();
+			statement2.close();
+			
 			return review;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,6 +73,8 @@ public class ReviewService {
 			
 			int c=stmt.executeUpdate();
 			System.out.println(c);
+			stmt.close();
+			conn.close();
 			
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions
@@ -97,6 +104,8 @@ public class ReviewService {
 			stmt.setInt(4, rev.getReviewId());
 			
 			stmt.executeUpdate();
+			stmt.close();
+
 		}
 		catch(Exception e) {
 			
@@ -110,6 +119,10 @@ public class ReviewService {
 			stmt.setInt(1, id);
 			
 			stmt.executeUpdate();
+			
+			stmt.close();
+			conn.close();
+			
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions
 	    } catch (NullPointerException e) {
@@ -147,6 +160,9 @@ public class ReviewService {
 				
 				review.add(rev);
 			}
+			rs.close();
+			statement2.close();
+			statement.close();
 			return review;
 		} catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions
@@ -169,6 +185,9 @@ public class ReviewService {
 			if(rs.next()) {
 				reviewCount=rs.getInt("count");
 			}
+			rs.close();
+			stmt.close();
+
 			
 		}catch (SQLException e) {
 	        e.printStackTrace(); // Catches database-related exceptions

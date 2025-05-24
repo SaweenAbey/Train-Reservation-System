@@ -26,6 +26,8 @@ public class paymentService {
 	        statement.setInt(6, payment.getCid());
 	        statement.executeUpdate();
 	        
+	        statement.close();
+		
 	    } catch (SQLIntegrityConstraintViolationException e) {
 	    	System.out.println("Constraint violation: " + e.getMessage());
 	    }
@@ -61,6 +63,9 @@ public class paymentService {
 				
 				listPay.add(pay);
 			}
+			rs.close();
+			statement.close();
+			
 			return listPay;
 			
 		} catch (SQLSyntaxErrorException e) {
@@ -92,6 +97,9 @@ public class paymentService {
 			
 			preparedStatement.executeUpdate();
 			
+			preparedStatement.close();
+
+			
 		} catch (SQLIntegrityConstraintViolationException e) {
 			System.out.println("Constraint violation: " + e.getMessage());
 		}
@@ -114,6 +122,8 @@ public class paymentService {
 			Statement statement=DBconnect.getConnection().createStatement();
 			statement.executeUpdate(query);
 			
+			statement.close();
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -139,8 +149,14 @@ public class paymentService {
 				pay.setCid(rs.getInt("cid"));
 				
 				listPay.add(pay);
+
 			}
+			rs.close();
+			statement.close();
 			return listPay;
+			
+			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -159,7 +175,10 @@ public class paymentService {
 			if(rs.next()) {
 				cardCount=rs.getInt("count");
 			}
+			rs.close();
+			stmt.close();
 		}
+
 		catch(Exception e) {
 			e.printStackTrace();
 		}
